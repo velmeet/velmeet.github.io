@@ -382,6 +382,22 @@ VM_THEME.apply(document.documentElement,(window.VM_SITE_CONFIG||{}).theme);match
 [data-vm-theme] .vm-photo-surface.vm-media-error{background-color:var(--vm-raised,#e4e8ed);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40' fill='none' stroke='%23848c99' stroke-width='1.5'%3E%3Crect x='7' y='7' width='26' height='26' rx='4'/%3E%3Ccircle cx='15' cy='15' r='3'/%3E%3Cpath d='M8 29l9-9 5 5 5-7 6 8'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
 @media(prefers-reduced-motion:reduce){.vm-photo{transition:none}}
 </style>
+<style id="vmCompactLanguageStyles">
+/* Compact visible control; retain a 54×44 touch target and the existing language adapter. */
+.site-header .lang.vm-lang-compact{position:relative;width:54px;height:44px;gap:0;flex:none}
+.site-header .vm-lang-compact #langSelect{position:absolute;inset:0;width:54px;height:44px;min-width:0;padding:0;opacity:0;pointer-events:none}
+.vm-lang-toggle{position:relative;display:flex;align-items:center;justify-content:center;gap:6px;width:54px;height:44px;padding:0;border:0;background:transparent;color:var(--vm-text,#0f1c2e);font:600 14px/1 system-ui,sans-serif;cursor:pointer}
+.vm-lang-toggle::before{content:'';position:absolute;inset:5px 0;border:1px solid var(--vm-line,#e6e3dd);border-radius:8px;background:var(--vm-surface,#fff);z-index:-1}
+.vm-lang-toggle{isolation:isolate}
+.vm-lang-toggle:focus{outline:none}
+.vm-lang-toggle:focus-visible::before{outline:2px solid #2783de;outline-offset:2px}
+.vm-lang-caret{display:block;width:0;height:0;border-left:3px solid transparent;border-right:3px solid transparent;border-top:4px solid currentColor;color:var(--vm-muted,#6b7785)}
+.vm-lang-menu{position:absolute;right:0;top:41px;z-index:1000;width:54px;box-sizing:border-box;padding:3px 0;margin:0;border:1px solid var(--vm-line,#e6e3dd);border-radius:8px;background:var(--vm-surface,#fff);color:var(--vm-text,#0f1c2e);box-shadow:0 4px 12px rgba(0,0,0,.14);max-height:min(280px,calc(100dvh - 110px));overflow-y:auto;overscroll-behavior:contain}
+.vm-lang-menu[hidden]{display:none}
+.vm-lang-option{display:block;width:100%;min-height:44px;padding:0;border:0;background:transparent;color:inherit;font:400 14px/1 system-ui,sans-serif;text-align:center;cursor:pointer}
+.vm-lang-option[aria-selected="true"]{background:var(--vm-raised,#f0efed);font-weight:700}
+.vm-lang-option:hover,.vm-lang-option:focus-visible{background:var(--vm-raised,#f0efed);outline:2px solid #2783de;outline-offset:-3px}
+</style>
 </head>
 <body>
 <div class="bar-social" id="top"><span class="pulse"></span><span id="socialBarText">8,400 men joined this week</span></div>
@@ -1591,6 +1607,27 @@ const VM_MEDIA=(()=>{
  // and invoke start() only after obtaining valid consent. No consent is invented here.
  window.VM_ANALYTICS={start:start,enabled:!!providers.length,legacyRefusal:refused};
  if(window.VM_ANALYTICS_AUTOSTART!==false&&!refused)start();
+})();
+</script>
+<script id="vmCompactLanguageScript">
+(function(){
+  var select=document.getElementById('langSelect');if(!select)return;
+  var host=select.parentElement,button=document.createElement('button'),menu=document.createElement('div');
+  button.type='button';button.className='vm-lang-toggle';button.id='vmLangToggle';button.setAttribute('aria-label',select.getAttribute('aria-label')||'Language');button.setAttribute('aria-haspopup','listbox');button.setAttribute('aria-expanded','false');button.setAttribute('aria-controls','vmLangMenu');
+  var label=document.createElement('span'),caret=document.createElement('span');caret.className='vm-lang-caret';caret.textContent='';caret.setAttribute('aria-hidden','true');button.append(label,caret);
+  menu.id='vmLangMenu';menu.className='vm-lang-menu';menu.setAttribute('role','listbox');menu.setAttribute('aria-label',select.getAttribute('aria-label')||'Language');menu.hidden=true;
+  var items=Array.from(select.options).map(function(option){var item=document.createElement('button');item.type='button';item.className='vm-lang-option';item.setAttribute('role','option');item.tabIndex=-1;item.dataset.lang=option.value;item.textContent=option.textContent;menu.appendChild(item);item.addEventListener('click',function(){select.value=option.value;select.dispatchEvent(new Event('change',{bubbles:true}));close(true)});return item});
+  function sync(){label.textContent=select.options[select.selectedIndex].textContent;items.forEach(function(item){item.setAttribute('aria-selected',String(item.dataset.lang===select.value))})}
+  function close(focus){menu.hidden=true;button.setAttribute('aria-expanded','false');if(focus)button.focus({preventScroll:true})}
+  function open(){sync();menu.hidden=false;button.setAttribute('aria-expanded','true');(items.find(function(item){return item.dataset.lang===select.value})||items[0]).focus({preventScroll:true})}
+  button.addEventListener('click',function(){if(menu.hidden)open();else close(false)});
+  button.addEventListener('keydown',function(e){if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();open()}});
+  menu.addEventListener('keydown',function(e){var index=items.indexOf(document.activeElement);if(e.key==='Escape'){e.preventDefault();e.stopPropagation();close(true)}else if(e.key==='Tab'){close(false)}else if(e.key==='ArrowDown'||e.key==='ArrowUp'||e.key==='Home'||e.key==='End'){e.preventDefault();var next=e.key==='Home'?0:e.key==='End'?items.length-1:(index+(e.key==='ArrowDown'?1:-1)+items.length)%items.length;items[next].focus({preventScroll:true})}});
+  document.addEventListener('pointerdown',function(e){if(!host.contains(e.target))close(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!menu.hidden){e.preventDefault();close(true)}});
+  document.addEventListener('focusin',function(e){if(!host.contains(e.target))close(false)});
+  select.addEventListener('change',function(){sync();close(false)});
+  host.append(button,menu);host.classList.add('vm-lang-compact');select.tabIndex=-1;select.setAttribute('aria-hidden','true');sync();
 })();
 </script>
 </body>
