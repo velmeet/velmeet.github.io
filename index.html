@@ -432,6 +432,8 @@ VM_THEME.apply(document.documentElement,(window.VM_SITE_CONFIG||{}).theme);match
       <a href="#quiz" class="card-pic card-a" aria-label="Continue to matching"><img src="" id="heroPic1" alt=""></a>
       <a href="#quiz" class="card-pic card-b" aria-label="Continue to matching"><img src="" id="heroPic2" alt=""></a>
       <a href="#quiz" class="card-pic card-c" aria-label="Continue to matching"><img src="" id="heroPic3" alt=""></a>
+      <span class="badge badge-online"><span id="badgeOnlineText">online now</span></span>
+      <span class="badge badge-verified"><span id="badgeVerifiedText">Verified</span></span>
 
     </div>
   </div>
@@ -1440,7 +1442,7 @@ const VM_MEDIA=(()=>{
   };
   function activityTime(p){return tpl((I18N[currentLang]||I18N.en).activeMin,{n:p?p.activeMinutes:1})}
   function applyActivityCopy(){var c=ACTIVITY_COPY[currentLang]||ACTIVITY_COPY.en;
-    setText('activityTitleText',c.heading);
+    setText('activityTitleText',(I18N[currentLang]||I18N.en).activityTitle);
 
   }
 
