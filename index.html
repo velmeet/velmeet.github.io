@@ -1040,6 +1040,197 @@ var LOCAL_CITIES = {
   nl:["Amsterdam","Rotterdam","Utrecht","Den Haag","Eindhoven","Groningen","Tilburg","Breda"]
 };
 
+var EYEBROW_CITIES = {
+  "DE": [
+    "Berlin",
+    "München",
+    "Hamburg",
+    "Köln",
+    "Frankfurt",
+    "Stuttgart",
+    "Düsseldorf",
+    "Leipzig"
+  ],
+  "AT": [
+    "Wien",
+    "Graz",
+    "Linz",
+    "Salzburg",
+    "Innsbruck",
+    "Klagenfurt",
+    "Villach",
+    "Wels"
+  ],
+  "CH": [
+    "Zürich",
+    "Genève",
+    "Basel",
+    "Lausanne",
+    "Bern",
+    "Winterthur",
+    "Luzern",
+    "St. Gallen"
+  ],
+  "LI": [
+    "Vaduz",
+    "Schaan",
+    "Triesen",
+    "Balzers",
+    "Eschen",
+    "Mauren",
+    "Ruggell",
+    "Gamprin"
+  ],
+  "LU": [
+    "Luxembourg",
+    "Esch-sur-Alzette",
+    "Differdange",
+    "Dudelange",
+    "Ettelbruck",
+    "Diekirch",
+    "Wiltz",
+    "Echternach"
+  ],
+  "PL": [
+    "Warszawa",
+    "Kraków",
+    "Wrocław",
+    "Poznań",
+    "Gdańsk",
+    "Łódź",
+    "Katowice",
+    "Szczecin"
+  ],
+  "FR": [
+    "Paris",
+    "Lyon",
+    "Marseille",
+    "Bordeaux",
+    "Toulouse",
+    "Nice",
+    "Nantes",
+    "Strasbourg"
+  ],
+  "BE": [
+    "Bruxelles",
+    "Antwerpen",
+    "Gent",
+    "Brugge",
+    "Liège",
+    "Namur",
+    "Leuven",
+    "Mons"
+  ],
+  "MC": [
+    "Monaco"
+  ],
+  "IT": [
+    "Milano",
+    "Roma",
+    "Napoli",
+    "Torino",
+    "Bologna",
+    "Firenze",
+    "Verona",
+    "Genova"
+  ],
+  "SM": [
+    "San Marino",
+    "Serravalle",
+    "Borgo Maggiore",
+    "Domagnano",
+    "Fiorentino",
+    "Acquaviva",
+    "Chiesanuova",
+    "Faetano",
+    "Montegiardino"
+  ],
+  "VA": [
+    "Città del Vaticano"
+  ],
+  "NL": [
+    "Amsterdam",
+    "Rotterdam",
+    "Utrecht",
+    "Den Haag",
+    "Eindhoven",
+    "Groningen",
+    "Tilburg",
+    "Breda"
+  ],
+  "GB": [
+    "London",
+    "Manchester",
+    "Birmingham",
+    "Edinburgh",
+    "Glasgow",
+    "Liverpool",
+    "Leeds",
+    "Bristol"
+  ],
+  "IE": [
+    "Dublin",
+    "Cork",
+    "Galway",
+    "Limerick",
+    "Waterford",
+    "Kilkenny",
+    "Sligo",
+    "Drogheda"
+  ],
+  "US": [
+    "New York",
+    "Los Angeles",
+    "Chicago",
+    "Houston",
+    "Phoenix",
+    "Philadelphia",
+    "San Antonio",
+    "San Diego",
+    "Dallas",
+    "Seattle",
+    "Boston",
+    "Miami",
+    "Denver",
+    "Atlanta",
+    "Portland"
+  ],
+  "CA": [
+    "Toronto",
+    "Montréal",
+    "Vancouver",
+    "Calgary",
+    "Ottawa",
+    "Edmonton",
+    "Québec",
+    "Winnipeg",
+    "Halifax",
+    "Victoria"
+  ],
+  "AU": [
+    "Sydney",
+    "Melbourne",
+    "Brisbane",
+    "Perth",
+    "Adelaide",
+    "Canberra",
+    "Hobart",
+    "Darwin",
+    "Gold Coast",
+    "Newcastle"
+  ],
+  "NZ": [
+    "Auckland",
+    "Wellington",
+    "Christchurch",
+    "Hamilton",
+    "Tauranga",
+    "Dunedin",
+    "Nelson",
+    "Queenstown"
+  ]
+};
+
 var NAME_POOL = {
   en:["Anna","Sarah","Emily","Claire","Helen","Jane","Rachel","Susan","Karen","Linda","Margaret","Catherine","Patricia","Elizabeth","Barbara"],
   de:["Anna","Eva","Petra","Heike","Sabine","Birgit","Claudia","Monika","Susanne","Andrea","Ute","Gabi","Ingrid","Karin","Beate"],
@@ -1684,6 +1875,20 @@ const VM_MEDIA=(()=>{
     });
   }
 
+  // Upper hero line only: one selection per load, independent of popup/reviews/quiz.
+  function chooseEyebrow(){
+    var previous={};try{previous=JSON.parse(safeSessGet('vm_eyebrow_previous_'+currentGeo)||'{}');if(!previous||typeof previous!=='object')previous={}}catch(e){}
+    var catalogue=popupCatalogue||[],candidates=catalogue.filter(function(p){return p.id!==previous.id&&profileName(p)!==previous.name});
+    if(!candidates.length)candidates=catalogue;
+    var profile=candidates.length?candidates[rnd(0,candidates.length-1)]:null;
+    var cities=EYEBROW_CITIES[currentGeo]||LOCAL_CITIES.en,cityChoices=cities.filter(function(city){return city!==previous.city});
+    if(!cityChoices.length)cityChoices=cities;
+    var distances=[];for(var km=2;km<=18;km++)if(km!==previous.distance)distances.push(km);
+    var value={profile:profile,distance:distances[rnd(0,distances.length-1)],city:cityChoices[rnd(0,cityChoices.length-1)]};
+    safeSessSet('vm_eyebrow_previous_'+currentGeo,JSON.stringify({id:profile?profile.id:null,name:profile?profileName(profile):'',distance:value.distance,city:value.city}));
+    return value;
+  }
+
   function pickLang(){
     try{var q=new URLSearchParams(location.search).get("lang");if(q&&I18N[q.toLowerCase()])return q.toLowerCase()}catch(e){}
     var cc=currentGeo;
@@ -1705,6 +1910,7 @@ const VM_MEDIA=(()=>{
   var popupMinutes=rnd(4,15),popupDistance=rnd(2,18);
   if(popupProfile)safeSessSet('vm_popup_previous_'+currentGeo,popupProfile.id);
   var selectedReviews=chooseReviews();
+  var eyebrowData=chooseEyebrow();
   var currentLang="en";
   var currentCity="";
   var currentName="";
@@ -1769,8 +1975,7 @@ const VM_MEDIA=(()=>{
 
   function applyHeroBlock(d){
     try{
-      var km=exitProfile?exitProfile.distance:6;
-      var eb=exitProfile?tpl(d.eyebrowGeo,{name:currentName,km:km,city:currentCity}):d.eyebrowDefault;
+      var eb=eyebrowData.profile?tpl(d.eyebrowGeo,{name:profileName(eyebrowData.profile),km:eyebrowData.distance,city:eyebrowData.city}):d.eyebrowDefault;
       setText("eyebrowText",eb);
       setText("h1MainText",d.h1Geo);
       setText("subText",d.sub);
