@@ -263,7 +263,7 @@ a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid #278
 /* Clickable photographs and collision-free mobile navigation. */
 @supports(overflow:clip){html,body{overflow-x:clip}}
 .card-pic{cursor:pointer;color:#fff;isolation:isolate}
-.card-pic::after{content:'→';position:absolute;right:10px;bottom:10px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.8);border-radius:50%;background:#0f1c2e;color:#fff;font:20px/1 Arial,sans-serif;z-index:4;pointer-events:none}
+.card-pic::after{content:'→';position:absolute;right:10px;bottom:10px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:0;border-radius:0;background:transparent;color:#fff;font:20px/1 Arial,sans-serif;z-index:4;pointer-events:none}
 .card-pic:hover,.card-pic:focus-visible{animation-play-state:paused;outline:3px solid #b8924a;outline-offset:3px}
 .hero-visual .badge{pointer-events:none}
 .activity-card:focus-visible{outline:3px solid #2783de;outline-offset:3px}
@@ -1533,7 +1533,6 @@ const VM_MEDIA=(()=>{
   function showExitModal(desktopExit){
     if(!popupProfile||exitShown||document.visibilityState!=='visible')return;
     if(currentQuizStep===3||currentQuizStep===4)return;
-    if(safeSessGet("vm_exit"))return;
     try{
       var quiz=document.getElementById("step4");
       if(quiz&&!quiz.hidden)return;
@@ -1542,10 +1541,13 @@ const VM_MEDIA=(()=>{
       var focused=document.activeElement;if(focused&&(focused.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(focused.tagName))&&!(desktopExit===true&&focused.tagName==='SELECT'))return;
     }catch(e){}
     exitShown=true;
-    safeSessSet("vm_exit","1");
     try{lastFocus=document.activeElement;loadDeferredMedia(document.getElementById("exitModal"));document.getElementById("exitModal").className="modal-bg show";setExitUi(true);document.getElementById("exitClose").focus()}catch(e){}
   }
-  try{document.addEventListener("mouseout",function(e){if(window.innerWidth>880&&!e.relatedTarget&&e.clientY<10)showExitModal(true)})}catch(e){}
+  // Desktop exit intent: top, left or right edge; never ordinary movement or bottom exit.
+  try{document.addEventListener("mouseout",function(e){
+    if(window.innerWidth<=880||e.relatedTarget)return;
+    if(e.clientY<=1||e.clientX<=1||e.clientX>=window.innerWidth-1)showExitModal(true);
+  })}catch(e){}
   // Mobile: count visible-page time only; background tabs never advance the delay.
   var mobileWindowElapsed=0,mobileWindowLast=performance.now(),mobileWindowVisible=document.visibilityState==='visible'&&window.innerWidth<=880;
   function accrueMobileWindowTime(){
@@ -1556,7 +1558,7 @@ const VM_MEDIA=(()=>{
   window.addEventListener('resize',accrueMobileWindowTime,{passive:true});
   var mobileWindowTimer=setInterval(function(){
     accrueMobileWindowTime();
-    if(exitShown||!popupProfile||safeSessGet('vm_exit')||currentQuizStep===4){clearInterval(mobileWindowTimer);document.removeEventListener('visibilitychange',accrueMobileWindowTime);window.removeEventListener('resize',accrueMobileWindowTime);return}
+    if(exitShown||!popupProfile||currentQuizStep===4){clearInterval(mobileWindowTimer);document.removeEventListener('visibilitychange',accrueMobileWindowTime);window.removeEventListener('resize',accrueMobileWindowTime);return}
     if(mobileWindowVisible&&mobileWindowElapsed>=35000&&popupProfile)VM_MEDIA.warm(mediaSource(popupProfile,'avatar'));
     if(mobileWindowVisible&&mobileWindowElapsed>=45000)showExitModal();
   },1000);
