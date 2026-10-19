@@ -370,6 +370,16 @@ window.VM_THEME=(()=>{
 })();
 
 VM_THEME.apply(document.documentElement,(window.VM_SITE_CONFIG||{}).theme);matchMedia("(prefers-color-scheme:dark)").addEventListener("change",()=>VM_THEME.apply(document.documentElement,(window.VM_SITE_CONFIG||{}).theme));</script>
+<style>/* Fixed crop containers keep their dimensions while photos load. No white image flash. */
+[data-vm-theme] :is(.card-pic,.activity-pic,.modal-pic,.face):not(.face-more){background:var(--vm-raised)}
+.vm-photo-surface{isolation:isolate;background:var(--vm-raised,#e4e8ed)}
+[data-vm-theme] .vm-photo-surface.vm-media-pending{background:linear-gradient(135deg,var(--vm-raised,#e4e8ed),var(--vm-surface,#f2f4f6));}
+.vm-photo-surface.vm-media-pending::before{content:'';position:absolute;inset:0;z-index:0;background:linear-gradient(110deg,transparent 20%,rgba(160,170,190,.09) 50%,transparent 80%);pointer-events:none}
+.vm-photo{opacity:0;transition:opacity .24s ease;will-change:auto}
+.vm-photo.vm-media-ready{opacity:1}
+[data-vm-theme] .vm-photo-surface.vm-media-error{background-color:var(--vm-raised,#e4e8ed);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40' fill='none' stroke='%23848c99' stroke-width='1.5'%3E%3Crect x='7' y='7' width='26' height='26' rx='4'/%3E%3Ccircle cx='15' cy='15' r='3'/%3E%3Cpath d='M8 29l9-9 5 5 5-7 6 8'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
+@media(prefers-reduced-motion:reduce){.vm-photo{transition:none}}
+</style>
 </head>
 <body>
 <div class="bar-social" id="top"><span class="pulse"></span><span id="socialBarText">8,400 men joined this week</span></div>
@@ -1090,6 +1100,39 @@ const VM_CROP = (()=>{
 })();
 
 </script>
+<script>// Small selected-photo pipeline: early loading, decode-before-reveal, no full-catalog prefetch.
+const VM_MEDIA=(()=>{
+ const warming=new Map();
+ const connection=navigator.connection||navigator.mozConnection||navigator.webkitConnection;
+ const margin=connection&&(connection.saveData||/^(slow-)?2g$/.test(connection.effectiveType||''))?'200px':'800px';
+ const observer=typeof IntersectionObserver==='function'?new IntersectionObserver(entries=>{for(const entry of entries){if(!entry.isIntersecting)continue;observer.unobserve(entry.target);entry.target.querySelectorAll('img[data-vm-near-src]').forEach(img=>{const source=img.dataset.vmNearSrc;delete img.dataset.vmNearSrc;begin(img,source)})}},{rootMargin:margin+' 0px',threshold:0}):null;
+ function has(img,source){return img._vmMediaSource===source&&(img.classList.contains('vm-media-ready')||img.hasAttribute('src'))}
+ function prepare(img,source){
+  const token={};img._vmMediaToken=token;img._vmMediaSource=source;img.classList.add('vm-photo');img.classList.remove('vm-media-ready');
+  const box=img.parentElement;if(box){box.classList.add('vm-photo-surface','vm-media-pending');box.classList.remove('vm-media-error');box.setAttribute('aria-busy','true')}
+  if(img._vmMediaCleanup)img._vmMediaCleanup();return token;
+ }
+ function begin(img,source,nativeLazy){
+  if(has(img,source))return;const token=prepare(img,source);img.loading=nativeLazy?'lazy':'eager';img.decoding='async';
+  let revealing=false;
+  function clean(){img.removeEventListener('load',loaded);img.removeEventListener('error',failed)}
+  function finish(error){if(img._vmMediaToken!==token)return;clean();const box=img.parentElement;if(box){box.classList.remove('vm-media-pending');box.classList.toggle('vm-media-error',error);box.setAttribute('aria-busy','false')}if(!error)img.classList.add('vm-media-ready')}
+  function failed(){finish(true)}
+  function loaded(){if(revealing||img._vmMediaToken!==token)return;if(!img.naturalWidth){failed();return}revealing=true;const decoded=typeof img.decode==='function'?img.decode():Promise.resolve();Promise.resolve(decoded).catch(()=>{}).then(()=>{if(img._vmMediaToken!==token)return;requestAnimationFrame(()=>finish(!img.naturalWidth))})}
+  img._vmMediaCleanup=clean;img.addEventListener('load',loaded);img.addEventListener('error',failed);img.src=source;
+  if(img.complete){if(img.naturalWidth)loaded();else if(img.getAttribute('src'))failed()}
+ }
+ function near(img,source){
+  if(has(img,source))return;prepare(img,source);img.dataset.vmNearSrc=source;
+  // Observe the whole six-profile strip, including photos outside its horizontal scroll viewport.
+  const target=img.closest('.activity')||img.parentElement;
+  if(observer&&target)observer.observe(target);else{delete img.dataset.vmNearSrc;begin(img,source,true)}
+ }
+ function hold(img,source){if(has(img,source))return;prepare(img,source);img.removeAttribute('src');img.dataset.deferredSrc=source}
+ function warm(source){if(!source||warming.has(source))return;const image=new Image();warming.set(source,image);image.decoding='async';image.fetchPriority='low';image.onload=()=>{if(image.decode)image.decode().catch(()=>{})};image.onerror=()=>warming.delete(source);image.src=source}
+ return {load:begin,near,hold,warm,has};
+})();
+</script>
 <script src="assets/profiles.js"></script>
 
 <script>
@@ -1121,11 +1164,10 @@ const VM_CROP = (()=>{
   function mediaSource(p,mode){var key=mode==="portrait"?"hero":mode==="square"?"card":"avatar";return p.images&&p.images[key]||p.photo;}
   function setProfileMedia(img,p,mode,deferred){
     if(!img)return;img.decoding="async";img.alt=profileName(p)+", "+p.age;img.dataset.profileId=p.id;
-    var source=mediaSource(p,mode);
-    if(deferred){img.removeAttribute("src");img.dataset.deferredSrc=source;img.loading="eager";}else{img.loading=mode==="square"?"lazy":"eager";img.src=source;}
-    VM_CROP.attach(img,VM_CROP.get(p,mode));
+    var source=mediaSource(p,mode);VM_CROP.attach(img,VM_CROP.get(p,mode));
+    if(deferred){VM_MEDIA.hold(img,source)}else if(mode==='square'){img.fetchPriority='low';VM_MEDIA.near(img,source)}else{VM_MEDIA.load(img,source)}
   }
-  function loadDeferredMedia(parent){parent.querySelectorAll("img[data-deferred-src]").forEach(function(img){img.src=img.dataset.deferredSrc;delete img.dataset.deferredSrc;});}
+  function loadDeferredMedia(parent){parent.querySelectorAll("img[data-deferred-src]").forEach(function(img){var source=img.dataset.deferredSrc;delete img.dataset.deferredSrc;VM_MEDIA.load(img,source);});}
 
   function getCatalogue(){
     var raw=window.VM_PROFILES;
@@ -1281,6 +1323,10 @@ const VM_CROP = (()=>{
       setText("activityCtaText",d.activityCta);
       var strip=document.getElementById("activityStrip");
       if(!strip)return;
+      var existing=strip.querySelectorAll('.activity-card');
+      if(existing.length===activityProfiles.length&&Array.prototype.every.call(existing,function(card,index){var image=card.querySelector('img');return image&&image.dataset.profileId===activityProfiles[index].id})){
+        activityProfiles.forEach(function(profile,index){var card=existing[index],img=card.querySelector('img');card.setAttribute('aria-label',cardActionLabel(profile));img.alt=profileName(profile)+', '+profile.age;card.querySelector('.activity-name').textContent=profileName(profile)+', '+profile.age;card.querySelector('.activity-time').textContent=activityTime(profile);card.querySelector('.activity-distance').textContent=profile.distance+' '+(d.kmShort||'km')});return;
+      }
       strip.querySelectorAll("img").forEach(function(img){if(img._vmCrop)img._vmCrop.destroy()});strip.innerHTML="";
       for(var i=0;i<activityProfiles.length;i++){
         var profile=activityProfiles[i];
@@ -1289,10 +1335,10 @@ const VM_CROP = (()=>{
         var pic=document.createElement("div");
         pic.className="activity-pic";
         var img=document.createElement("img");
-        img.loading="lazy";img.decoding="async";img.src=mediaSource(profile,"square");
+        img.decoding="async";
         img.alt=profileName(profile)+", "+profile.age;
         img.dataset.profileId=profile.id;
-        pic.appendChild(img);VM_CROP.attach(img,VM_CROP.get(profile,"square"));
+        pic.appendChild(img);
         var dot=document.createElement("span");
         dot.className="activity-online";
         pic.appendChild(dot);
@@ -1309,7 +1355,7 @@ const VM_CROP = (()=>{
         card.appendChild(pic);
         card.appendChild(name);
         card.appendChild(time);
-        strip.appendChild(card);
+        strip.appendChild(card);setProfileMedia(img,profile,'square',false);
       }
     }catch(e){}
   }
@@ -1435,7 +1481,7 @@ const VM_CROP = (()=>{
     for(var j=0;j<bars.length;j++){if(j<Math.min(n,2))bars[j].className="done";else bars[j].className=""}
     try{scrollToCurrentQuiz()}catch(e){}
     updateStickyCta();
-    if(n===3){try{var fill=document.querySelector(".loading-bar-fill");if(fill){fill.style.animation="none";void fill.offsetWidth;fill.style.animation=""}}catch(e){}}
+    if(n===3){resultProfiles.forEach(function(profile){VM_MEDIA.warm(mediaSource(profile,'avatar'))});try{var fill=document.querySelector(".loading-bar-fill");if(fill){fill.style.animation="none";void fill.offsetWidth;fill.style.animation=""}}catch(e){}}
   }
 
   function showResult(){
@@ -1450,7 +1496,7 @@ const VM_CROP = (()=>{
       var faces=document.getElementById("resultFaces");
       if(faces){
         faces.querySelectorAll("img").forEach(function(img){if(img._vmCrop)img._vmCrop.destroy()});faces.innerHTML="";
-        for(var i=0;i<resultProfiles.length;i++){var profile=resultProfiles[i];var f=document.createElement("div");f.className="face";var im=document.createElement("img");im.decoding="async";im.src=mediaSource(profile,"avatar");im.alt=profileName(profile)+", "+profile.age;im.dataset.profileId=profile.id;f.appendChild(im);faces.appendChild(f);VM_CROP.attach(im,VM_CROP.get(profile,"avatar"))}
+        for(var i=0;i<resultProfiles.length;i++){var profile=resultProfiles[i];var f=document.createElement("div");f.className="face";var im=document.createElement("img");f.appendChild(im);faces.appendChild(f);setProfileMedia(im,profile,'avatar',false)}
         var more=document.createElement("div");more.className="face face-more";more.textContent="+"+(n-4);faces.appendChild(more);
       }
       show(4);
@@ -1510,6 +1556,7 @@ const VM_CROP = (()=>{
   var mobileWindowTimer=setInterval(function(){
     accrueMobileWindowTime();
     if(exitShown||!exitProfile||safeSessGet('vm_exit')||currentQuizStep===4){clearInterval(mobileWindowTimer);document.removeEventListener('visibilitychange',accrueMobileWindowTime);window.removeEventListener('resize',accrueMobileWindowTime);return}
+    if(mobileWindowVisible&&mobileWindowElapsed>=35000&&exitProfile)VM_MEDIA.warm(mediaSource(exitProfile,'avatar'));
     if(mobileWindowVisible&&mobileWindowElapsed>=45000)showExitModal();
   },1000);
 
