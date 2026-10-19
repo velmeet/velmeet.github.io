@@ -1827,7 +1827,7 @@ const VM_MEDIA=(()=>{
     }
     var seenId={},seenPhoto={};
     return raw.filter(function(p){
-      if(!p||typeof p.id!=='string'||typeof p.photo!=='string'||!Number.isInteger(p.age)||p.age<37||p.age>50||seenId[p.id]||seenPhoto[p.photo]||!profileName(p))return false;
+      if(!p||typeof p.id!=='string'||typeof p.photo!=='string'||!Number.isInteger(p.age)||p.age<30||p.age>65||seenId[p.id]||seenPhoto[p.photo]||!profileName(p))return false;
       seenId[p.id]=true;seenPhoto[p.photo]=true;return true;
     }).map(function(p){return Object.assign({},p,{distance:2+stableHash(p.id+'distance')%17,activeMinutes:rnd(1,15)})});
   }
