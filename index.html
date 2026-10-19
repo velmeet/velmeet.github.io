@@ -641,7 +641,7 @@ var I18N = {
     finalSub:"Create a profile and find someone you’ll want to keep talking to.",
     finalCta:"Start connecting →",
     exitTitle:"Wait \u2014 {name} is online",
-    exitSub:"She joined 4 minutes ago and lives 6 km from you.",
+    exitSub:"She joined {minutes} minutes ago and lives {km} km from you.",
     exitCta:"See her profile \u2192", exitNo:"Maybe later",
     footerDesc:"A discreet way to meet real women nearby \u2014 no swiping, no games.",
     fCompany:"Company", fAbout:"About", fSafety:"Safety", fContact:"Contact",
@@ -716,7 +716,7 @@ var I18N = {
     finalSub:"Erstelle ein Profil und finde jemanden, mit dem du das Gespräch fortsetzen möchtest.",
     finalCta:"Jetzt kennenlernen →",
     exitTitle:"Warte \u2014 {name} ist online",
-    exitSub:"Sie kam vor 4 Minuten online und ist 6 km von dir entfernt.",
+    exitSub:"Sie kam vor {minutes} Minuten online und ist {km} km von dir entfernt.",
     exitCta:"Ihr Profil ansehen \u2192", exitNo:"Vielleicht sp\u00e4ter",
     footerDesc:"Diskret echte Frauen in der N\u00e4he kennenlernen \u2014 kein Wischen, kein Drama.",
     fCompany:"Unternehmen", fAbout:"\u00dcber uns", fSafety:"Sicherheit", fContact:"Kontakt",
@@ -791,7 +791,7 @@ var I18N = {
     finalSub:"Utwórz profil i znajdź osobę, z którą zechcesz kontynuować rozmowę.",
     finalCta:"Rozpocznij znajomość →",
     exitTitle:"Czekaj \u2014 {name} jest online",
-    exitSub:"Wesz\u0142a 4 minuty temu i jest 6 km od Ciebie.",
+    exitSub:"Weszła {minutes} minuty temu i jest {km} km od Ciebie.",
     exitCta:"Zobacz jej profil \u2192", exitNo:"Mo\u017ce p\u00f3\u017aniej",
     footerDesc:"Dyskretny spos\u00f3b na poznanie prawdziwych kobiet w pobli\u017cu \u2014 bez swipe, bez \u015bciemy.",
     fCompany:"Firma", fAbout:"O nas", fSafety:"Bezpiecze\u0144stwo", fContact:"Kontakt",
@@ -866,7 +866,7 @@ var I18N = {
     finalSub:"Crée un profil et trouve une personne avec qui tu auras envie de poursuivre la conversation.",
     finalCta:"Faire le premier pas →",
     exitTitle:"Attends \u2014 {name} est en ligne",
-    exitSub:"Elle s'est connect\u00e9e il y a 4 minutes et habite \u00e0 6 km de toi.",
+    exitSub:"Elle s'est connectée il y a {minutes} minutes et habite à {km} km de toi.",
     exitCta:"Voir son profil \u2192", exitNo:"Plus tard",
     footerDesc:"Une fa\u00e7on discr\u00e8te de rencontrer de vraies femmes pr\u00e8s de toi \u2014 sans swipe, sans prise de t\u00eate.",
     fCompany:"Soci\u00e9t\u00e9", fAbout:"\u00c0 propos", fSafety:"S\u00e9curit\u00e9", fContact:"Contact",
@@ -941,7 +941,7 @@ var I18N = {
     finalSub:"Crea un profilo e trova una persona con cui vorrai continuare a parlare.",
     finalCta:"Inizia a conoscere →",
     exitTitle:"Aspetta \u2014 {name} \u00e8 online",
-    exitSub:"Si \u00e8 collegata 4 minuti fa e vive a 6 km da te.",
+    exitSub:"Si è collegata {minutes} minuti fa e vive a {km} km da te.",
     exitCta:"Vedi il suo profilo \u2192", exitNo:"Forse dopo",
     footerDesc:"Un modo discreto per incontrare donne vere vicino a te \u2014 senza swipe, senza giri.",
     fCompany:"Azienda", fAbout:"Chi siamo", fSafety:"Sicurezza", fContact:"Contatti",
@@ -1016,7 +1016,7 @@ var I18N = {
     finalSub:"Maak een profiel aan en vind iemand met wie je verder wilt praten.",
     finalCta:"Begin met kennismaken →",
     exitTitle:"Wacht \u2014 {name} is online",
-    exitSub:"Ze kwam 4 minuten geleden online en woont op 6 km van jou.",
+    exitSub:"Ze kwam {minutes} minuten geleden online en woont op {km} km van jou.",
     exitCta:"Bekijk haar profiel \u2192", exitNo:"Misschien later",
     footerDesc:"Een discrete manier om echte vrouwen dichtbij te ontmoeten \u2014 geen swipen, geen gedoe.",
     fCompany:"Bedrijf", fAbout:"Over ons", fSafety:"Veiligheid", fContact:"Contact",
@@ -1215,6 +1215,13 @@ const VM_MEDIA=(()=>{
 
   var deck=chooseDeck();
   var heroProfiles=deck.slice(0,3), activityProfiles=deck.slice(3,9), exitProfile=deck[9]||null, resultProfiles=deck.slice(10,14);
+  // Select popup-only data once per page load; language changes do not reroll it.
+  var popupCatalogue=getCatalogue(),popupPrevious=safeSessGet('vm_popup_previous_'+currentGeo);
+  var popupCandidates=popupCatalogue.filter(function(p){return p.id!==popupPrevious});
+  if(!popupCandidates.length)popupCandidates=popupCatalogue;
+  var popupProfile=popupCandidates.length?popupCandidates[rnd(0,popupCandidates.length-1)]:null;
+  var popupMinutes=rnd(4,15),popupDistance=rnd(2,18);
+  if(popupProfile)safeSessSet('vm_popup_previous_'+currentGeo,popupProfile.id);
   var currentLang="en";
   var currentCity="";
   var currentName="";
@@ -1425,9 +1432,9 @@ const VM_MEDIA=(()=>{
     try{
       setText("finalTitleText",tpl(d.finalTitle,{name:currentName}));
       setText("finalSubText",d.finalSub);setText("finalCtaBtn",d.finalCta);
-      setText("exitTitleText",tpl(d.exitTitle,{name:currentName}));
-      setText("exitSubText",d.exitSub);setText("exitCtaBtn",d.exitCta);setText("exitNoBtn",d.exitNo);
-      if(exitProfile){setProfileMedia(document.getElementById("exitPic"),exitProfile,"avatar",true);}
+      setText("exitTitleText",tpl(d.exitTitle,{name:popupProfile?profileName(popupProfile):currentName}));
+      setText("exitSubText",tpl(d.exitSub,{minutes:popupMinutes,km:popupDistance}));setText("exitCtaBtn",d.exitCta);setText("exitNoBtn",d.exitNo);
+      if(popupProfile){setProfileMedia(document.getElementById("exitPic"),popupProfile,"avatar",true);}
       if(!exitProfile){setText("finalTitleText",d.eyebrowDefault);}
     }catch(e){}
   }
@@ -1524,7 +1531,7 @@ const VM_MEDIA=(()=>{
   });
   var exitShown=false;
   function showExitModal(){
-    if(!exitProfile||exitShown||document.visibilityState!=='visible')return;
+    if(!popupProfile||exitShown||document.visibilityState!=='visible')return;
     if(currentQuizStep===3||currentQuizStep===4)return;
     if(safeSessGet("vm_exit"))return;
     try{
@@ -1549,8 +1556,8 @@ const VM_MEDIA=(()=>{
   window.addEventListener('resize',accrueMobileWindowTime,{passive:true});
   var mobileWindowTimer=setInterval(function(){
     accrueMobileWindowTime();
-    if(exitShown||!exitProfile||safeSessGet('vm_exit')||currentQuizStep===4){clearInterval(mobileWindowTimer);document.removeEventListener('visibilitychange',accrueMobileWindowTime);window.removeEventListener('resize',accrueMobileWindowTime);return}
-    if(mobileWindowVisible&&mobileWindowElapsed>=35000&&exitProfile)VM_MEDIA.warm(mediaSource(exitProfile,'avatar'));
+    if(exitShown||!popupProfile||safeSessGet('vm_exit')||currentQuizStep===4){clearInterval(mobileWindowTimer);document.removeEventListener('visibilitychange',accrueMobileWindowTime);window.removeEventListener('resize',accrueMobileWindowTime);return}
+    if(mobileWindowVisible&&mobileWindowElapsed>=35000&&popupProfile)VM_MEDIA.warm(mediaSource(popupProfile,'avatar'));
     if(mobileWindowVisible&&mobileWindowElapsed>=45000)showExitModal();
   },1000);
 
