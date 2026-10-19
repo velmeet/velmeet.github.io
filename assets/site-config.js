@@ -1,0 +1,1 @@
+window.VM_SITE_CONFIG = {"affiliateLink":"https://go.cm-trk6.com/aff_f?h=rA47F6&aff_sub5=free-social","theme":{"mode":"dark","accent":"#4f033d","glow":"#f604e2","depth":100,"opacity":93,"intensity":100,"backgroundPreset":"custom","background":"#211925"},"analytics":{"clarity":{"scripts":[]},"google":{"scripts":[]}}};

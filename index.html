@@ -1,0 +1,1532 @@
+<!doctype html>
+<html lang="en" id="htmlRoot">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Real women near you. Verified. Discreet. Free to join." id="metaDesc">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0f1c2e">
+<title id="docTitle">VelvetMeet — Real Women Nearby</title>
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0;background:#f7f5f1;color:#0f1c2e;font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.55;font-size:16px;overflow-x:hidden}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+/* HEADER */
+.site-header{position:sticky;top:0;z-index:30;background:rgba(247,245,241,.95);-webkit-backdrop-filter:saturate(180%) blur(10px);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid #e6e3dd}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;letter-spacing:-.01em;color:#0f1c2e}
+.brand-mark{width:32px;height:32px;border-radius:8px;background:#0f1c2e;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px;position:relative}
+.brand-mark::after{content:"";position:absolute;bottom:6px;width:14px;height:2px;background:#b8924a;border-radius:2px}
+.lang{display:flex;align-items:center;gap:6px;font-size:13px;color:#6b7785}
+.lang select{border:1px solid #e6e3dd;background:#fff;border-radius:8px;padding:6px 24px 6px 10px;font:inherit;font-size:13px;color:#0f1c2e;cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='%236b7785' d='M0 0l5 6 5-6z'/></svg>");background-repeat:no-repeat;background-position:right 8px center}
+
+/* SOCIAL BAR */
+.bar-social{background:#0f1c2e;color:#fff;padding:9px 16px;text-align:center;font-size:13px;font-weight:500}
+.bar-social .pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:#2d9d5f;-webkit-animation:pulse 2s infinite;animation:pulse 2s infinite;margin-right:8px;vertical-align:middle}
+@-webkit-keyframes pulse{0%{box-shadow:0 0 0 0 rgba(45,157,95,.6)}70%{box-shadow:0 0 0 8px rgba(45,157,95,0)}100%{box-shadow:0 0 0 0 rgba(45,157,95,0)}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(45,157,95,.6)}70%{box-shadow:0 0 0 8px rgba(45,157,95,0)}100%{box-shadow:0 0 0 0 rgba(45,157,95,0)}}
+
+/* HERO */
+.hero{padding:32px 0 48px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#0f2a47;padding:8px 14px;border-radius:999px;font-size:13.5px;font-weight:600;margin-bottom:18px;border:1px solid #e6e3dd;max-width:100%}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:#2d9d5f;-webkit-animation:pulse 2s infinite;animation:pulse 2s infinite;flex-shrink:0}
+.eyebrow-text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+h1{font-size:48px;line-height:1.08;letter-spacing:-.022em;margin:0 0 18px;font-weight:700;color:#0f1c2e}
+h1 .accent{color:#b8924a;font-style:italic;font-weight:600}
+.sub{font-size:18px;color:#3d4a5c;margin:0 0 26px;max-width:520px;line-height:1.55}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 28px;border-radius:10px;font-weight:600;font-size:17px;cursor:pointer;border:0;-webkit-transition:transform .18s ease,box-shadow .18s ease,background .18s ease;transition:transform .18s ease,box-shadow .18s ease,background .18s ease;font-family:inherit;text-align:center;text-decoration:none}
+.btn-primary{background:#0f1c2e;color:#fff;box-shadow:0 10px 28px rgba(15,28,46,.18)}
+.btn-primary:hover{background:#000}
+.btn-gold{background:#b8924a;color:#0f1c2e}
+.btn-gold:hover{background:#c9a35b}
+.btn-ghost{background:transparent;color:#0f1c2e;border:1.5px solid #0f1c2e}
+.btn-ghost:hover{background:#0f1c2e;color:#fff}
+.micro{display:flex;align-items:center;gap:18px;color:#3d4a5c;font-size:13.5px;margin-top:18px;flex-wrap:wrap;font-weight:500}
+.micro span{display:inline-flex;align-items:center;gap:6px}
+.check{color:#2d9d5f;font-weight:700}
+
+/* HERO PHOTOS */
+.hero-visual{position:relative;height:480px}
+.card-pic{position:absolute;border-radius:14px;overflow:hidden;background:#eaeaea;box-shadow:0 24px 60px rgba(15,28,46,.22)}
+.card-pic img{width:100%;height:100%;display:block;-o-object-fit:cover;object-fit:cover}
+.card-a{width:240px;height:320px;top:30px;left:0;-webkit-transform:rotate(-5deg);transform:rotate(-5deg);-webkit-animation:float1 7s ease-in-out infinite;animation:float1 7s ease-in-out infinite}
+.card-b{width:230px;height:300px;top:80px;right:0;-webkit-transform:rotate(6deg);transform:rotate(6deg);-webkit-animation:float2 8s ease-in-out infinite;animation:float2 8s ease-in-out infinite}
+.card-c{width:170px;height:210px;bottom:10px;left:120px;-webkit-transform:rotate(-2deg);transform:rotate(-2deg);-webkit-animation:float3 6s ease-in-out infinite;animation:float3 6s ease-in-out infinite;z-index:2}
+@-webkit-keyframes float1{0%,100%{-webkit-transform:rotate(-5deg) translateY(0)}50%{-webkit-transform:rotate(-3deg) translateY(-8px)}}
+@keyframes float1{0%,100%{transform:rotate(-5deg) translateY(0)}50%{transform:rotate(-3deg) translateY(-8px)}}
+@-webkit-keyframes float2{0%,100%{-webkit-transform:rotate(6deg) translateY(0)}50%{-webkit-transform:rotate(4deg) translateY(10px)}}
+@keyframes float2{0%,100%{transform:rotate(6deg) translateY(0)}50%{transform:rotate(4deg) translateY(10px)}}
+@-webkit-keyframes float3{0%,100%{-webkit-transform:rotate(-2deg) translateY(0)}50%{-webkit-transform:rotate(0deg) translateY(-6px)}}
+@keyframes float3{0%,100%{transform:rotate(-2deg) translateY(0)}50%{transform:rotate(0deg) translateY(-6px)}}
+.badge{position:absolute;background:#fff;border-radius:999px;padding:8px 14px;font-size:13px;font-weight:600;color:#0f1c2e;box-shadow:0 12px 28px rgba(15,28,46,.16);display:inline-flex;align-items:center;gap:7px;z-index:3}
+.badge-online{top:10px;right:40px}
+.badge-online::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#2d9d5f;-webkit-animation:pulse 2s infinite;animation:pulse 2s infinite}
+.badge-verified{bottom:40px;right:10px;color:#0f2a47;background:#eaf1f9}
+.badge-verified::before{content:"\2713";color:#0f2a47;font-weight:700}
+
+/* ACTIVITY */
+.activity{background:#fff;padding:36px 0;border-top:1px solid #e6e3dd;border-bottom:1px solid #e6e3dd}
+.activity-head{text-align:center;margin-bottom:24px}
+.activity-title{font-size:14px;text-transform:uppercase;letter-spacing:.12em;color:#6b7785;font-weight:600}
+.activity-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;padding:0 0 8px}
+.activity-card{background:#fff;border:1px solid #e6e3dd;border-radius:14px;padding:10px;-webkit-transition:transform .2s ease,box-shadow .2s ease;transition:transform .2s ease,box-shadow .2s ease;cursor:pointer}
+.activity-card:hover{-webkit-transform:translateY(-2px);transform:translateY(-2px);box-shadow:0 12px 28px rgba(15,28,46,.1)}
+.activity-pic{width:100%;position:relative;border-radius:10px;background:#eaf1f9;overflow:hidden;margin-bottom:10px;padding-top:100%}
+.activity-pic img{position:absolute;top:0;left:0;width:100%;height:100%;-o-object-fit:cover;object-fit:cover}
+.activity-online{position:absolute;top:8px;right:8px;width:11px;height:11px;border-radius:50%;background:#2d9d5f;border:2px solid #fff;box-shadow:0 0 0 1px rgba(45,157,95,.3);z-index:2}
+.activity-distance{position:absolute;left:8px;bottom:8px;background:rgba(15,28,46,.85);color:#fff;font-size:11px;font-weight:600;padding:3px 8px;border-radius:999px;z-index:2}
+.activity-name{font-weight:600;font-size:14px;margin-bottom:2px;color:#0f1c2e}
+.activity-time{font-size:11.5px;color:#6b7785}
+.activity-cta-wrap{text-align:center;margin-top:18px}
+.activity-cta{color:#0f2a47;font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:4px}
+
+/* SECTIONS */
+section{padding:56px 0}
+.section-head{text-align:center;max-width:680px;margin:0 auto 36px}
+.section-eyebrow{text-transform:uppercase;letter-spacing:.14em;color:#0f2a47;font-weight:600;font-size:12.5px;margin-bottom:10px}
+h2{font-size:32px;line-height:1.2;letter-spacing:-.02em;margin:0 0 12px;font-weight:700}
+.section-sub{color:#3d4a5c;font-size:16px;margin:0}
+
+/* QUIZ */
+.quiz{background:#fff;border:1px solid #e6e3dd;border-radius:16px;padding:36px;max-width:640px;margin:0 auto;box-shadow:0 10px 30px rgba(15,28,46,.08)}
+.quiz-progress{display:flex;gap:6px;margin-bottom:24px}
+.quiz-progress span{flex:1;height:5px;border-radius:3px;background:#e6e3dd;-webkit-transition:background .3s;transition:background .3s}
+.quiz-progress span.done{background:#0f1c2e}
+.quiz-step{-webkit-animation:fadeIn .35s ease;animation:fadeIn .35s ease}
+@-webkit-keyframes fadeIn{from{opacity:0;-webkit-transform:translateY(4px)}to{opacity:1;-webkit-transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+.quiz-step h3{font-size:22px;margin:0 0 8px;letter-spacing:-.01em;font-weight:700}
+.quiz-step p{color:#3d4a5c;margin:0 0 22px;font-size:15.5px}
+.quiz-options{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
+.quiz-options-2col{grid-template-columns:repeat(2,1fr)}
+.quiz-opt{padding:14px 12px;border:1.5px solid #e6e3dd;border-radius:10px;background:#fff;text-align:center;cursor:pointer;font:inherit;color:#0f1c2e;font-size:15px;font-weight:600;-webkit-transition:all .15s;transition:all .15s}
+.quiz-opt:hover{border-color:#0f1c2e;background:#fafafa;-webkit-transform:translateY(-1px);transform:translateY(-1px)}
+.quiz-options.quiz-options-2col .quiz-opt{text-align:left;padding:14px 18px;font-weight:500}
+.quiz-actions{display:flex;justify-content:space-between;align-items:center;margin-top:14px;gap:8px}
+.quiz-back,.quiz-skip{background:none;border:0;color:#6b7785;cursor:pointer;font:inherit;font-size:14px;padding:4px 8px}
+.quiz-skip{text-decoration:underline}
+.quiz-counter{font-size:13px;color:#6b7785;font-weight:500}
+.loading-state{text-align:center;padding:20px 0}
+.loading-state h3{font-size:22px;margin:0 0 24px;font-weight:700}
+.loading-bar{height:6px;background:#e6e3dd;border-radius:3px;overflow:hidden;margin-bottom:20px;max-width:280px;margin-left:auto;margin-right:auto}
+.loading-bar-fill{height:100%;background:#b8924a;width:0;-webkit-animation:loadFill 2.5s ease forwards;animation:loadFill 2.5s ease forwards}
+@-webkit-keyframes loadFill{to{width:100%}}
+@keyframes loadFill{to{width:100%}}
+.loading-steps{font-size:14px;color:#6b7785;min-height:20px}
+.loading-step{opacity:0;-webkit-animation:fadeStep .6s ease forwards;animation:fadeStep .6s ease forwards}
+.loading-step.s1{-webkit-animation-delay:.1s;animation-delay:.1s}
+.loading-step.s2{-webkit-animation-delay:.9s;animation-delay:.9s}
+.loading-step.s3{-webkit-animation-delay:1.7s;animation-delay:1.7s}
+@-webkit-keyframes fadeStep{from{opacity:0}to{opacity:1}}
+@keyframes fadeStep{from{opacity:0}to{opacity:1}}
+.quiz-result{text-align:center}
+.quiz-result h3{font-size:24px;font-weight:700;margin:0 0 8px}
+.quiz-result p{font-size:15.5px;color:#3d4a5c;margin:0 0 22px}
+.result-faces{display:flex;justify-content:center;margin:0 0 22px}
+.result-faces .face{width:48px;height:48px;border-radius:50%;border:3px solid #fff;background:#eaf1f9;margin-left:-12px;overflow:hidden}
+.result-faces .face:first-child{margin-left:0}
+.result-faces .face img{width:100%;height:100%;-o-object-fit:cover;object-fit:cover}
+.result-faces .face-more{background:#0f1c2e;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600}
+.result-legal{font-size:11.5px;color:#6b7785;margin-top:16px;line-height:1.5}
+.result-legal a{color:#0f2a47;text-decoration:underline}
+
+/* STEPS */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.step{background:#fff;border:1px solid #e6e3dd;border-radius:12px;padding:26px}
+.step-num{width:36px;height:36px;border-radius:9px;background:#0f1c2e;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:16px;font-size:15px}
+.step h3{margin:0 0 6px;font-size:17px;font-weight:600;letter-spacing:-.01em}
+.step p{margin:0;color:#3d4a5c;font-size:15px;line-height:1.55}
+
+/* FEATURES */
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feature{background:#fff;border:1px solid #e6e3dd;border-radius:12px;padding:26px}
+.feature .ic{width:42px;height:42px;border-radius:10px;background:#eaf1f9;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.feature h3{margin:0 0 6px;font-size:17px;font-weight:600}
+.feature p{margin:0;color:#3d4a5c;font-size:15px;line-height:1.55}
+
+/* TESTIMONIALS */
+.testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.t{background:#fff;border:1px solid #e6e3dd;border-radius:12px;padding:26px}
+.stars{color:#b8924a;letter-spacing:3px;font-size:14px;margin-bottom:10px}
+.t p{margin:0 0 16px;color:#0f1c2e;font-size:15.5px;line-height:1.55;font-style:italic}
+.t .who{display:flex;align-items:center;gap:10px;padding-top:14px;border-top:1px solid #e6e3dd}
+.avatar{width:38px;height:38px;border-radius:50%;background:#eaf1f9;display:flex;align-items:center;justify-content:center;color:#0f2a47;font-weight:700;font-size:13.5px;flex-shrink:0}
+.who div{display:flex;flex-direction:column;min-width:0}
+.who strong{font-size:14.5px;font-weight:600}
+.who span{font-size:12.5px;color:#6b7785}
+.actor-note{text-align:center;font-size:12.5px;color:#6b7785;margin-top:18px}
+
+/* FAQ */
+.faq{max-width:780px;margin:0 auto}
+details{background:#fff;border:1px solid #e6e3dd;border-radius:10px;padding:18px 22px;margin-bottom:10px}
+details summary{font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:#0f1c2e;font-size:16px;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";font-size:22px;color:#1e3a5f;font-weight:300;flex-shrink:0}
+details[open] summary::after{content:"\2212"}
+details p{margin:14px 0 0;color:#3d4a5c;font-size:15px;line-height:1.6}
+
+/* FINAL CTA */
+.cta-band{background:#0f1c2e;color:#fff;border-radius:18px;padding:48px 36px;text-align:center;position:relative;overflow:hidden;margin:20px 0}
+.cta-band::before{content:"";position:absolute;top:-40%;right:-15%;width:60%;height:180%;background:radial-gradient(circle,rgba(184,146,74,.22) 0%,transparent 60%);pointer-events:none}
+.cta-band h2{color:#fff;font-size:30px;margin-bottom:10px;position:relative;letter-spacing:-.01em}
+.cta-band p{color:rgba(255,255,255,.82);margin:0 0 24px;font-size:16px;position:relative;max-width:480px;margin-left:auto;margin-right:auto}
+.cta-band .btn-gold{position:relative}
+
+/* FOOTER */
+footer{border-top:1px solid #e6e3dd;padding:36px 0;background:#fff;margin-top:24px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px}
+.footer-grid h4{font-size:12.5px;text-transform:uppercase;letter-spacing:.12em;color:#0f1c2e;margin:0 0 12px;font-weight:700}
+.footer-grid a{display:block;color:#3d4a5c;font-size:14px;padding:4px 0}
+.footer-grid a:hover{color:#1e3a5f}
+.legal{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #e6e3dd;margin-top:28px;padding-top:20px;color:#6b7785;font-size:13px;flex-wrap:wrap;gap:8px}
+
+/* COOKIE */
+.cookie{position:fixed;bottom:14px;left:14px;right:14px;max-width:520px;margin:0 auto;background:#0f1c2e;color:#fff;padding:16px 20px;border-radius:12px;display:flex;align-items:center;gap:14px;box-shadow:0 24px 50px rgba(0,0,0,.28);z-index:100;font-size:14px}
+.cookie button{background:#b8924a;color:#0f1c2e;border:0;padding:9px 16px;border-radius:8px;font-weight:600;cursor:pointer;font-size:13.5px;flex-shrink:0;font-family:inherit}
+.cookie a{text-decoration:underline;color:#d4af6e}
+.cookie.hidden{display:none}
+
+/* MODAL */
+.modal-bg{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(15,28,46,.65);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-bg.show{display:flex;-webkit-animation:modalFade .2s ease;animation:modalFade .2s ease}
+@-webkit-keyframes modalFade{from{opacity:0}to{opacity:1}}
+@keyframes modalFade{from{opacity:0}to{opacity:1}}
+.modal{background:#fff;border-radius:16px;padding:36px 28px;max-width:420px;width:100%;text-align:center;box-shadow:0 30px 70px rgba(0,0,0,.3);position:relative}
+.modal-close{position:absolute;top:14px;right:14px;background:none;border:0;font-size:22px;color:#6b7785;cursor:pointer;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.modal-close:hover{background:#f1f1ee}
+.modal-pic{width:72px;height:72px;border-radius:50%;margin:0 auto 16px;overflow:hidden;background:#eaf1f9;border:3px solid #fff;box-shadow:0 8px 24px rgba(15,28,46,.16)}
+.modal-pic img{width:100%;height:100%;-o-object-fit:cover;object-fit:cover}
+.modal h3{font-size:22px;margin:0 0 8px;font-weight:700}
+.modal p{font-size:15px;color:#3d4a5c;margin:0 0 20px;line-height:1.5}
+.modal .btn{width:100%;margin-bottom:8px}
+.modal-no{background:none;border:0;color:#6b7785;cursor:pointer;font:inherit;font-size:13.5px;text-decoration:underline;padding:6px;margin-top:6px}
+
+/* STICKY MOBILE CTA */
+.sticky-cta{display:none}
+
+/* RESPONSIVE */
+@media (max-width:1024px){
+  .activity-grid{grid-template-columns:repeat(4,1fr)}
+}
+@media (max-width:880px){
+  html,body{font-size:15.5px}
+  .container{padding:0 16px}
+  .nav{padding:12px 0}
+  .brand{font-size:17px}
+  .hero{padding:24px 0 32px}
+  .hero-grid{grid-template-columns:1fr;gap:28px;text-align:left}
+  .hero-visual{height:340px;margin-top:8px}
+  .card-a{width:180px;height:240px;left:5%}
+  .card-b{width:170px;height:220px;right:5%;top:50px}
+  .card-c{width:130px;height:160px;left:38%;bottom:0}
+  .badge{font-size:11.5px;padding:6px 11px}
+  .badge-online{top:8px;right:8px}
+  .badge-verified{bottom:8px;right:5%}
+  h1{font-size:30px;line-height:1.15}
+  .sub{font-size:16px;margin-bottom:20px}
+  .btn{width:100%;padding:15px 24px;font-size:16px}
+  .btn-ghost{display:none}
+  .micro{gap:14px;font-size:13px;justify-content:flex-start;margin-top:14px}
+  section{padding:40px 0}
+  h2{font-size:24px}
+  .section-head{margin-bottom:26px}
+  .quiz{padding:22px 20px;border-radius:14px}
+  .quiz-step h3{font-size:19px}
+  .quiz-options{grid-template-columns:repeat(2,1fr)}
+  .quiz-options.quiz-options-2col{grid-template-columns:1fr}
+  .activity{padding:28px 0}
+  .activity-grid{display:flex;grid-template-columns:none;gap:12px;overflow-x:auto;padding:8px 16px 16px;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory}
+  .activity-grid::-webkit-scrollbar{display:none}
+  .activity-card{flex:0 0 140px;scroll-snap-align:start}
+  .steps,.features,.testimonials{grid-template-columns:1fr;gap:12px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:20px}
+  .cta-band{padding:32px 22px;border-radius:14px}
+  .cta-band h2{font-size:24px}
+  .legal{flex-direction:column;align-items:flex-start;gap:6px}
+  .sticky-cta{display:block;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e6e3dd;padding:10px 14px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:50;box-shadow:0 -8px 24px rgba(0,0,0,.06)}
+  .sticky-cta .btn{width:100%;padding:14px 20px;font-size:16px}
+  body{padding-bottom:80px}
+  .cookie{padding:12px 14px;font-size:13px;gap:10px}
+  .cookie button{padding:7px 13px;font-size:12.5px}
+  .modal{padding:28px 22px}
+  .modal h3{font-size:20px}
+}
+[hidden]{display:none!important}
+a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid #2783de;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+/* Clickable photographs and collision-free mobile navigation. */
+@supports(overflow:clip){html,body{overflow-x:clip}}
+.card-pic{cursor:pointer;color:#fff;isolation:isolate}
+.card-pic::after{content:'→';position:absolute;right:10px;bottom:10px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.8);border-radius:50%;background:#0f1c2e;color:#fff;font:20px/1 Arial,sans-serif;z-index:4;pointer-events:none}
+.card-pic:hover,.card-pic:focus-visible{animation-play-state:paused;outline:3px solid #b8924a;outline-offset:3px}
+.hero-visual .badge{pointer-events:none}
+.activity-card:focus-visible{outline:3px solid #2783de;outline-offset:3px}
+#quiz,#quizBox,#how{scroll-margin-top:calc(var(--site-header-height,72px) + 12px)}
+.quiz-step h3:focus{outline:none}
+html.vm-modal-open,body.vm-modal-open{overflow:hidden}
+.modal{max-height:calc(100dvh - 32px);overflow:auto}
+.modal-close{width:44px;height:44px}
+body.vm-modal-open .sticky-cta,body.vm-modal-open .cookie{visibility:hidden;pointer-events:none}
+@media(max-width:880px){
+  .site-header .nav{display:grid;grid-template-columns:minmax(52px,1fr) auto minmax(52px,1fr);align-items:center;min-height:68px;gap:4px}
+  .site-header .brand{grid-column:2;grid-row:1;justify-self:center;gap:8px;white-space:nowrap}
+  .site-header .lang{grid-column:3;grid-row:1;justify-self:end}
+  .site-header .lang select{min-height:44px;min-width:58px;font-size:14px;padding-left:9px;padding-right:23px}
+  .sticky-cta{display:block;position:fixed;inset:auto 0 0;z-index:90;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:#fff;border-top:1px solid #dcd9d2;box-shadow:0 -3px 12px rgba(15,28,46,.07)}
+  .sticky-cta .btn{min-height:52px;width:100%;margin:0;padding:13px 16px;font-size:16px;line-height:1.4;border-radius:10px;box-shadow:none}
+  .sticky-cta .btn[aria-disabled=true]{background:#344153;cursor:wait;pointer-events:none}
+  .cookie{bottom:calc(var(--mobile-cta-height,74px) + 12px);max-width:520px;padding:12px 14px;font-size:14px;gap:12px;border:1px solid rgba(255,255,255,.2)}
+  .cookie button{min-height:44px;min-width:56px;font-size:14px;padding:9px 12px}
+  body{padding-bottom:calc(var(--mobile-cta-height,74px) + var(--mobile-cookie-height,0px) + 28px)}
+  html{scroll-padding-bottom:calc(var(--mobile-cta-height,74px) + var(--mobile-cookie-height,0px) + 12px)}
+}
+@media(max-width:359px){.site-header .brand{font-size:16px}.site-header .brand-mark{width:28px;height:28px}.site-header .lang select{min-width:54px;padding-left:7px;padding-right:20px}}
+
+</style>
+<style>[data-vm-theme]{--vm-bg:#f7f6f3;--vm-surface:#fff;--vm-raised:#f0f3f5;--vm-text:#112333;--vm-muted:#485b6b;--vm-line:#d7dfe4;--vm-surface-rgb:255,255,255;--vm-accent:#183c59;--vm-ink:#fff;--vm-glow:121,207,255;--vm-depth:.65;--vm-opacity:.88;--vm-intensity:.45;color:var(--vm-text);color-scheme:light}
+[data-vm-theme=dark]{--vm-bg:#101922;--vm-surface:#192632;--vm-raised:#213442;--vm-text:#f5f8fc;--vm-muted:#bacbd9;--vm-line:#536775;--vm-surface-rgb:25,38,50;color-scheme:dark}
+html[data-vm-theme],html[data-vm-theme] body{background:var(--vm-bg);color:var(--vm-text)}
+[data-vm-theme] :is(h1,h2,h3,h4,.brand,.activity-name,details summary,.t p){color:var(--vm-text)}
+[data-vm-theme] :is(.sub,.section-sub,.micro,.step p,.feature p,.quiz-step p,.quiz-result p,details p,.footer-grid a,.modal p,.who span,.actor-note,.legal,.activity-time,.quiz-counter,.loading-steps,.quiz-back,.quiz-skip,.modal-no,.result-legal){color:var(--vm-muted)}
+[data-vm-theme] :is(.activity,.step,.feature,.t,details,.quiz,.modal,footer,.activity-card,.eyebrow,.badge,.lang select){background:var(--vm-surface);border-color:var(--vm-line);color:var(--vm-text)}
+[data-vm-theme] .site-header{background:rgba(var(--vm-surface-rgb),.94);border-color:var(--vm-line)}
+[data-vm-theme] section[style]{background:var(--vm-bg)!important}
+[data-vm-theme] :is(.section-eyebrow,.activity-cta,.result-legal a,.badge-verified,.badge-verified::before){color:var(--vm-text)}
+[data-vm-theme] :is(.feature .ic,.avatar){background:var(--vm-raised);color:var(--vm-text)}
+[data-vm-theme] .feature svg{stroke:currentColor}
+[data-vm-theme] :is(.legal,.t .who,footer,.activity){border-color:var(--vm-line)}
+[data-vm-theme] .quiz-progress span{background:var(--vm-line)}
+[data-vm-theme] .quiz-progress span.done,[data-vm-theme] .loading-bar-fill{background:var(--vm-accent)}
+[data-vm-theme] .cta-band{background:var(--vm-raised);border:1px solid var(--vm-line)}
+[data-vm-theme] .cta-band h2{color:var(--vm-text)}[data-vm-theme] .cta-band p{color:var(--vm-muted)}
+[data-vm-theme] .sticky-cta{background:rgba(var(--vm-surface-rgb),.94);border-color:var(--vm-line)}
+[data-vm-theme] :is(.btn,.quiz-opt,.cookie button,.preview-button){position:relative;isolation:isolate;overflow:hidden;min-height:48px;border:1px solid var(--vm-line);background:rgba(var(--vm-surface-rgb),var(--vm-opacity));color:var(--vm-text);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 2px rgba(0,0,0,.12),0 var(--vm-shadow-y,8px) var(--vm-shadow-blur,18px) rgba(0,0,0,calc(.05 + var(--vm-depth)*.15));backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:transform .15s,box-shadow .15s}
+[data-vm-theme] :is(.btn-primary,.btn-gold,.cookie button,.preview-primary){background:var(--vm-accent);color:var(--vm-ink);border-color:var(--vm-accent)}
+[data-vm-theme] :is(.btn,.quiz-opt,.cookie button,.preview-button)::before{content:'';pointer-events:none;position:absolute;inset:0;z-index:-1;background:linear-gradient(rgba(255,255,255,var(--vm-secondary-sheen)),transparent 48%,rgba(0,0,0,var(--vm-secondary-shade)));border-radius:inherit}
+[data-vm-theme] :is(.btn,.quiz-opt,.cookie button,.preview-button)::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:-1;border-radius:inherit;opacity:0;background:radial-gradient(140px circle at var(--vm-x,50%) var(--vm-y,50%),rgba(var(--vm-glow),var(--vm-secondary-glow)),transparent 100%);transition:opacity .2s}
+[data-vm-theme] :is(.btn,.quiz-opt,.cookie button,.preview-button):is(:hover,:focus-visible,.vm-touch)::after{opacity:1}
+[data-vm-theme] :is(.btn,.quiz-opt,.cookie button,.preview-button):active{transform:translateY(2px);box-shadow:inset 0 2px 5px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.1)}
+[data-vm-theme] :is(.btn,.quiz-opt,.cookie button,.preview-button):focus-visible{outline:3px solid var(--vm-text);outline-offset:4px}
+[data-vm-theme] :is(.btn,.quiz-opt,.cookie button,.preview-button)[aria-disabled=true]{opacity:.7;pointer-events:none}
+[data-vm-theme] .cookie{background:var(--vm-surface);color:var(--vm-text);border:1px solid var(--vm-line);max-width:680px;flex-wrap:wrap;gap:12px}
+[data-vm-theme] .cookie>div:first-child{flex:1 1 100%}
+[data-vm-theme] .cookie a{color:var(--vm-text)}
+[data-vm-theme] .cookie #cookieReject{background:var(--vm-surface);border-color:var(--vm-line);color:var(--vm-text)}
+[data-vm-theme] .cookie button{flex:1 1 160px;white-space:normal;font-size:14px}
+#privacyChoices{border:0;background:none;color:inherit;text-decoration:underline;font:inherit;cursor:pointer;padding:12px 0;min-height:44px;text-align:left}
+.vm-demo-label{font-size:14px;line-height:1.5;color:var(--vm-muted);margin:12px 0}
+[data-vm-theme] .activity-time{font-size:14px}
+@media(prefers-reduced-motion:reduce){[data-vm-theme] *,[data-vm-theme] *::after{transition:none!important;animation:none!important}[data-vm-theme] :is(.btn,.quiz-opt,.cookie button,.preview-button)::after{background:linear-gradient(rgba(var(--vm-glow),.12),transparent)}}
+
+/* Primary glass tint is composited once; text and hover contrast are guarded in VM_THEME. */
+[data-vm-theme] :is(.btn-primary,.btn-gold,.cookie button,.preview-primary){background:rgb(var(--vm-button));color:var(--vm-ink)}
+[data-vm-theme] :is(.btn-primary,.btn-gold,.cookie button,.preview-primary)::before{background:linear-gradient(rgba(255,255,255,var(--vm-sheen)),transparent 48%,rgba(0,0,0,var(--vm-bottomshade)))}
+[data-vm-theme] :is(.btn-primary,.btn-gold,.cookie button,.preview-primary)::after{background:radial-gradient(160px circle at var(--vm-x,50%) var(--vm-y,50%),rgba(var(--vm-glow),var(--vm-glow-alpha)),transparent 100%)}
+[data-vm-theme] .cookie #cookieReject{background:var(--vm-surface);color:var(--vm-text)}
+[data-vm-theme] .cookie #cookieReject::before{background:none}
+[data-vm-theme] .cookie #cookieReject::after{background:radial-gradient(140px circle at var(--vm-x,50%) var(--vm-y,50%),rgba(var(--vm-glow),.12),transparent)}
+[data-vm-theme] :is(.activity-title,.actor-note,.who span,.quiz-counter,.legal,.quiz-skip,.quiz-back){color:var(--vm-muted)}
+[data-vm-theme] .badge-verified::before{color:var(--vm-text)}
+[data-vm-theme] .footer-grid p{color:var(--vm-muted)!important}
+[data-vm-theme] .feature svg *{stroke:var(--vm-text)}
+[data-vm-theme] details summary::after{color:var(--vm-text)}
+[data-vm-theme] .lang select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%237b95aa' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 8px center}
+[data-vm-theme] .modal-close{width:44px;height:44px;color:var(--vm-muted)}
+[data-vm-theme] .modal-close:hover{background:var(--vm-raised)}
+
+[data-vm-theme] section[style]{border-color:var(--vm-line)!important}
+</style>
+<script src="assets/site-config.js"></script>
+<script>/* Shared, dependency-free appearance model. No profile or analytics code is evaluated. */
+window.VM_THEME=(()=>{
+ const defaults={mode:'light',accent:'#183c59',glow:'#79cfff',depth:65,opacity:88,intensity:45,backgroundPreset:'auto',background:'#f7f6f3'};
+ const clamp=(v,a,b,d)=>Number.isFinite(+v)?Math.min(b,Math.max(a,+v)):d;
+ const backgrounds={auto:['#f7f6f3','#101922'],sand:['#f4eadb','#241e18'],rose:['#f6e8ee','#291b25'],ocean:['#e7eff5','#101f2b'],forest:['#e8eee7','#14241e'],violet:['#eeebf7','#201b2e']};
+ function norm(x){x=x||{};return {mode:['light','dark','system'].includes(x.mode)?x.mode:'light',accent:/^#[0-9a-f]{6}$/i.test(x.accent||'')?x.accent:defaults.accent,glow:/^#[0-9a-f]{6}$/i.test(x.glow||'')?x.glow:defaults.glow,depth:clamp(x.depth,0,100,65),opacity:clamp(x.opacity,60,100,88),intensity:clamp(x.intensity,0,100,45),backgroundPreset:x.backgroundPreset==='custom'||Object.hasOwn(backgrounds,x.backgroundPreset)?x.backgroundPreset:'auto',background:/^#[0-9a-f]{6}$/i.test(x.background||'')?x.background:defaults.background}}
+ function rgb(hex){return [1,3,5].map(i=>parseInt(hex.slice(i,i+2),16))}
+ function lum(a){return a.map(v=>{v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4}).reduce((s,v,i)=>s+v*[.2126,.7152,.0722][i],0)}
+ function ink(hex){return lum(rgb(hex))>.179?'#000000':'#ffffff'}
+ function contrast(a,ink){const l=lum(a);return ink==='#ffffff'?1.05/(l+.05):(l+.05)/.05}
+ function mix(a,b,t){return a.map((x,i)=>x*(1-t)+b[i]*t)}
+ function hex(a){return '#'+a.map(v=>Math.round(v).toString(16).padStart(2,'0')).join('')}
+ function palette(s,requestedDark){
+  const color=s.backgroundPreset==='custom'?s.background:backgrounds[s.backgroundPreset][requestedDark?1:0],bg=rgb(color),dark=s.backgroundPreset==='custom'?lum(bg)<.179:requestedDark;
+  if(s.backgroundPreset==='auto')return {dark,bg:color,surface:dark?'#192632':'#ffffff',raised:dark?'#213442':'#f0f3f5',text:dark?'#f5f8fc':'#112333',muted:dark?'#bacbd9':'#485b6b',line:dark?'#536775':'#d7dfe4'};
+  const surface=dark?mix(bg,lum(bg)<.09?[255,255,255]:[0,0,0],lum(bg)<.09?.06:.12):mix(bg,[255,255,255],.85),raised=dark?mix(bg,lum(bg)<.09?[255,255,255]:[0,0,0],lum(bg)<.09?.10:.18):mix(bg,[255,255,255],.65),surfaces=[bg,surface,raised];
+  let text=dark?[245,248,252]:[17,35,51];
+  const ratio=(a,b)=>(Math.max(lum(a),lum(b))+.05)/(Math.min(lum(a),lum(b))+.05);
+  if(surfaces.some(c=>ratio(text,c)<4.6))text=dark?[255,255,255]:[0,0,0];
+  let muted=text;for(let weight=.6;weight<=1.001;weight+=.02){const candidate=mix(bg,text,Math.min(weight,1)).map(Math.round);if(surfaces.every(c=>ratio(candidate,c)>=4.65)){muted=candidate;break}}
+  let line=mix(surface,text,.35);for(let w=.35;w<=1;w+=.03){line=mix(surface,text,w);if(ratio(line,surface)>=3.1)break}
+  return {dark,bg:color,surface:hex(surface),raised:hex(raised),text:hex(text),muted:hex(muted),line:hex(line)};
+ }
+ function apply(el,input){const s=norm(input),requestedDark=s.mode==='dark'||s.mode==='system'&&matchMedia('(prefers-color-scheme:dark)').matches,p=palette(s,requestedDark),dark=p.dark;el.dataset.vmTheme=dark?'dark':'light';for(const k of ['bg','surface','raised','text','muted','line'])el.style.setProperty('--vm-'+k,p[k]);el.style.setProperty('--vm-surface-rgb',rgb(p.surface).join(','));const bg=rgb(p.bg),surface=rgb(p.surface),raised=rgb(p.raised),text=rgb(p.text),scenes=[bg,surface,raised].map(c=>mix(c,surface,s.opacity/100));let secondarySheen=s.depth/100*.16,secondaryShade=.06,secondaryGlow=s.intensity/100*.42;const ratio=(a,b)=>(Math.max(lum(a),lum(b))+.05)/(Math.min(lum(a),lum(b))+.05);for(let attempt=0;attempt<101;attempt++){const samples=scenes.flatMap(c=>[c,mix(c,[255,255,255],secondarySheen),mix(c,[0,0,0],secondaryShade)]),colors=samples.concat(samples.map(c=>mix(c,rgb(s.glow),secondaryGlow)));if(colors.every(c=>ratio(c,text)>=4.5))break;secondarySheen*=.85;secondaryShade*=.85;secondaryGlow*=.85}el.style.setProperty('--vm-secondary-sheen',secondarySheen);el.style.setProperty('--vm-secondary-shade',secondaryShade);el.style.setProperty('--vm-secondary-glow',secondaryGlow);el.style.setProperty('--vm-accent',s.accent);const base=mix(rgb(p.surface),rgb(s.accent),s.opacity/100).map(v=>Math.round(v)),glow=rgb(s.glow);let strength=s.intensity/100*.35,sheen=s.depth/100*.12,shade=.035,chosen='#fff';for(let attempt=0;attempt<101;attempt++){const shades=[base,mix(base,[255,255,255],sheen),mix(base,[0,0,0],shade)],colors=shades.concat(shades.map(c=>mix(c,glow,strength)));const white=Math.min(...colors.map(c=>contrast(c,'#ffffff'))),black=Math.min(...colors.map(c=>contrast(c,'#000000')));chosen=white>=black?'#ffffff':'#000000';if(Math.max(white,black)>=4.53)break;strength*=.85;sheen*=.85;shade*=.85}el.style.setProperty('--vm-button',base.map(v=>Math.round(v)).join(','));el.style.setProperty('--vm-ink',chosen);el.style.setProperty('--vm-glow-alpha',strength);el.style.setProperty('--vm-sheen',sheen);el.style.setProperty('--vm-bottomshade',shade);el.style.setProperty('--vm-glow',rgb(s.glow).join(','));el.style.setProperty('--vm-depth',s.depth/100);el.style.setProperty('--vm-opacity',s.opacity/100);el.style.setProperty('--vm-intensity',s.intensity/100);el.style.setProperty('--vm-shadow-y',(2+s.depth*.09)+'px');el.style.setProperty('--vm-shadow-blur',(6+s.depth*.18)+'px');return s}
+ function initGlow(root){if(root._vmGlow)return;root._vmGlow=true;const selector='.btn,.quiz-opt,.cookie button,.preview-button';function target(e){const t=e.target.closest(selector);return t&&root.contains(t)?t:null}root.addEventListener('pointermove',e=>{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const t=target(e);if(!t)return;const r=t.getBoundingClientRect();t.style.setProperty('--vm-x',e.clientX-r.left+'px');t.style.setProperty('--vm-y',e.clientY-r.top+'px')});root.addEventListener('pointerdown',e=>{const t=target(e);if(!t)return;t.classList.add('vm-touch');setTimeout(()=>t.classList.remove('vm-touch'),350)})}
+ return {defaults,norm,apply,ink,initGlow,backgrounds};
+})();
+
+VM_THEME.apply(document.documentElement,(window.VM_SITE_CONFIG||{}).theme);matchMedia("(prefers-color-scheme:dark)").addEventListener("change",()=>VM_THEME.apply(document.documentElement,(window.VM_SITE_CONFIG||{}).theme));</script>
+</head>
+<body>
+<div class="bar-social" id="top"><span class="pulse"></span><span id="socialBarText">8,400 men joined this week</span></div>
+<header class="site-header">
+  <div class="container nav">
+    <a href="#top" class="brand"><span class="brand-mark">V</span> VelvetMeet</a>
+    <div class="lang">
+      <select id="langSelect" aria-label="Language">
+        <option value="en">EN</option><option value="de">DE</option><option value="pl">PL</option><option value="fr">FR</option><option value="it">IT</option><option value="nl">NL</option>
+      </select>
+    </div>
+  </div>
+</header>
+<main>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow"><span class="dot"></span> <span class="eyebrow-text" id="eyebrowText">Mature women near you</span></span>
+      <h1><span id="h1MainText">She’d like to meet you.</span></h1>
+      <p class="sub" id="subText">Verified profiles, real conversations, total discretion. Free signup, no card needed.</p>
+      <div class="cta-row">
+        <a href="#quiz" class="btn btn-primary" id="ctaFindBtn">See who’s nearby →</a>
+        <a href="#how" class="btn btn-ghost" id="ctaHowBtn">How it works</a>
+      </div>
+      <div class="micro">
+        <span><span class="check">✓</span> <span id="mFreeText">Free</span></span>
+        <span><span class="check">✓</span> <span id="m30Text">30 seconds</span></span>
+        <span><span class="check">✓</span> <span id="mNoCardText">Discreet</span></span>
+      </div>
+    </div>
+    <div class="hero-visual" role="group" aria-label="Featured profiles">
+      <a href="#quiz" class="card-pic card-a" aria-label="Continue to matching"><img src="" id="heroPic1" alt=""></a>
+      <a href="#quiz" class="card-pic card-b" aria-label="Continue to matching"><img src="" id="heroPic2" alt=""></a>
+      <a href="#quiz" class="card-pic card-c" aria-label="Continue to matching"><img src="" id="heroPic3" alt=""></a>
+      <span class="badge badge-online" aria-hidden="true"><span id="badgeOnlineText">online now</span></span>
+      <span class="badge badge-verified" aria-hidden="true"><span id="badgeVerifiedText">Verified</span></span>
+    </div>
+  </div>
+</section>
+<div class="activity">
+  <div class="container">
+    <div class="activity-head"><div class="activity-title" id="activityTitleText">Recently active near you</div></div>
+    <div class="activity-grid" id="activityStrip"></div>
+    <div class="activity-cta-wrap"><a href="#quiz" class="activity-cta" id="activityCtaText">See all matches →</a></div>
+  </div>
+</div>
+<section id="quiz">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow" id="quizEyebrowText">60 seconds</div>
+      <h2 id="quizTitleText">Two quick questions</h2>
+      <p class="section-sub" id="quizSubText">Then we’ll show you who’s nearby.</p>
+    </div>
+    <div class="quiz" id="quizBox">
+      <div class="quiz-progress"><span class="done"></span><span></span></div>
+      <div class="quiz-step" id="step1">
+        <h3 id="q1tText">Your age?</h3><p id="q1sText">We’ll match you by life stage.</p>
+        <div class="quiz-options" data-opts="q1o" data-next="2"></div>
+        <div class="quiz-actions"><button class="quiz-skip" id="quizSkipBtn">Skip</button><span class="quiz-counter" data-step="1">Step 1 of 2</span></div>
+      </div>
+      <div class="quiz-step" id="step2" hidden>
+        <h3 id="q2tText">What are you looking for?</h3><p id="q2sText">No judgement.</p>
+        <div class="quiz-options quiz-options-2col" data-opts="q2o" data-next="3"></div>
+        <div class="quiz-actions"><button class="quiz-back" data-back="1" id="quizBackText">← Back</button><span class="quiz-counter" data-step="2">Step 2 of 2</span></div>
+      </div>
+      <div class="quiz-step loading-state" id="step3" hidden>
+        <h3 id="loadingTitleText">Finding women near you…</h3>
+        <div class="loading-bar"><div class="loading-bar-fill"></div></div>
+        <div class="loading-steps"><div class="loading-step s1" id="loadingStep1Text">Checking your area</div><div class="loading-step s2" id="loadingStep2Text">Filtering verified profiles</div><div class="loading-step s3" id="loadingStep3Text">Sorting by distance</div></div>
+      </div>
+      <div class="quiz-step quiz-result" id="step4" hidden>
+        <div class="result-faces" id="resultFaces"></div>
+        <h3 id="resultTitleText">We found 47 matches</h3>
+        <p id="resultSubText">Create your free account in 30 seconds.</p>
+        <a href="#" class="btn btn-primary" id="finalCta">Show me my matches →</a>
+        <p class="result-legal"><span id="qLegalText">By continuing</span> <a href="#" id="qTermsLink">Terms</a> <span id="qAndText">and</span> <a href="#" id="qPrivacyLink">Privacy</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="how" style="background:#fff;border-top:1px solid #e6e3dd;border-bottom:1px solid #e6e3dd">
+  <div class="container">
+    <div class="section-head"><div class="section-eyebrow" id="howEyebrowText">How it works</div><h2 id="howTitleText">From signup to first message in under a minute</h2><p class="section-sub" id="howSubText">No long forms.</p></div>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><h3 id="step1tText">Sign up free</h3><p id="step1dText">Email and age.</p></div>
+      <div class="step"><div class="step-num">2</div><h3 id="step2tText">Browse women near you</h3><p id="step2dText">Verified profiles.</p></div>
+      <div class="step"><div class="step-num">3</div><h3 id="step3tText">Start a conversation</h3><p id="step3dText">Meet when ready.</p></div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="section-head"><div class="section-eyebrow" id="whyEyebrowText">Why men choose us</div><h2 id="whyTitleText">Built for men past the games</h2><p class="section-sub" id="whySubText">Verified women. Real conversations.</p></div>
+    <div class="features">
+      <div class="feature"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1e3a5f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"></path><circle cx="12" cy="12" r="9"></circle></svg></div><h3 id="f1tText">Verified profiles only</h3><p id="f1dText">Every profile checked manually.</p></div>
+      <div class="feature"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1e3a5f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div><h3 id="f2tText">Discreet by design</h3><p id="f2dText">Neutral billing.</p></div>
+      <div class="feature"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1e3a5f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg></div><h3 id="f3tText">No pressure</h3><p id="f3dText">Your pace.</p></div>
+    </div>
+  </div>
+</section>
+<section style="background:#fff;border-top:1px solid #e6e3dd;border-bottom:1px solid #e6e3dd">
+  <div class="container">
+    <div class="section-head"><div class="section-eyebrow" id="tEyebrowText">What men tell us</div><h2 id="tTitleText">Real men. Real meetings.</h2></div>
+    <div class="testimonials">
+      <div class="t"><div class="stars">★★★★★</div><p id="t1Text"></p><div class="who"><div class="avatar" id="avatar1">MK</div><div><strong id="who1Name">Martin K., 52</strong><span data-tloc="1"></span></div></div></div>
+      <div class="t"><div class="stars">★★★★★</div><p id="t2Text"></p><div class="who"><div class="avatar" id="avatar2">TR</div><div><strong id="who2Name">Thomas R., 58</strong><span data-tloc="2"></span></div></div></div>
+      <div class="t"><div class="stars">★★★★★</div><p id="t3Text"></p><div class="who"><div class="avatar" id="avatar3">DL</div><div><strong id="who3Name">David L., 47</strong><span data-tloc="3"></span></div></div></div>
+    </div>
+    <p class="actor-note" id="tActorNoteText">Real experiences.</p>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="section-head"><div class="section-eyebrow" id="faqEyebrowText">Common questions</div><h2 id="faqTitleText">What men usually ask</h2></div>
+    <div class="faq" id="faqList"></div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="cta-band"><h2 id="finalTitleText">Profile preview</h2><p id="finalSubText">Free to join.</p><a href="#quiz" class="btn btn-gold" id="finalCtaBtn">Join free →</a></div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="brand" style="margin-bottom:10px"><span class="brand-mark">V</span> VelvetMeet</div><p style="color:#3d4a5c;font-size:14px;margin:0;max-width:280px;line-height:1.55" id="footerDescText"></p></div>
+      <div><h4 id="fCompanyText">Company</h4><a href="#" id="fAboutText">About</a><a href="#" id="fSafetyText">Safety</a><a href="#" id="fContactText">Contact</a></div>
+      <div><h4 id="fLegalText">Legal</h4><a href="#" id="fPrivacyText">Privacy</a><a href="#" id="fTermsText">Terms</a><a href="#" id="fCookieText">Cookies</a><a href="#" id="fImprintText">Imprint</a></div>
+      <div><h4 id="fSupportText">Support</h4><a href="#" id="fHelpText">Help</a><a href="#" id="fGuidelinesText">Guidelines</a><a href="#" id="fReportText">Report</a></div>
+    </div>
+    <div class="legal"><span id="legalCopyText">© 2026 VelvetMeet. 18+ only.</span><span id="legalTagText">Discreet · Verified · Made in Europe</span></div>
+  </div>
+</footer>
+<nav class="sticky-cta" id="mobileActionBar" aria-label="Profile navigation"><a href="#quiz" class="btn btn-primary" id="stickyCtaText">See profiles →</a></nav>
+<div class="modal-bg" id="exitModal" role="dialog" aria-modal="true" aria-labelledby="exitTitleText"><div class="modal"><button class="modal-close" id="exitClose" aria-label="Close">×</button><div class="modal-pic"><img src="" id="exitPic" alt=""></div><h3 id="exitTitleText">Wait</h3><p id="exitSubText">Illustrative activity, not live data.</p><a href="#" class="btn btn-primary" id="exitCtaBtn">See profile →</a><button class="modal-no" id="exitNoBtn">Maybe later</button></div></div>
+
+<!-- Photos and persistent profile identities: managed by manage-photos.html. -->
+<script>
+
+var AFFILIATE_LINK = "https://go.cm-trk6.com/aff_f?h=rA47F6&aff_sub5=free-social";
+</script>
+<script>
+// Fallback Pexels photos — used when images/ folder is empty
+// All women 40-60, neutral, non-suggestive portraits
+var FALLBACK_HERO = [
+  "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=600",
+  "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=600",
+  "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=600",
+  "https://images.pexels.com/photos/1542252/pexels-photo-1542252.jpeg?auto=compress&cs=tinysrgb&w=600",
+  "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=600",
+  "https://images.pexels.com/photos/2691608/pexels-photo-2691608.jpeg?auto=compress&cs=tinysrgb&w=600",
+  "https://images.pexels.com/photos/2249531/pexels-photo-2249531.jpeg?auto=compress&cs=tinysrgb&w=600",
+  "https://images.pexels.com/photos/1820919/pexels-photo-1820919.jpeg?auto=compress&cs=tinysrgb&w=600",
+  "https://images.pexels.com/photos/1239288/pexels-photo-1239288.jpeg?auto=compress&cs=tinysrgb&w=600",
+  "https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg?auto=compress&cs=tinysrgb&w=600",
+  "https://images.pexels.com/photos/3782196/pexels-photo-3782196.jpeg?auto=compress&cs=tinysrgb&w=600",
+  "https://images.pexels.com/photos/3776932/pexels-photo-3776932.jpeg?auto=compress&cs=tinysrgb&w=600",
+  "https://images.pexels.com/photos/3992656/pexels-photo-3992656.jpeg?auto=compress&cs=tinysrgb&w=600",
+  "https://images.pexels.com/photos/3866555/pexels-photo-3866555.jpeg?auto=compress&cs=tinysrgb&w=600",
+  "https://images.pexels.com/photos/3779705/pexels-photo-3779705.jpeg?auto=compress&cs=tinysrgb&w=600"
+];
+
+var FALLBACK_CARDS = [
+  "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/1542252/pexels-photo-1542252.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/2691608/pexels-photo-2691608.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/2249531/pexels-photo-2249531.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/1820919/pexels-photo-1820919.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/1239288/pexels-photo-1239288.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/3782196/pexels-photo-3782196.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/3776932/pexels-photo-3776932.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/3992656/pexels-photo-3992656.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/3866555/pexels-photo-3866555.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/3779705/pexels-photo-3779705.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/3621104/pexels-photo-3621104.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/3768114/pexels-photo-3768114.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/4348078/pexels-photo-4348078.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/3998016/pexels-photo-3998016.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/3863793/pexels-photo-3863793.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/5128089/pexels-photo-5128089.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/4101160/pexels-photo-4101160.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/5212688/pexels-photo-5212688.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/6147369/pexels-photo-6147369.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/6238288/pexels-photo-6238288.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/5325840/pexels-photo-5325840.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/4101147/pexels-photo-4101147.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/6940962/pexels-photo-6940962.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/6147384/pexels-photo-6147384.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "https://images.pexels.com/photos/3779662/pexels-photo-3779662.jpeg?auto=compress&cs=tinysrgb&w=400"
+];
+
+</script>
+<script>
+var I18N = {
+  en: {
+    htmlLang:"en",
+    title:"VelvetMeet — Real Women Nearby. No Swiping.",
+    metaDesc:"Real women near you. Verified. Discreet. Free to join.",
+    eyebrowGeo:"{name} is {km} km from {city}",
+    eyebrowDefault:"Mature women near you",
+    h1Geo:"She'd like to meet you.",
+    h1Default:"They'd like to meet you.",
+    sub:"Verified profiles, real conversations, total discretion. Free signup, no card needed.",
+    ctaFind:"See who's nearby \u2192",
+    ctaHow:"How it works",
+    mFree:"Free", m30:"30 seconds", mNoCard:"Discreet",
+    badgeVerified:"Verified", badgeOnline:"online now",
+    loadingTitle:"Finding women near you\u2026",
+    loadingStep1:"Checking your area",
+    loadingStep2:"Filtering verified profiles",
+    loadingStep3:"Sorting by distance",
+    quizEyebrow:"60 seconds", quizTitle:"Two quick questions",
+    quizSub:"Then we'll show you who's nearby.",
+    quizSkip:"Skip \u2014 show me everyone",
+    q1t:"Your age?", q1s:"We'll match you by life stage.",
+    q1o:["18 \u2013 24","25 \u2013 34","35 \u2013 44","45 \u2013 54","55 \u2013 64","65+"],
+    q2t:"What are you looking for?", q2s:"No judgement \u2014 helps us match.",
+    q2o:["Something serious","Easy company","Discreet conversation","Open \u2014 I'll see"],
+    qDoneYoung:"{n} singles your age near {city}",
+    qDoneMature:"{n} mature women near {city}",
+    qDoneSub:"Create your free account in 30 seconds to see them.",
+    qDoneCta:"Show me my matches \u2192",
+    qLegal:"By continuing you confirm you are 18+ and accept our",
+    qTerms:"Terms", qAnd:"and", qPrivacy:"Privacy Policy",
+    qBack:"\u2190 Back", qStepOf:"Step {n} of 2",
+    activityTitle:"Recently active near you",
+    activityCta:"See all matches \u2192",
+    activeMin:"{n} min ago",
+    kmShort:"km",
+    socialBar:"{n} men joined this week",
+    howEyebrow:"How it works", howTitle:"From signup to first message in under a minute",
+    howSub:"No long forms. No questionnaires. Just real women, ready to talk.",
+    step1t:"Sign up free", step1d:"Just an email and your age. 30 seconds \u2014 no card needed.",
+    step2t:"Browse women near you", step2d:"See verified profiles in your area. Filter by age and distance.",
+    step3t:"Start a conversation", step3d:"Send a quiet message. Meet when it feels right. You set the pace.",
+    whyEyebrow:"Why men choose us", whyTitle:"Built for men who are past the games",
+    whySub:"Verified women. Real conversations. Total discretion.",
+    f1t:"Verified profiles only", f1d:"Every profile checked manually. No bots, no fakes, no catfish.",
+    f2t:"Discreet by design", f2d:"Neutral billing. Private browsing. We never share your data. GDPR-compliant.",
+    f3t:"No pressure", f3d:"Your pace. Browse, message, meet \u2014 only when you're ready.",
+    tEyebrow:"What men tell us", tTitle:"Real men. Real meetings.",
+    t1:"After my divorce I thought dating sites weren't for me. This one's different \u2014 the first woman I wrote to is now a real friend, and more.",
+    t2:"I'm 58. I was tired of apps full of 25-year-olds. Here it's women my age, my city, ready to actually talk.",
+    t3:"No pressure, no fake messages, no endless upsells. I met someone for coffee within a week.",
+    tActorNote:"Real member experiences. Names changed, photos illustrative.",
+    faqEyebrow:"Common questions", faqTitle:"What men usually ask",
+    faq:[
+      ["\ud83d\udd12 Is it really discreet? Will anyone find out?","Discretion is the core of VelvetMeet. Neutral billing line, no posts on social, no emails at odd hours. You choose what's public on your profile."],
+      ["Is it really free to join?","Yes \u2014 creating a profile and browsing women is completely free. No credit card needed to sign up."],
+      ["Are the women real?","Every female profile passes manual photo + ID verification. Fakes are removed daily."],
+      ["Will I see women my age?","Yes \u2014 we match by age range first. 55+ sees mature women, not 20-year-olds."],
+      ["Can I cancel any time?","Yes. Delete your account in two clicks. We keep nothing after deletion."]
+    ],
+    finalTitle:"{name} logged in 4 minutes ago.",
+    finalSub:"So did 47 others nearby. Free to join. Total discretion.",
+    finalCta:"Join free \u2192",
+    exitTitle:"Wait \u2014 {name} is online",
+    exitSub:"She joined 4 minutes ago and lives 6 km from you.",
+    exitCta:"See her profile \u2192", exitNo:"Maybe later",
+    footerDesc:"A discreet way to meet real women nearby \u2014 no swiping, no games.",
+    fCompany:"Company", fAbout:"About", fSafety:"Safety", fContact:"Contact",
+    fLegal:"Legal", fPrivacy:"Privacy", fTerms:"Terms", fCookie:"Cookies", fImprint:"Imprint",
+    fSupport:"Support", fHelp:"Help", fGuidelines:"Guidelines", fReport:"Report",
+    legalCopy:"\u00a9 2026 VelvetMeet. 18+ only.",
+    legalTag:"Discreet \u00b7 Verified \u00b7 Made in Europe",
+    cookieMsg:"We use essential cookies only.",
+    cookieLearn:"Learn more", cookieOk:"Got it",
+    cityFallback:"your city",
+    countryName:""
+  },
+  de: {
+    htmlLang:"de",
+    title:"VelvetMeet \u2014 Echte Frauen in deiner N\u00e4he. Kein Wischen.",
+    metaDesc:"Echte Frauen in deiner N\u00e4he. Verifiziert. Diskret. Kostenlos anmelden.",
+    eyebrowGeo:"{name} ist {km} km von {city}",
+    eyebrowDefault:"Reife Frauen in deiner N\u00e4he",
+    h1Geo:"Sie m\u00f6chte dich kennenlernen.",
+    h1Default:"Sie m\u00f6chten dich kennenlernen.",
+    sub:"Verifizierte Profile, echte Gespr\u00e4che, volle Diskretion. Kostenlos, keine Kreditkarte.",
+    ctaFind:"Schau, wer in der N\u00e4he ist \u2192",
+    ctaHow:"So geht's",
+    mFree:"Kostenlos", m30:"30 Sekunden", mNoCard:"Diskret",
+    badgeVerified:"Verifiziert", badgeOnline:"jetzt online",
+    loadingTitle:"Suche Frauen in deiner N\u00e4he\u2026",
+    loadingStep1:"Pr\u00fcfe deine Region",
+    loadingStep2:"Filtere verifizierte Profile",
+    loadingStep3:"Sortiere nach Entfernung",
+    quizEyebrow:"60 Sekunden", quizTitle:"Zwei kurze Fragen",
+    quizSub:"Dann zeigen wir dir, wer in der N\u00e4he ist.",
+    quizSkip:"\u00dcberspringen \u2014 alle anzeigen",
+    q1t:"Wie alt bist du?", q1s:"Wir matchen nach Lebensphase.",
+    q1o:["18 \u2013 24","25 \u2013 34","35 \u2013 44","45 \u2013 54","55 \u2013 64","65+"],
+    q2t:"Wonach suchst du?", q2s:"Kein Urteil \u2014 hilft uns nur beim Matchen.",
+    q2o:["Etwas Ernstes","Lockere Begleitung","Unkomplizierte Gespr\u00e4che","Bin offen"],
+    qDoneYoung:"{n} Singles in deinem Alter nahe {city}",
+    qDoneMature:"{n} reife Frauen nahe {city}",
+    qDoneSub:"Erstelle dein kostenloses Konto in 30 Sekunden, um sie zu sehen.",
+    qDoneCta:"Meine Matches zeigen \u2192",
+    qLegal:"Mit dem Fortfahren best\u00e4tigst du, dass du 18+ bist und akzeptierst unsere",
+    qTerms:"AGB", qAnd:"und", qPrivacy:"Datenschutzerkl\u00e4rung",
+    qBack:"\u2190 Zur\u00fcck", qStepOf:"Schritt {n} von 2",
+    activityTitle:"K\u00fcrzlich aktiv in deiner N\u00e4he",
+    activityCta:"Alle Matches sehen \u2192",
+    activeMin:"vor {n} Min.",
+    kmShort:"km",
+    socialBar:"{n} M\u00e4nner sind diese Woche beigetreten",
+    howEyebrow:"So geht's", howTitle:"Von der Anmeldung zur ersten Nachricht in unter einer Minute",
+    howSub:"Keine Formulare. Keine Frageb\u00f6gen. Nur echte Frauen, bereit zu reden.",
+    step1t:"Kostenlos anmelden", step1d:"Nur E-Mail und Alter. 30 Sekunden \u2014 keine Kreditkarte.",
+    step2t:"Frauen in deiner N\u00e4he ansehen", step2d:"Verifizierte Profile in deiner Region. Filter nach Alter und Entfernung.",
+    step3t:"Schreib ihr eine Nachricht", step3d:"Locker anschreiben. Treffen, wenn es passt. Du bestimmst das Tempo.",
+    whyEyebrow:"Warum M\u00e4nner uns w\u00e4hlen", whyTitle:"Gemacht f\u00fcr M\u00e4nner ohne Lust auf Drama",
+    whySub:"Verifizierte Frauen. Echte Gespr\u00e4che. Volle Diskretion.",
+    f1t:"Nur verifizierte Profile", f1d:"Jedes Profil manuell gepr\u00fcft. Keine Bots, keine Fakes, kein Catfishing.",
+    f2t:"Diskret von Anfang an", f2d:"Neutrale Abrechnung. Privates Browsen. Daten bleiben bei uns. DSGVO-konform.",
+    f3t:"Kein Druck", f3d:"Dein Tempo. St\u00f6bern, schreiben, treffen \u2014 wenn du bereit bist.",
+    tEyebrow:"Was M\u00e4nner sagen", tTitle:"Echte M\u00e4nner. Echte Treffen.",
+    t1:"Nach meiner Scheidung dachte ich, Dating-Seiten sind nichts f\u00fcr mich. Die hier ist anders \u2014 die erste Frau, der ich schrieb, ist heute eine echte Freundin und mehr.",
+    t2:"Ich bin 58. Hatte genug von Apps voller 25-J\u00e4hriger. Hier sind Frauen in meinem Alter, in meiner Stadt, bereit f\u00fcr ein echtes Gespr\u00e4ch.",
+    t3:"Kein Druck, keine Fake-Nachrichten, kein st\u00e4ndiges Upselling. Innerhalb einer Woche jemanden auf einen Kaffee getroffen.",
+    tActorNote:"Echte Mitgliedererlebnisse. Namen ge\u00e4ndert, Fotos illustrativ.",
+    faqEyebrow:"H\u00e4ufige Fragen", faqTitle:"Was M\u00e4nner fragen",
+    faq:[
+      ["\ud83d\udd12 Ist es wirklich diskret? Erf\u00e4hrt jemand davon?","Diskretion ist der Kern von VelvetMeet. Neutrale Abrechnungsbezeichnung, keine Posts auf Social Media, keine E-Mails zu seltsamen Zeiten. Du entscheidest, was \u00f6ffentlich ist."],
+      ["Ist die Anmeldung wirklich kostenlos?","Ja \u2014 Profil erstellen und Frauen ansehen ist komplett kostenlos. Keine Kreditkarte zur Anmeldung."],
+      ["Sind die Frauen echt?","Jedes weibliche Profil passiert manuelle Foto- und ID-Pr\u00fcfung. Fakes werden t\u00e4glich entfernt."],
+      ["Sehe ich Frauen in meinem Alter?","Ja \u2014 wir matchen zuerst nach Altersgruppe. 55+ sieht reife Frauen, keine 20-J\u00e4hrigen."],
+      ["Kann ich jederzeit k\u00fcndigen?","Ja. Konto in zwei Klicks l\u00f6schen. Nach L\u00f6schung speichern wir nichts."]
+    ],
+    finalTitle:"{name} war vor 4 Minuten online.",
+    finalSub:"Und 47 weitere in deiner N\u00e4he. Kostenlos. Volle Diskretion.",
+    finalCta:"Kostenlos beitreten \u2192",
+    exitTitle:"Warte \u2014 {name} ist online",
+    exitSub:"Sie kam vor 4 Minuten online und ist 6 km von dir entfernt.",
+    exitCta:"Ihr Profil ansehen \u2192", exitNo:"Vielleicht sp\u00e4ter",
+    footerDesc:"Diskret echte Frauen in der N\u00e4he kennenlernen \u2014 kein Wischen, kein Drama.",
+    fCompany:"Unternehmen", fAbout:"\u00dcber uns", fSafety:"Sicherheit", fContact:"Kontakt",
+    fLegal:"Rechtliches", fPrivacy:"Datenschutz", fTerms:"AGB", fCookie:"Cookies", fImprint:"Impressum",
+    fSupport:"Support", fHelp:"Hilfe", fGuidelines:"Richtlinien", fReport:"Melden",
+    legalCopy:"\u00a9 2026 VelvetMeet. Nur 18+.",
+    legalTag:"Diskret \u00b7 Verifiziert \u00b7 Made in Europe",
+    cookieMsg:"Wir verwenden nur notwendige Cookies.",
+    cookieLearn:"Mehr", cookieOk:"Verstanden",
+    cityFallback:"deiner Stadt",
+    countryName:"Deutschland"
+  },
+  pl: {
+    htmlLang:"pl",
+    title:"VelvetMeet \u2014 Prawdziwe kobiety obok. Bez swipe.",
+    metaDesc:"Prawdziwe kobiety w pobli\u017cu. Zweryfikowane. Dyskretnie. Darmowa rejestracja.",
+    eyebrowGeo:"{name} jest {km} km od {city}",
+    eyebrowDefault:"Dojrza\u0142e kobiety w pobli\u017cu",
+    h1Geo:"Chce Ci\u0119 pozna\u0107.",
+    h1Default:"Chc\u0105 Ci\u0119 pozna\u0107.",
+    sub:"Zweryfikowane profile, prawdziwe rozmowy, pe\u0142na prywatno\u015b\u0107. Za darmo, bez karty.",
+    ctaFind:"Zobacz kto jest obok \u2192",
+    ctaHow:"Jak to dzia\u0142a",
+    mFree:"Za darmo", m30:"30 sekund", mNoCard:"Dyskretnie",
+    badgeVerified:"Zweryfikowane", badgeOnline:"online teraz",
+    loadingTitle:"Szukam kobiet w pobli\u017cu\u2026",
+    loadingStep1:"Sprawdzam Twoj\u0105 okolic\u0119",
+    loadingStep2:"Filtruj\u0119 zweryfikowane profile",
+    loadingStep3:"Sortuj\u0119 po odleg\u0142o\u015bci",
+    quizEyebrow:"60 sekund", quizTitle:"Dwa szybkie pytania",
+    quizSub:"Potem poka\u017cemy, kto jest blisko.",
+    quizSkip:"Pomi\u0144 \u2014 poka\u017c wszystkich",
+    q1t:"Tw\u00f3j wiek?", q1s:"Dopasujemy po etapie \u017cycia.",
+    q1o:["18 \u2013 24","25 \u2013 34","35 \u2013 44","45 \u2013 54","55 \u2013 64","65+"],
+    q2t:"Czego szukasz?", q2s:"Bez oceniania \u2014 pomo\u017ce dopasowa\u0107.",
+    q2o:["Czego\u015b powa\u017cnego","Lu\u017anego towarzystwa","Dyskretnej rozmowy","Otwarty \u2014 zobacz\u0119"],
+    qDoneYoung:"{n} singli w Twoim wieku w pobli\u017cu {city}",
+    qDoneMature:"{n} dojrza\u0142ych kobiet w pobli\u017cu {city}",
+    qDoneSub:"Za\u0142\u00f3\u017c darmowe konto w 30 sekund, \u017ceby je zobaczy\u0107.",
+    qDoneCta:"Poka\u017c moje dopasowania \u2192",
+    qLegal:"Kontynuuj\u0105c potwierdzasz, \u017ce masz 18+ i akceptujesz",
+    qTerms:"Regulamin", qAnd:"oraz", qPrivacy:"Polityk\u0119 Prywatno\u015bci",
+    qBack:"\u2190 Wstecz", qStepOf:"Krok {n} z 2",
+    activityTitle:"Niedawno aktywne w pobli\u017cu",
+    activityCta:"Zobacz wszystkie dopasowania \u2192",
+    activeMin:"{n} min temu",
+    kmShort:"km",
+    socialBar:"{n} m\u0119\u017cczyzn do\u0142\u0105czy\u0142o w tym tygodniu",
+    howEyebrow:"Jak to dzia\u0142a", howTitle:"Od rejestracji do pierwszej wiadomo\u015bci w mniej ni\u017c minut\u0119",
+    howSub:"Bez d\u0142ugich formularzy. Bez ankiet. Tylko prawdziwe kobiety, gotowe do rozmowy.",
+    step1t:"Za\u0142\u00f3\u017c konto za darmo", step1d:"Tylko e-mail i wiek. 30 sekund \u2014 bez karty.",
+    step2t:"Przegl\u0105daj kobiety obok", step2d:"Zweryfikowane profile w Twojej okolicy. Filtruj po wieku i odleg\u0142o\u015bci.",
+    step3t:"Zacznij rozmow\u0119", step3d:"Napisz spokojnie. Spotkajcie si\u0119 gdy to pasuje. Ty wyznaczasz tempo.",
+    whyEyebrow:"Dlaczego nas wybieraj\u0105", whyTitle:"Dla m\u0119\u017cczyzn, kt\u00f3rzy maj\u0105 do\u015b\u0107 \u015bciemy",
+    whySub:"Zweryfikowane kobiety. Prawdziwe rozmowy. Pe\u0142na dyskrecja.",
+    f1t:"Tylko zweryfikowane profile", f1d:"Ka\u017cdy profil sprawdzany r\u0119cznie. Bez bot\u00f3w, bez fake'\u00f3w, bez oszustw.",
+    f2t:"Dyskretne z za\u0142o\u017cenia", f2d:"Neutralne rozliczenia. Prywatne przegl\u0105danie. Twoje dane zostaj\u0105 u nas. Zgodne z RODO.",
+    f3t:"Bez presji", f3d:"Twoje tempo. Przegl\u0105daj, pisz, spotykaj si\u0119 \u2014 gdy b\u0119dziesz gotowy.",
+    tEyebrow:"Co m\u00f3wi\u0105 m\u0119\u017cczy\u017ani", tTitle:"Prawdziwi m\u0119\u017cczy\u017ani. Prawdziwe spotkania.",
+    t1:"Po rozwodzie my\u015bla\u0142em, \u017ce portale randkowe nie s\u0105 dla mnie. Ten jest inny \u2014 pierwsza kobieta, do kt\u00f3rej napisa\u0142em, zosta\u0142a prawdziw\u0105 przyjaci\u00f3\u0142k\u0105, i kim\u015b wi\u0119cej.",
+    t2:"Mam 58 lat. Mia\u0142em do\u015b\u0107 aplikacji pe\u0142nych 25-latek. Tu s\u0105 kobiety w moim wieku, w moim mie\u015bcie, gotowe na konkretn\u0105 rozmow\u0119.",
+    t3:"Bez presji, bez fake-wiadomo\u015bci, bez ci\u0105g\u0142ego upsellu. W tydzie\u0144 wypi\u0142em kaw\u0119 z kim\u015b konkretnym.",
+    tActorNote:"Prawdziwe do\u015bwiadczenia cz\u0142onk\u00f3w. Imiona zmienione, zdj\u0119cia pogl\u0105dowe.",
+    faqEyebrow:"Cz\u0119ste pytania", faqTitle:"O co pytaj\u0105 m\u0119\u017cczy\u017ani",
+    faq:[
+      ["\ud83d\udd12 Czy to naprawd\u0119 dyskretne? Czy kto\u015b si\u0119 dowie?","Dyskrecja jest sercem VelvetMeet. Neutralna nazwa rozliczeniowa, brak post\u00f3w w social media, brak maili o dziwnych porach. Ty decydujesz, co jest publiczne."],
+      ["Czy rejestracja jest naprawd\u0119 darmowa?","Tak \u2014 za\u0142o\u017cenie profilu i przegl\u0105danie kobiet jest w pe\u0142ni darmowe. Bez karty kredytowej."],
+      ["Czy kobiety s\u0105 prawdziwe?","Ka\u017cdy profil kobiety przechodzi r\u0119czn\u0105 weryfikacj\u0119 zdj\u0119cia i ID. Fake'i usuwamy codziennie."],
+      ["Zobacz\u0119 kobiety w moim wieku?","Tak \u2014 dopasowujemy najpierw po przedziale wiekowym. 55+ zobaczy dojrza\u0142e kobiety, nie 20-latki."],
+      ["Czy mog\u0119 zrezygnowa\u0107 w ka\u017cdej chwili?","Tak. Usu\u0144 konto w dw\u00f3ch klikni\u0119ciach. Nic nie zostaje."]
+    ],
+    finalTitle:"{name} by\u0142a online 4 minuty temu.",
+    finalSub:"Tak samo 47 innych w pobli\u017cu. Za darmo. Pe\u0142na dyskrecja.",
+    finalCta:"Do\u0142\u0105cz za darmo \u2192",
+    exitTitle:"Czekaj \u2014 {name} jest online",
+    exitSub:"Wesz\u0142a 4 minuty temu i jest 6 km od Ciebie.",
+    exitCta:"Zobacz jej profil \u2192", exitNo:"Mo\u017ce p\u00f3\u017aniej",
+    footerDesc:"Dyskretny spos\u00f3b na poznanie prawdziwych kobiet w pobli\u017cu \u2014 bez swipe, bez \u015bciemy.",
+    fCompany:"Firma", fAbout:"O nas", fSafety:"Bezpiecze\u0144stwo", fContact:"Kontakt",
+    fLegal:"Prawne", fPrivacy:"Prywatno\u015b\u0107", fTerms:"Regulamin", fCookie:"Cookies", fImprint:"Dane firmy",
+    fSupport:"Wsparcie", fHelp:"Pomoc", fGuidelines:"Zasady", fReport:"Zg\u0142o\u015b",
+    legalCopy:"\u00a9 2026 VelvetMeet. Tylko 18+.",
+    legalTag:"Dyskretnie \u00b7 Zweryfikowane \u00b7 Made in Europe",
+    cookieMsg:"U\u017cywamy tylko niezb\u0119dnych cookies.",
+    cookieLearn:"Wi\u0119cej", cookieOk:"OK",
+    cityFallback:"Twojej okolicy",
+    countryName:"Polska"
+  },
+  fr: {
+    htmlLang:"fr",
+    title:"VelvetMeet \u2014 De vraies femmes pr\u00e8s de chez toi. Sans swipe.",
+    metaDesc:"De vraies femmes pr\u00e8s de toi. V\u00e9rifi\u00e9es. Discret. Inscription gratuite.",
+    eyebrowGeo:"{name} est \u00e0 {km} km de {city}",
+    eyebrowDefault:"Femmes m\u00fbres pr\u00e8s de chez toi",
+    h1Geo:"Elle aimerait te rencontrer.",
+    h1Default:"Elles aimeraient te rencontrer.",
+    sub:"Profils v\u00e9rifi\u00e9s, vraies conversations, discr\u00e9tion totale. Gratuit, sans carte.",
+    ctaFind:"Voir qui est pr\u00e8s \u2192",
+    ctaHow:"Comment \u00e7a marche",
+    mFree:"Gratuit", m30:"30 secondes", mNoCard:"Discret",
+    badgeVerified:"V\u00e9rifi\u00e9", badgeOnline:"en ligne",
+    loadingTitle:"Recherche de femmes pr\u00e8s de toi\u2026",
+    loadingStep1:"V\u00e9rification de ta zone",
+    loadingStep2:"Filtrage des profils v\u00e9rifi\u00e9s",
+    loadingStep3:"Tri par distance",
+    quizEyebrow:"60 secondes", quizTitle:"Deux questions rapides",
+    quizSub:"Ensuite on te montre qui est pr\u00e8s.",
+    quizSkip:"Passer \u2014 voir tout le monde",
+    q1t:"Ton \u00e2ge ?", q1s:"On matche par \u00e9tape de vie.",
+    q1o:["18 \u2013 24","25 \u2013 34","35 \u2013 44","45 \u2013 54","55 \u2013 64","65+"],
+    q2t:"Que cherches-tu ?", q2s:"Sans jugement \u2014 aide juste \u00e0 matcher.",
+    q2o:["Quelque chose de s\u00e9rieux","Une compagnie tranquille","Une conversation discr\u00e8te","Ouvert \u2014 je verrai"],
+    qDoneYoung:"{n} c\u00e9libataires de ton \u00e2ge pr\u00e8s de {city}",
+    qDoneMature:"{n} femmes m\u00fbres pr\u00e8s de {city}",
+    qDoneSub:"Cr\u00e9e ton compte gratuit en 30 secondes pour les voir.",
+    qDoneCta:"Voir mes matchs \u2192",
+    qLegal:"En continuant tu confirmes avoir 18+ et acceptes nos",
+    qTerms:"CGU", qAnd:"et", qPrivacy:"Politique de confidentialit\u00e9",
+    qBack:"\u2190 Retour", qStepOf:"\u00c9tape {n} sur 2",
+    activityTitle:"R\u00e9cemment actives pr\u00e8s de toi",
+    activityCta:"Voir tous les matchs \u2192",
+    activeMin:"il y a {n} min",
+    kmShort:"km",
+    socialBar:"{n} hommes inscrits cette semaine",
+    howEyebrow:"Comment \u00e7a marche", howTitle:"De l'inscription au premier message en moins d'une minute",
+    howSub:"Pas de formulaires. Pas de questionnaires. Que de vraies femmes, pr\u00eates \u00e0 parler.",
+    step1t:"Inscris-toi gratuitement", step1d:"Juste un e-mail et ton \u00e2ge. 30 secondes \u2014 sans carte.",
+    step2t:"Parcoure les femmes pr\u00e8s de toi", step2d:"Profils v\u00e9rifi\u00e9s dans ta r\u00e9gion. Filtre par \u00e2ge et distance.",
+    step3t:"Lance la conversation", step3d:"\u00c9cris tranquillement. Rencontrez-vous quand \u00e7a vous pla\u00eet. Tu d\u00e9cides.",
+    whyEyebrow:"Pourquoi nous choisir", whyTitle:"Con\u00e7u pour les hommes sans prise de t\u00eate",
+    whySub:"Femmes v\u00e9rifi\u00e9es. Vraies conversations. Discr\u00e9tion totale.",
+    f1t:"Que des profils v\u00e9rifi\u00e9s", f1d:"Chaque profil v\u00e9rifi\u00e9 \u00e0 la main. Pas de bots, pas de faux, pas de catfish.",
+    f2t:"Discret par nature", f2d:"Facturation neutre. Navigation priv\u00e9e. On ne partage jamais tes donn\u00e9es. Conforme RGPD.",
+    f3t:"Sans pression", f3d:"\u00c0 ton rythme. Parcourir, \u00e9crire, rencontrer \u2014 quand tu es pr\u00eat.",
+    tEyebrow:"Ce que disent les hommes", tTitle:"De vrais hommes. De vraies rencontres.",
+    t1:"Apr\u00e8s mon divorce, je pensais en avoir fini avec les sites de rencontres. Celui-ci est diff\u00e9rent \u2014 la premi\u00e8re femme \u00e0 qui j'ai \u00e9crit est devenue une vraie amie, et plus.",
+    t2:"J'ai 58 ans. Marre des applis pleines de filles de 25 ans. Ici, des femmes de mon \u00e2ge, de ma ville, pr\u00eates \u00e0 parler vraiment.",
+    t3:"Pas de pression, pas de faux messages, pas de relances commerciales. J'ai pris un caf\u00e9 avec quelqu'un en une semaine.",
+    tActorNote:"De vraies exp\u00e9riences. Noms chang\u00e9s, photos illustratives.",
+    faqEyebrow:"Questions fr\u00e9quentes", faqTitle:"Ce que les hommes demandent",
+    faq:[
+      ["\ud83d\udd12 Est-ce vraiment discret ? Quelqu'un peut-il savoir ?","La discr\u00e9tion est au c\u0153ur de VelvetMeet. Nom de facturation neutre, aucun post sur les r\u00e9seaux, aucun e-mail \u00e0 des heures bizarres. Tu d\u00e9cides ce qui est public."],
+      ["L'inscription est-elle vraiment gratuite ?","Oui \u2014 cr\u00e9er un profil et parcourir les femmes est enti\u00e8rement gratuit. Pas de carte requise."],
+      ["Les femmes sont-elles r\u00e9elles ?","Chaque profil f\u00e9minin passe une v\u00e9rification manuelle photo + pi\u00e8ce d'identit\u00e9. Les faux sont retir\u00e9s chaque jour."],
+      ["Verrai-je des femmes de mon \u00e2ge ?","Oui \u2014 on matche d'abord par tranche d'\u00e2ge. 55+ voit des femmes m\u00fbres, pas des jeunes de 20 ans."],
+      ["Puis-je annuler \u00e0 tout moment ?","Oui. Supprime ton compte en deux clics. Rien n'est conserv\u00e9."]
+    ],
+    finalTitle:"{name} \u00e9tait en ligne il y a 4 minutes.",
+    finalSub:"Comme 47 autres pr\u00e8s de chez toi. Gratuit. Discr\u00e9tion totale.",
+    finalCta:"Rejoindre gratuitement \u2192",
+    exitTitle:"Attends \u2014 {name} est en ligne",
+    exitSub:"Elle s'est connect\u00e9e il y a 4 minutes et habite \u00e0 6 km de toi.",
+    exitCta:"Voir son profil \u2192", exitNo:"Plus tard",
+    footerDesc:"Une fa\u00e7on discr\u00e8te de rencontrer de vraies femmes pr\u00e8s de toi \u2014 sans swipe, sans prise de t\u00eate.",
+    fCompany:"Soci\u00e9t\u00e9", fAbout:"\u00c0 propos", fSafety:"S\u00e9curit\u00e9", fContact:"Contact",
+    fLegal:"Mentions l\u00e9gales", fPrivacy:"Confidentialit\u00e9", fTerms:"CGU", fCookie:"Cookies", fImprint:"Mentions",
+    fSupport:"Support", fHelp:"Aide", fGuidelines:"R\u00e8gles", fReport:"Signaler",
+    legalCopy:"\u00a9 2026 VelvetMeet. 18+ uniquement.",
+    legalTag:"Discret \u00b7 V\u00e9rifi\u00e9 \u00b7 Made in Europe",
+    cookieMsg:"Nous utilisons uniquement des cookies essentiels.",
+    cookieLearn:"En savoir plus", cookieOk:"OK",
+    cityFallback:"ta ville",
+    countryName:"France"
+  },
+  it: {
+    htmlLang:"it",
+    title:"VelvetMeet \u2014 Donne vere vicino a te. Senza swipe.",
+    metaDesc:"Donne vere vicino a te. Verificate. Discreto. Iscrizione gratuita.",
+    eyebrowGeo:"{name} \u00e8 a {km} km da {city}",
+    eyebrowDefault:"Donne mature vicino a te",
+    h1Geo:"Vuole conoscerti.",
+    h1Default:"Vogliono conoscerti.",
+    sub:"Profili verificati, vere conversazioni, discrezione totale. Gratis, senza carta.",
+    ctaFind:"Vedi chi \u00e8 vicino \u2192",
+    ctaHow:"Come funziona",
+    mFree:"Gratis", m30:"30 secondi", mNoCard:"Discreto",
+    badgeVerified:"Verificato", badgeOnline:"online ora",
+    loadingTitle:"Cerco donne vicino a te\u2026",
+    loadingStep1:"Controllo la tua zona",
+    loadingStep2:"Filtro i profili verificati",
+    loadingStep3:"Ordino per distanza",
+    quizEyebrow:"60 secondi", quizTitle:"Due domande veloci",
+    quizSub:"Poi ti mostriamo chi \u00e8 vicino.",
+    quizSkip:"Salta \u2014 mostrami tutti",
+    q1t:"La tua et\u00e0?", q1s:"Ti matchiamo per fase di vita.",
+    q1o:["18 \u2013 24","25 \u2013 34","35 \u2013 44","45 \u2013 54","55 \u2013 64","65+"],
+    q2t:"Cosa cerchi?", q2s:"Nessun giudizio \u2014 solo per matchare meglio.",
+    q2o:["Qualcosa di serio","Compagnia tranquilla","Conversazione discreta","Aperto \u2014 vedremo"],
+    qDoneYoung:"{n} single della tua et\u00e0 vicino a {city}",
+    qDoneMature:"{n} donne mature vicino a {city}",
+    qDoneSub:"Crea il tuo account gratuito in 30 secondi per vederle.",
+    qDoneCta:"Mostrami i miei match \u2192",
+    qLegal:"Continuando confermi di avere 18+ e accetti i nostri",
+    qTerms:"Termini", qAnd:"e", qPrivacy:"Informativa Privacy",
+    qBack:"\u2190 Indietro", qStepOf:"Passaggio {n} di 2",
+    activityTitle:"Recentemente attive vicino a te",
+    activityCta:"Vedi tutti i match \u2192",
+    activeMin:"{n} min fa",
+    kmShort:"km",
+    socialBar:"{n} uomini iscritti questa settimana",
+    howEyebrow:"Come funziona", howTitle:"Dall'iscrizione al primo messaggio in meno di un minuto",
+    howSub:"Niente moduli. Niente questionari. Solo donne vere, pronte a parlare.",
+    step1t:"Iscriviti gratis", step1d:"Solo email ed et\u00e0. 30 secondi \u2014 niente carta.",
+    step2t:"Sfoglia le donne vicino", step2d:"Profili verificati nella tua zona. Filtra per et\u00e0 e distanza.",
+    step3t:"Inizia la conversazione", step3d:"Scrivi tranquillo. Vedetevi quando vi va. Decidi tu il ritmo.",
+    whyEyebrow:"Perch\u00e9 ci scelgono", whyTitle:"Creato per chi non vuole perdere tempo",
+    whySub:"Donne verificate. Conversazioni vere. Discrezione totale.",
+    f1t:"Solo profili verificati", f1d:"Ogni profilo controllato manualmente. Niente bot, niente fake, niente catfish.",
+    f2t:"Discreto per design", f2d:"Fatturazione neutra. Navigazione privata. I tuoi dati restano qui. Conforme GDPR.",
+    f3t:"Nessuna pressione", f3d:"Al tuo ritmo. Sfoglia, scrivi, incontra \u2014 quando sei pronto.",
+    tEyebrow:"Cosa dicono gli uomini", tTitle:"Veri uomini. Veri incontri.",
+    t1:"Dopo il divorzio pensavo che i siti di incontri non facessero per me. Questo \u00e8 diverso \u2014 la prima donna a cui ho scritto \u00e8 diventata una vera amica, e di pi\u00f9.",
+    t2:"Ho 58 anni. Stufo delle app piene di 25enni. Qui ci sono donne della mia et\u00e0, della mia citt\u00e0, pronte a parlare davvero.",
+    t3:"Niente pressione, niente messaggi finti, niente upsell continui. In una settimana ho preso un caff\u00e8 con qualcuno.",
+    tActorNote:"Esperienze reali. Nomi cambiati, foto illustrative.",
+    faqEyebrow:"Domande frequenti", faqTitle:"Cosa chiedono gli uomini",
+    faq:[
+      ["\ud83d\udd12 \u00c8 davvero discreto? Lo verr\u00e0 a sapere qualcuno?","La discrezione \u00e8 il cuore di VelvetMeet. Nome di fatturazione neutro, nessun post sui social, nessuna email a orari strani. Decidi tu cosa \u00e8 pubblico."],
+      ["\u00c8 davvero gratis iscriversi?","S\u00ec \u2014 creare il profilo e sfogliare le donne \u00e8 completamente gratis. Niente carta per iscriversi."],
+      ["Le donne sono vere?","Ogni profilo femminile passa verifica manuale foto + documento. I fake vengono rimossi ogni giorno."],
+      ["Vedr\u00f2 donne della mia et\u00e0?","S\u00ec \u2014 matchiamo prima per fascia d'et\u00e0. Chi ha 55+ vede donne mature, non 20enni."],
+      ["Posso cancellarmi quando voglio?","S\u00ec. Elimina l'account in due clic. Non conserviamo nulla."]
+    ],
+    finalTitle:"{name} era online 4 minuti fa.",
+    finalSub:"Come altre 47 vicino a te. Gratis. Discrezione totale.",
+    finalCta:"Iscriviti gratis \u2192",
+    exitTitle:"Aspetta \u2014 {name} \u00e8 online",
+    exitSub:"Si \u00e8 collegata 4 minuti fa e vive a 6 km da te.",
+    exitCta:"Vedi il suo profilo \u2192", exitNo:"Forse dopo",
+    footerDesc:"Un modo discreto per incontrare donne vere vicino a te \u2014 senza swipe, senza giri.",
+    fCompany:"Azienda", fAbout:"Chi siamo", fSafety:"Sicurezza", fContact:"Contatti",
+    fLegal:"Legale", fPrivacy:"Privacy", fTerms:"Termini", fCookie:"Cookie", fImprint:"Note legali",
+    fSupport:"Supporto", fHelp:"Aiuto", fGuidelines:"Linee guida", fReport:"Segnala",
+    legalCopy:"\u00a9 2026 VelvetMeet. Solo 18+.",
+    legalTag:"Discreto \u00b7 Verificato \u00b7 Made in Europe",
+    cookieMsg:"Usiamo solo cookie essenziali.",
+    cookieLearn:"Scopri di pi\u00f9", cookieOk:"OK",
+    cityFallback:"la tua citt\u00e0",
+    countryName:"Italia"
+  },
+  nl: {
+    htmlLang:"nl",
+    title:"VelvetMeet \u2014 Echte vrouwen dichtbij. Geen swipen.",
+    metaDesc:"Echte vrouwen bij jou in de buurt. Geverifieerd. Discreet. Gratis aanmelden.",
+    eyebrowGeo:"{name} is {km} km van {city}",
+    eyebrowDefault:"Volwassen vrouwen dichtbij",
+    h1Geo:"Ze wil je ontmoeten.",
+    h1Default:"Ze willen je ontmoeten.",
+    sub:"Geverifieerde profielen, echte gesprekken, volledige discretie. Gratis, zonder kaart.",
+    ctaFind:"Zie wie er dichtbij is \u2192",
+    ctaHow:"Hoe het werkt",
+    mFree:"Gratis", m30:"30 seconden", mNoCard:"Discreet",
+    badgeVerified:"Geverifieerd", badgeOnline:"nu online",
+    loadingTitle:"Vrouwen bij jou in de buurt zoeken\u2026",
+    loadingStep1:"Jouw regio controleren",
+    loadingStep2:"Geverifieerde profielen filteren",
+    loadingStep3:"Sorteren op afstand",
+    quizEyebrow:"60 seconden", quizTitle:"Twee korte vragen",
+    quizSub:"Daarna laten we zien wie dichtbij is.",
+    quizSkip:"Overslaan \u2014 toon iedereen",
+    q1t:"Jouw leeftijd?", q1s:"We matchen op levensfase.",
+    q1o:["18 \u2013 24","25 \u2013 34","35 \u2013 44","45 \u2013 54","55 \u2013 64","65+"],
+    q2t:"Wat zoek je?", q2s:"Geen oordeel \u2014 helpt alleen met matchen.",
+    q2o:["Iets serieus","Relaxed gezelschap","Discreet gesprek","Open \u2014 ik zie wel"],
+    qDoneYoung:"{n} singles van jouw leeftijd in de buurt van {city}",
+    qDoneMature:"{n} volwassen vrouwen in de buurt van {city}",
+    qDoneSub:"Maak je gratis account in 30 seconden om ze te zien.",
+    qDoneCta:"Toon mijn matches \u2192",
+    qLegal:"Door verder te gaan bevestig je dat je 18+ bent en accepteer je onze",
+    qTerms:"Voorwaarden", qAnd:"en", qPrivacy:"Privacybeleid",
+    qBack:"\u2190 Terug", qStepOf:"Stap {n} van 2",
+    activityTitle:"Recent actief in de buurt",
+    activityCta:"Zie alle matches \u2192",
+    activeMin:"{n} min geleden",
+    kmShort:"km",
+    socialBar:"{n} mannen aangemeld deze week",
+    howEyebrow:"Hoe het werkt", howTitle:"Van aanmelden tot eerste bericht in minder dan een minuut",
+    howSub:"Geen formulieren. Geen vragenlijsten. Alleen echte vrouwen, klaar om te praten.",
+    step1t:"Gratis aanmelden", step1d:"Alleen e-mail en leeftijd. 30 seconden \u2014 geen kaart nodig.",
+    step2t:"Bekijk vrouwen dichtbij", step2d:"Geverifieerde profielen in jouw regio. Filter op leeftijd en afstand.",
+    step3t:"Start een gesprek", step3d:"Schrijf rustig. Spreek af als het past. Jij bepaalt het tempo.",
+    whyEyebrow:"Waarom mannen kiezen voor ons", whyTitle:"Gemaakt voor mannen zonder gedoe",
+    whySub:"Geverifieerde vrouwen. Echte gesprekken. Volledige discretie.",
+    f1t:"Alleen geverifieerde profielen", f1d:"Elk profiel handmatig gecontroleerd. Geen bots, geen nep, geen catfish.",
+    f2t:"Discreet van nature", f2d:"Neutrale facturatie. Priv\u00e9 browsen. Je gegevens blijven bij ons. AVG-conform.",
+    f3t:"Geen druk", f3d:"Jouw tempo. Bekijken, schrijven, ontmoeten \u2014 als jij er klaar voor bent.",
+    tEyebrow:"Wat mannen zeggen", tTitle:"Echte mannen. Echte ontmoetingen.",
+    t1:"Na mijn scheiding dacht ik dat datingsites niets voor mij waren. Deze is anders \u2014 de eerste vrouw die ik schreef werd een echte vriendin, en meer.",
+    t2:"Ik ben 58. Klaar met apps vol 25-jarigen. Hier zijn vrouwen van mijn leeftijd, mijn stad, klaar voor een echt gesprek.",
+    t3:"Geen druk, geen nepberichten, geen eindeloze upsells. Binnen een week koffie gedronken met iemand.",
+    tActorNote:"Echte ervaringen. Namen gewijzigd, foto's ter illustratie.",
+    faqEyebrow:"Veelgestelde vragen", faqTitle:"Wat mannen vragen",
+    faq:[
+      ["\ud83d\udd12 Is het echt discreet? Komt iemand erachter?","Discretie is de kern van VelvetMeet. Neutrale factuurnaam, geen posts op social, geen mails op rare tijden. Jij beslist wat openbaar is."],
+      ["Is aanmelden echt gratis?","Ja \u2014 profiel maken en vrouwen bekijken is volledig gratis. Geen creditcard nodig."],
+      ["Zijn de vrouwen echt?","Elk vrouwelijk profiel passeert handmatige foto- en ID-verificatie. Nep wordt dagelijks verwijderd."],
+      ["Zie ik vrouwen van mijn leeftijd?","Ja \u2014 we matchen eerst op leeftijdscategorie. 55+ ziet volwassen vrouwen, geen 20-jarigen."],
+      ["Kan ik altijd opzeggen?","Ja. Verwijder je account in twee klikken. We bewaren niets."]
+    ],
+    finalTitle:"{name} was 4 minuten geleden online.",
+    finalSub:"Net als 47 anderen in de buurt. Gratis. Volledige discretie.",
+    finalCta:"Gratis aanmelden \u2192",
+    exitTitle:"Wacht \u2014 {name} is online",
+    exitSub:"Ze kwam 4 minuten geleden online en woont op 6 km van jou.",
+    exitCta:"Bekijk haar profiel \u2192", exitNo:"Misschien later",
+    footerDesc:"Een discrete manier om echte vrouwen dichtbij te ontmoeten \u2014 geen swipen, geen gedoe.",
+    fCompany:"Bedrijf", fAbout:"Over ons", fSafety:"Veiligheid", fContact:"Contact",
+    fLegal:"Juridisch", fPrivacy:"Privacy", fTerms:"Voorwaarden", fCookie:"Cookies", fImprint:"Colofon",
+    fSupport:"Support", fHelp:"Help", fGuidelines:"Richtlijnen", fReport:"Melden",
+    legalCopy:"\u00a9 2026 VelvetMeet. Alleen 18+.",
+    legalTag:"Discreet \u00b7 Geverifieerd \u00b7 Made in Europe",
+    cookieMsg:"We gebruiken alleen essenti\u00eble cookies.",
+    cookieLearn:"Meer info", cookieOk:"Begrepen",
+    cityFallback:"jouw stad",
+    countryName:"Nederland"
+  }
+};
+
+var COUNTRY_LANG = {
+  DE:"de", AT:"de", CH:"de", LI:"de", LU:"de",
+  PL:"pl",
+  FR:"fr", BE:"fr", MC:"fr",
+  IT:"it", SM:"it", VA:"it",
+  NL:"nl",
+  GB:"en", IE:"en", US:"en", CA:"en", AU:"en", NZ:"en"
+};
+
+var LOCAL_CITIES = {
+  en:["London","Manchester","Birmingham","Edinburgh","Glasgow","Liverpool","Leeds","Bristol"],
+  de:["Berlin","M\u00fcnchen","Hamburg","K\u00f6ln","Frankfurt","Stuttgart","D\u00fcsseldorf","Leipzig"],
+  pl:["Warszawa","Krak\u00f3w","Wroc\u0142aw","Pozna\u0144","Gda\u0144sk","\u0141\u00f3d\u017a","Katowice","Szczecin"],
+  fr:["Paris","Lyon","Marseille","Bordeaux","Toulouse","Nice","Nantes","Strasbourg"],
+  it:["Milano","Roma","Napoli","Torino","Bologna","Firenze","Verona","Genova"],
+  nl:["Amsterdam","Rotterdam","Utrecht","Den Haag","Eindhoven","Groningen","Tilburg","Breda"]
+};
+
+var NAME_POOL = {
+  en:["Anna","Sarah","Emily","Claire","Helen","Jane","Rachel","Susan","Karen","Linda","Margaret","Catherine","Patricia","Elizabeth","Barbara"],
+  de:["Anna","Eva","Petra","Heike","Sabine","Birgit","Claudia","Monika","Susanne","Andrea","Ute","Gabi","Ingrid","Karin","Beate"],
+  pl:["Anna","Ewa","Magda","Iwona","Beata","Joanna","Ma\u0142gorzata","Katarzyna","Agnieszka","Barbara","Halina","Bo\u017cena","Jolanta","Krystyna","Teresa"],
+  fr:["Marie","Sophie","Claire","Camille","Isabelle","Sylvie","Nathalie","Catherine","Brigitte","Martine","Chantal","Fran\u00e7oise","V\u00e9ronique","Pascale","Christine"],
+  it:["Sofia","Giulia","Chiara","Laura","Elena","Francesca","Antonella","Cristina","Patrizia","Roberta","Daniela","Paola","Silvia","Manuela","Stefania"],
+  nl:["Anna","Sanne","Linda","Eva","Marije","Petra","Saskia","Astrid","Wilma","Brigitte","Ineke","Margriet","Yvonne","Carolien","Annemarie"]
+};
+
+var TESTIMONIAL_NAMES = {
+  en:[["Martin K.",52],["Thomas R.",58],["David L.",47]],
+  de:[["Martin K.",52],["Thomas R.",58],["Andreas F.",47]],
+  pl:[["Marek K.",52],["Tomasz R.",58],["Piotr L.",47]],
+  fr:[["Philippe D.",52],["Jean-Marc R.",58],["Bruno L.",47]],
+  it:[["Marco T.",52],["Giuseppe R.",58],["Andrea F.",47]],
+  nl:[["Mark V.",52],["Thomas B.",58],["Jeroen K.",47]]
+};
+
+</script>
+<script>
+// Rendering-only crop: original bytes and SHA-256 identity never change.
+const VM_CROP = (()=>{
+  const modes=['portrait','square','avatar'];
+  const fallback=()=>({x:0.5,y:0.25,zoom:1});
+  const clamp=(v,lo,hi)=>Math.min(hi,Math.max(lo,v));
+  function norm(c){c=c||{};return {x:Number.isFinite(c.x)?clamp(c.x,0,1):0.5,y:Number.isFinite(c.y)?clamp(c.y,0,1):0.25,zoom:Number.isFinite(c.zoom)?clamp(c.zoom,1,3):1}}
+  function defaults(){return Object.fromEntries(modes.map(k=>[k,fallback()]))}
+  function get(p,mode){return norm(p&&p.crops&&p.crops[mode])}
+  function valid(crops){return crops===undefined||(crops&&typeof crops==='object'&&modes.every(k=>{let c=crops[k];return c&&Number.isFinite(c.x)&&c.x>=0&&c.x<=1&&Number.isFinite(c.y)&&c.y>=0&&c.y<=1&&Number.isFinite(c.zoom)&&c.zoom>=1&&c.zoom<=3}))}
+  function geometry(iw,ih,w,h,c){c=norm(c);const scale=Math.max(w/iw,h/ih)*c.zoom;const rw=iw*scale,rh=ih*scale;return {width:rw,height:rh,left:-(rw-w)*c.x,top:-(rh-h)*c.y,overflowX:Math.max(0,rw-w),overflowY:Math.max(0,rh-h)}}
+  function attach(img,crop){
+    const parent=img.parentElement;if(!parent)return null;
+    if(img._vmCrop){img._vmCrop.update(crop);return img._vmCrop}
+    let current=norm(crop);parent.classList.add('vm-crop-surface');
+    if(getComputedStyle(parent).position==='static')parent.style.position='relative';
+    img.style.setProperty('position','absolute');img.style.setProperty('max-width','none');img.style.setProperty('max-height','none');img.style.setProperty('aspect-ratio','auto');img.style.setProperty('object-fit','fill');img.style.setProperty('transform','none');img.style.setProperty('user-select','none');img.draggable=false;
+    function paint(){if(!img.naturalWidth||!img.naturalHeight||!parent.clientWidth||!parent.clientHeight)return;const g=geometry(img.naturalWidth,img.naturalHeight,parent.clientWidth,parent.clientHeight,current);Object.assign(img.style,{width:g.width+'px',height:g.height+'px',left:g.left+'px',top:g.top+'px'});}
+    const observer=new ResizeObserver(paint);observer.observe(parent);img.addEventListener('load',paint);
+    const state={update(c){current=norm(c);paint()},destroy(){observer.disconnect();img.removeEventListener('load',paint);delete img._vmCrop},geometry(){return geometry(img.naturalWidth,img.naturalHeight,parent.clientWidth,parent.clientHeight,current)}};
+    img._vmCrop=state;paint();return state;
+  }
+  return {modes,defaults,norm,get,valid,geometry,attach};
+})();
+
+</script>
+<script src="assets/profiles.js"></script>
+
+<script>
+(function(){
+  "use strict";
+  function safeGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+  function safeSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+  function safeSessGet(k){try{return sessionStorage.getItem(k)}catch(e){return null}}
+  function safeSessSet(k,v){try{sessionStorage.setItem(k,v)}catch(e){}}
+  function setText(id,v){var el=document.getElementById(id);if(el&&v!=null)el.textContent=v}
+  function setSrc(id,v){var el=document.getElementById(id);if(el&&v)el.src=v}
+  function setHref(id,v){var el=document.getElementById(id);if(el&&v)el.href=v}
+  function rnd(min,max){return Math.floor(Math.random()*(max-min+1))+min}
+  function shuffle(arr){var a=arr.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a}
+  function pickN(arr,n){if(!arr||!arr.length)return [];return shuffle(arr).slice(0,Math.min(n,arr.length))}
+  function tpl(s,vars){if(!s)return "";return s.replace(/\{(\w+)\}/g,function(_,k){return vars[k]!=null?vars[k]:""})}
+  function pad2(n){return n<10?"0"+n:""+n}
+
+  function stableHash(s){var h=2166136261;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
+  function detectGeo(){
+    var q;try{q=new URLSearchParams(location.search).get('geo')}catch(e){}
+    var meta=document.querySelector('meta[name="vm-country"]');
+    var candidates=[q,window.__VM_COUNTRY,meta&&meta.content];
+    for(var i=0;i<candidates.length;i++){var cc=String(candidates[i]||'').trim().toUpperCase();if(/^[A-Z]{2}$/.test(cc)&&COUNTRY_LANG[cc])return cc;}
+    return 'DEFAULT';
+  }
+  var currentGeo=detectGeo();
+  function profileName(p){var names=p.names||{};return names[currentGeo]||names[COUNTRY_LANG[currentGeo]||'en']||names.en||p.name||'Profile';}
+  function mediaSource(p,mode){var key=mode==="portrait"?"hero":mode==="square"?"card":"avatar";return p.images&&p.images[key]||p.photo;}
+  function setProfileMedia(img,p,mode,deferred){
+    if(!img)return;img.decoding="async";img.alt=profileName(p)+", "+p.age;img.dataset.profileId=p.id;
+    var source=mediaSource(p,mode);
+    if(deferred){img.removeAttribute("src");img.dataset.deferredSrc=source;img.loading="eager";}else{img.loading=mode==="square"?"lazy":"eager";img.src=source;}
+    VM_CROP.attach(img,VM_CROP.get(p,mode));
+  }
+  function loadDeferredMedia(parent){parent.querySelectorAll("img[data-deferred-src]").forEach(function(img){img.src=img.dataset.deferredSrc;delete img.dataset.deferredSrc;});}
+
+  function getCatalogue(){
+    var raw=window.VM_PROFILES;
+    if(!Array.isArray(raw)){ // Preview only; these identities are illustrative, not real member records.
+      var seen={};raw=[];
+      FALLBACK_CARDS.concat(FALLBACK_HERO).forEach(function(photo){var key=photo.split('?')[0];if(seen[key])return;seen[key]=true;var names={};Object.keys(NAME_POOL).forEach(function(lang){names[lang]=NAME_POOL[lang][stableHash(key+lang)%NAME_POOL[lang].length]});raw.push({id:key,photo:photo,age:37+(raw.length%14),names:names,demo:true})});
+    }
+    var seenId={},seenPhoto={};
+    return raw.filter(function(p){
+      if(!p||typeof p.id!=='string'||typeof p.photo!=='string'||!Number.isInteger(p.age)||p.age<37||p.age>50||seenId[p.id]||seenPhoto[p.photo]||!profileName(p))return false;
+      seenId[p.id]=true;seenPhoto[p.photo]=true;return true;
+    }).map(function(p){return Object.assign({},p,{distance:2+stableHash(p.id+'distance')%17,activeMinutes:rnd(1,15)})});
+  }
+  function chooseDeck(){
+    var all=getCatalogue(),previous=[];
+    try{previous=JSON.parse(safeSessGet('vm_previous_'+currentGeo)||'[]')}catch(e){}
+    // Maximum bipartite matching (age <-> name): every selected age and name is unique.
+    // One identity can only belong to one age, so photos are unique as well.
+    function match(candidates){
+      var groups={};shuffle(candidates).forEach(function(p){(groups[p.age]||(groups[p.age]=[])).push(p)});
+      var byName={};
+      function augment(age,visited){
+        var list=groups[age]||[];
+        for(var i=0;i<list.length;i++){
+          var p=list[i],key=profileName(p).normalize('NFKC').trim().toLocaleLowerCase();
+          if(visited[key])continue;visited[key]=true;
+          if(!byName[key]||augment(byName[key].age,visited)){byName[key]=p;return true;}
+        }
+        return false;
+      }
+      shuffle(Object.keys(groups)).forEach(function(age){augment(age,{})});
+      return shuffle(Object.keys(byName).map(function(key){return byName[key]}));
+    }
+    var fresh=all.filter(function(p){return previous.indexOf(p.id)<0}),deck=match(fresh);
+    if(deck.length<Math.min(14,all.length))deck=match(all);
+    deck=deck.slice(0,14);
+    safeSessSet('vm_previous_'+currentGeo,JSON.stringify(deck.map(function(p){return p.id})));
+    return deck;
+  }
+
+  function pickLang(){
+    try{var q=new URLSearchParams(location.search).get("lang");if(q&&I18N[q.toLowerCase()])return q.toLowerCase()}catch(e){}
+    var cc=currentGeo;
+    if(!cc){var m=document.querySelector('meta[name="vm-country"]');if(m)cc=(m.content||"").toUpperCase()}
+    if(cc&&COUNTRY_LANG[cc])return COUNTRY_LANG[cc];
+    var s=safeGet("vm_lang");if(s&&I18N[s])return s;
+    var nav=(navigator.language||"en").slice(0,2).toLowerCase();
+    if(I18N[nav])return nav;
+    return "en";
+  }
+
+  var deck=chooseDeck();
+  var heroProfiles=deck.slice(0,3), activityProfiles=deck.slice(3,9), exitProfile=deck[9]||null, resultProfiles=deck.slice(10,14);
+  var currentLang="en";
+  var currentCity="";
+  var currentName="";
+  var heroPhotoUrl="";
+  var selectedAge=null;
+  var currentQuizStep=1;
+  var ACTION_COPY={
+    en:{find:'See profiles →',continue:'Continue →',nav:'Profile navigation',featured:'Featured profiles',card:'Continue to matching — {name}, {age}'},
+    de:{find:'Profile ansehen →',continue:'Weiter →',nav:'Profilnavigation',featured:'Ausgewählte Profile',card:'Weiter zur Auswahl — {name}, {age}'},
+    pl:{find:'Zobacz profile →',continue:'Dalej →',nav:'Nawigacja profili',featured:'Wybrane profile',card:'Przejdź do dopasowań — {name}, {age}'},
+    fr:{find:'Voir les profils →',continue:'Continuer →',nav:'Navigation des profils',featured:'Profils sélectionnés',card:'Continuer vers les profils — {name}, {age}'},
+    it:{find:'Vedi i profili →',continue:'Continua →',nav:'Navigazione dei profili',featured:'Profili selezionati',card:'Continua agli abbinamenti — {name}, {age}'},
+    nl:{find:'Bekijk profielen →',continue:'Verder →',nav:'Profielnavigatie',featured:'Uitgelichte profielen',card:'Ga verder naar de matches — {name}, {age}'}
+  };
+  function cardActionLabel(p){var copy=ACTION_COPY[currentLang]||ACTION_COPY.en;return tpl(copy.card,{name:profileName(p),age:p.age})}
+  function updateStickyCta(){
+    var link=document.getElementById('stickyCtaText'),bar=document.getElementById('mobileActionBar');if(!link||!bar)return;
+    var copy=ACTION_COPY[currentLang]||ACTION_COPY.en,d=I18N[currentLang]||I18N.en;
+    bar.setAttribute('aria-label',copy.nav);link.removeAttribute('aria-busy');link.removeAttribute('aria-disabled');link.tabIndex=0;
+    if(currentQuizStep===3){link.textContent=d.loadingTitle;link.removeAttribute('href');link.setAttribute('aria-disabled','true');link.setAttribute('aria-busy','true');link.tabIndex=-1;}
+    else if(currentQuizStep===4){var final=document.getElementById('finalCta');link.textContent=d.qDoneCta;link.href=final&&final.getAttribute('href')||'#quiz';}
+    else{link.textContent=currentQuizStep===2?copy.continue:copy.find;link.setAttribute('href','#quiz');}
+    scheduleDockLayout();
+  }
+  function scrollToCurrentQuiz(){
+    var box=document.getElementById('quizBox');if(!box)return;
+    box.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+    var heading=box.querySelector('.quiz-step:not([hidden]) h3');
+    if(!heading)heading=box.querySelector('#step'+currentQuizStep+' h3');
+    if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}
+  }
+  var dockFrame=0;
+  function scheduleDockLayout(){if(dockFrame)return;dockFrame=requestAnimationFrame(function(){dockFrame=0;syncDockLayout()})}
+  function syncDockLayout(){
+    var root=document.documentElement,bar=document.getElementById('mobileActionBar'),cookie=document.getElementById('cookieBanner'),header=document.querySelector('.site-header');
+    if(header)root.style.setProperty('--site-header-height',Math.ceil(header.getBoundingClientRect().height)+'px');
+    if(bar)root.style.setProperty('--mobile-cta-height',Math.ceil(bar.getBoundingClientRect().height)+'px');
+    var height=cookie&&!cookie.classList.contains('hidden')?Math.ceil(cookie.getBoundingClientRect().height)+12:0;
+    root.style.setProperty('--mobile-cookie-height',height+'px');
+  }
+  function setExitUi(open){
+    document.body.classList.toggle('vm-modal-open',open);document.documentElement.classList.toggle('vm-modal-open',open);
+    document.querySelectorAll('.site-header,main,footer,#mobileActionBar').forEach(function(el){el.inert=open});
+    var bar=document.getElementById('mobileActionBar');if(bar)bar.setAttribute('aria-hidden',String(open));
+    scheduleDockLayout();
+  }
+  function initDockLayout(){
+    var targets=[document.getElementById('mobileActionBar'),document.querySelector('.site-header')].filter(Boolean);
+    if(window.ResizeObserver){var observer=new ResizeObserver(scheduleDockLayout);targets.forEach(function(el){observer.observe(el)})}
+    window.addEventListener('resize',scheduleDockLayout,{passive:true});
+    if(window.visualViewport)window.visualViewport.addEventListener('resize',scheduleDockLayout,{passive:true});
+    scheduleDockLayout();
+  }
+
+
+  function setHeroine(lang){
+    currentName=exitProfile?profileName(exitProfile):"";
+    heroPhotoUrl=exitProfile?exitProfile.photo:"";
+    var cities=LOCAL_CITIES[COUNTRY_LANG[currentGeo]||"en"]||LOCAL_CITIES.en;
+    currentCity=cities[stableHash(currentGeo)%cities.length];
+  }
+
+  function applyHeroBlock(d){
+    try{
+      var km=exitProfile?exitProfile.distance:6;
+      var eb=exitProfile?tpl(d.eyebrowGeo,{name:currentName,km:km,city:currentCity}):d.eyebrowDefault;
+      setText("eyebrowText",eb);
+      setText("h1MainText",d.h1Geo);
+      setText("subText",d.sub);
+      setText("ctaFindBtn",d.ctaFind);
+      setText("ctaHowBtn",d.ctaHow);
+      setText("mFreeText",d.mFree);
+      setText("m30Text",d.m30);
+      setText("mNoCardText",d.mNoCard);
+      setText("badgeOnlineText",d.badgeOnline);
+      setText("badgeVerifiedText",d.badgeVerified);
+      var featured=document.querySelector(".hero-visual");if(featured)featured.setAttribute("aria-label",(ACTION_COPY[currentLang]||ACTION_COPY.en).featured);
+      for(var hi=0;hi<3;hi++){
+        var image=document.getElementById("heroPic"+(hi+1));
+        if(!image)continue;
+        image.parentNode.hidden=!heroProfiles[hi];
+        if(heroProfiles[hi]){image.fetchPriority=hi===0?"high":"auto";setProfileMedia(image,heroProfiles[hi],"portrait",false);image.parentNode.setAttribute("aria-label",cardActionLabel(heroProfiles[hi]));}
+      }
+    }catch(e){}
+  }
+
+  function applySocialBar(d){
+    try{
+      var n=rnd(7200,9400);
+      var country=d.countryName||"";
+      var s=tpl(d.socialBar||"{n} men",{n:n.toLocaleString(),country:country});
+      if(country) s=s+(s.indexOf(country)>=0?"":" — "+country);
+      setText("socialBarText",s);
+    }catch(e){}
+  }
+
+  function applyActivityStrip(d,lang){
+    try{
+      setText("activityTitleText",d.activityTitle);
+      setText("activityCtaText",d.activityCta);
+      var strip=document.getElementById("activityStrip");
+      if(!strip)return;
+      strip.querySelectorAll("img").forEach(function(img){if(img._vmCrop)img._vmCrop.destroy()});strip.innerHTML="";
+      for(var i=0;i<activityProfiles.length;i++){
+        var profile=activityProfiles[i];
+        var card=document.createElement("a");card.href="#quiz";card.setAttribute("aria-label",cardActionLabel(profile));
+        card.className="activity-card";
+        var pic=document.createElement("div");
+        pic.className="activity-pic";
+        var img=document.createElement("img");
+        img.loading="lazy";img.decoding="async";img.src=mediaSource(profile,"square");
+        img.alt=profileName(profile)+", "+profile.age;
+        img.dataset.profileId=profile.id;
+        pic.appendChild(img);VM_CROP.attach(img,VM_CROP.get(profile,"square"));
+        var dot=document.createElement("span");
+        dot.className="activity-online";
+        pic.appendChild(dot);
+        var dist=document.createElement("span");
+        dist.className="activity-distance";
+        dist.textContent=profile.distance+" "+(d.kmShort||"km");
+        pic.appendChild(dist);
+        var name=document.createElement("div");
+        name.className="activity-name";
+        name.textContent=profileName(profile)+", "+profile.age;
+        var time=document.createElement("div");
+        time.className="activity-time";
+        time.textContent=activityTime(profile);
+        card.appendChild(pic);
+        card.appendChild(name);
+        card.appendChild(time);
+        strip.appendChild(card);
+      }
+    }catch(e){}
+  }
+
+  function applyQuiz(d){
+    try{
+      setText("quizEyebrowText",d.quizEyebrow);
+      setText("quizTitleText",d.quizTitle);
+      setText("quizSubText",d.quizSub);
+      setText("quizSkipBtn",d.quizSkip);
+      setText("q1tText",d.q1t);setText("q1sText",d.q1s);
+      setText("q2tText",d.q2t);setText("q2sText",d.q2s);
+      setText("loadingTitleText",d.loadingTitle);
+      setText("loadingStep1Text",d.loadingStep1);
+      setText("loadingStep2Text",d.loadingStep2);
+      setText("loadingStep3Text",d.loadingStep3);
+      setText("quizBackText",d.qBack);
+      setText("qLegalText",d.qLegal);
+      setText("qTermsLink",d.qTerms);
+      setText("qAndText",d.qAnd);
+      setText("qPrivacyLink",d.qPrivacy);
+      var stepEls=document.querySelectorAll("[data-step]");
+      for(var s=0;s<stepEls.length;s++){var el=stepEls[s];var n=el.getAttribute("data-step");el.textContent=tpl(d.qStepOf||"Step {n} of 2",{n:n})}
+      var box1=document.querySelector('[data-opts="q1o"]');
+      if(box1){box1.innerHTML="";var arr1=d.q1o||[];for(var i=0;i<arr1.length;i++){var b=document.createElement("button");b.className="quiz-opt";b.textContent=arr1[i];(function(v){b.addEventListener("click",function(){selectedAge=v;show(2)})})(arr1[i]);box1.appendChild(b)}}
+      var box2=document.querySelector('[data-opts="q2o"]');
+      if(box2){box2.innerHTML="";var arr2=d.q2o||[];for(var j=0;j<arr2.length;j++){var b2=document.createElement("button");b2.className="quiz-opt";b2.textContent=arr2[j];b2.addEventListener("click",function(){show(3);setTimeout(showResult,2600)});box2.appendChild(b2)}}
+    }catch(e){}
+  }
+
+  function applySections(d,lang){
+    try{
+      setText("howEyebrowText",d.howEyebrow);setText("howTitleText",d.howTitle);setText("howSubText",d.howSub);
+      setText("step1tText",d.step1t);setText("step1dText",d.step1d);
+      setText("step2tText",d.step2t);setText("step2dText",d.step2d);
+      setText("step3tText",d.step3t);setText("step3dText",d.step3d);
+      setText("whyEyebrowText",d.whyEyebrow);setText("whyTitleText",d.whyTitle);setText("whySubText",d.whySub);
+      setText("f1tText",d.f1t);setText("f1dText",d.f1d);
+      setText("f2tText",d.f2t);setText("f2dText",d.f2d);
+      setText("f3tText",d.f3t);setText("f3dText",d.f3d);
+      setText("tEyebrowText",d.tEyebrow);setText("tTitleText",d.tTitle);
+      setText("t1Text","“"+d.t1+"”");setText("t2Text","“"+d.t2+"”");setText("t3Text","“"+d.t3+"”");
+      setText("tActorNoteText",d.tActorNote);
+      var tn=TESTIMONIAL_NAMES[lang]||TESTIMONIAL_NAMES.en;
+      var initials=function(s){var p=s.split(" ");return (p[0]?p[0][0]:"")+(p[1]?p[1][0]:"")};
+      setText("who1Name",tn[0][0]+", "+tn[0][1]);setText("avatar1",initials(tn[0][0]));
+      setText("who2Name",tn[1][0]+", "+tn[1][1]);setText("avatar2",initials(tn[1][0]));
+      setText("who3Name",tn[2][0]+", "+tn[2][1]);setText("avatar3",initials(tn[2][0]));
+      var cities=LOCAL_CITIES[lang]||LOCAL_CITIES.en;
+      var locEls=document.querySelectorAll("[data-tloc]");
+      for(var k=0;k<locEls.length;k++){locEls[k].textContent=cities[k%cities.length]}
+      setText("faqEyebrowText",d.faqEyebrow);setText("faqTitleText",d.faqTitle);
+      var faq=document.getElementById("faqList");
+      if(faq){faq.innerHTML="";var arr=d.faq||[];for(var f=0;f<arr.length;f++){var det=document.createElement("details");if(f===0)det.open=true;var sum=document.createElement("summary");sum.textContent=arr[f][0];var p=document.createElement("p");p.textContent=arr[f][1];det.appendChild(sum);det.appendChild(p);faq.appendChild(det)}}
+    }catch(e){}
+  }
+
+  var ACTIVITY_COPY={
+    en:{ago:'{n} min ago',demo:'Illustrative profile · activity is simulated, not live data.',heading:'Profile previews · demo activity',preview:'Profile preview',badge:'Illustrative',title:'{name} · {time}'},
+    de:{ago:'vor {n} Min.',demo:'Beispielprofil · simulierte Aktivität, keine Live-Daten.',heading:'Profilvorschau · Beispielaktivität',preview:'Profilvorschau',badge:'Beispiel',title:'{name} · {time}'},
+    pl:{ago:'{n} min temu',demo:'Profil przykładowy · aktywność symulowana, nie dane na żywo.',heading:'Podgląd profili · przykładowa aktywność',preview:'Podgląd profilu',badge:'Przykład',title:'{name} · {time}'},
+    fr:{ago:'il y a {n} min',demo:'Profil illustratif · activité simulée, pas de données en direct.',heading:'Aperçus des profils · activité simulée',preview:'Aperçu du profil',badge:'Illustration',title:'{name} · {time}'},
+    it:{ago:'{n} min fa',demo:'Profilo illustrativo · attività simulata, non dati in tempo reale.',heading:'Anteprime dei profili · attività simulata',preview:'Anteprima profilo',badge:'Esempio',title:'{name} · {time}'},
+    nl:{ago:'{n} min geleden',demo:'Voorbeeldprofiel · gesimuleerde activiteit, geen livegegevens.',heading:'Profielvoorbeelden · demoactiviteit',preview:'Profielvoorbeeld',badge:'Voorbeeld',title:'{name} · {time}'}
+  };
+  function activityTime(p){return tpl((ACTIVITY_COPY[currentLang]||ACTIVITY_COPY.en).ago,{n:p?p.activeMinutes:1})}
+  function applyActivityCopy(){var c=ACTIVITY_COPY[currentLang]||ACTIVITY_COPY.en;
+    setText('activityTitleText',c.heading);setText('badgeOnlineText',c.preview);setText('badgeVerifiedText',c.badge);
+    if(exitProfile){setText('finalTitleText',tpl(c.title,{name:currentName,time:activityTime(exitProfile)}));setText('finalSubText',c.demo);setText('exitTitleText',currentName+' · '+c.preview);setText('exitSubText',activityTime(exitProfile)+'. '+c.demo)}
+  }
+
+  function applyFinalAndExit(d){
+    try{
+      setText("finalTitleText",tpl(d.finalTitle,{name:currentName}));
+      setText("finalSubText",d.finalSub);setText("finalCtaBtn",d.finalCta);
+      setText("exitTitleText",tpl(d.exitTitle,{name:currentName}));
+      setText("exitSubText",d.exitSub);setText("exitCtaBtn",d.exitCta);setText("exitNoBtn",d.exitNo);
+      if(exitProfile){setProfileMedia(document.getElementById("exitPic"),exitProfile,"avatar",true);}
+      if(!exitProfile){setText("finalTitleText",d.eyebrowDefault);}
+    }catch(e){}
+  }
+
+  function applyFooter(d){
+    try{
+      setText("footerDescText",d.footerDesc);
+      setText("fCompanyText",d.fCompany);setText("fAboutText",d.fAbout);setText("fSafetyText",d.fSafety);setText("fContactText",d.fContact);
+      setText("fLegalText",d.fLegal);setText("fPrivacyText",d.fPrivacy);setText("fTermsText",d.fTerms);setText("fCookieText",d.fCookie);setText("fImprintText",d.fImprint);
+      setText("fSupportText",d.fSupport);setText("fHelpText",d.fHelp);setText("fGuidelinesText",d.fGuidelines);setText("fReportText",d.fReport);
+      setText("legalCopyText",d.legalCopy);setText("legalTagText",d.legalTag);
+      setText("cookieMsgText",d.cookieMsg);setText("cookieLearnText",d.cookieLearn);
+      var ck=document.getElementById("cookieOk");if(ck&&d.cookieOk)ck.textContent=d.cookieOk;
+    }catch(e){}
+  }
+
+  function applyAffiliateLinks(){
+    try{var configured=window.VM_SITE_CONFIG&&window.VM_SITE_CONFIG.affiliateLink;var target=configured||AFFILIATE_LINK;var parsed=new URL(target);if(parsed.protocol!=="https:"&&parsed.protocol!=="http:")return;setHref("finalCta",target);setHref("exitCtaBtn",target)}catch(e){}
+  }
+
+  function applyLang(lang){
+    currentLang=lang;
+    var d=I18N[lang]||I18N.en;
+    try{document.getElementById("htmlRoot").lang=d.htmlLang}catch(e){}
+    setText("docTitle",d.title);
+    try{var meta=document.getElementById("metaDesc");if(meta)meta.content=d.metaDesc}catch(e){}
+    setHeroine(lang);
+    applyHeroBlock(d);
+    applySocialBar(d);
+    applyActivityStrip(d,lang);
+    applyQuiz(d);
+    applySections(d,lang);
+    applyFinalAndExit(d);
+    applyFooter(d);applyActivityCopy();
+    applyAffiliateLinks();
+    try{document.getElementById("langSelect").value=lang}catch(e){}
+    safeSet("vm_lang",lang);updateStickyCta();
+  }
+
+  function show(n){
+    currentQuizStep=n;
+    var steps=[1,2,3,4];
+    for(var i=0;i<steps.length;i++){var el=document.getElementById("step"+steps[i]);if(el)el.hidden=(steps[i]!==n)}
+    var bars=document.querySelectorAll(".quiz-progress span");
+    for(var j=0;j<bars.length;j++){if(j<Math.min(n,2))bars[j].className="done";else bars[j].className=""}
+    try{scrollToCurrentQuiz()}catch(e){}
+    updateStickyCta();
+    if(n===3){try{var fill=document.querySelector(".loading-bar-fill");if(fill){fill.style.animation="none";void fill.offsetWidth;fill.style.animation=""}}catch(e){}}
+  }
+
+  function showResult(){
+    try{
+      var d=I18N[currentLang]||I18N.en;
+      var young=selectedAge&&(selectedAge.indexOf("18")===0||selectedAge.indexOf("25")===0);
+      var n=rnd(34,68);
+      var titleTpl=young?d.qDoneYoung:d.qDoneMature;
+      setText("resultTitleText",tpl(titleTpl,{n:n,city:currentCity}));
+      setText("resultSubText",d.qDoneSub);
+      setText("finalCta",d.qDoneCta);
+      var faces=document.getElementById("resultFaces");
+      if(faces){
+        faces.querySelectorAll("img").forEach(function(img){if(img._vmCrop)img._vmCrop.destroy()});faces.innerHTML="";
+        for(var i=0;i<resultProfiles.length;i++){var profile=resultProfiles[i];var f=document.createElement("div");f.className="face";var im=document.createElement("img");im.decoding="async";im.src=mediaSource(profile,"avatar");im.alt=profileName(profile)+", "+profile.age;im.dataset.profileId=profile.id;f.appendChild(im);faces.appendChild(f);VM_CROP.attach(im,VM_CROP.get(profile,"avatar"))}
+        var more=document.createElement("div");more.className="face face-more";more.textContent="+"+(n-4);faces.appendChild(more);
+      }
+      show(4);
+    }catch(e){show(4)}
+  }
+
+  document.body.addEventListener("click",function(e){
+    try{
+      var t=e.target;
+      while(t&&t!==document.body){
+        if(t.className&&t.className.indexOf&&t.className.indexOf("quiz-back")>=0){show(parseInt(t.getAttribute("data-back")||"1",10));return}
+        if(t.id==="quizSkipBtn"){selectedAge=null;show(3);setTimeout(showResult,2600);return}
+        if(t.tagName==="A"&&t.getAttribute("href")&&t.getAttribute("href").charAt(0)==="#"){
+          var id=t.getAttribute("href");
+          if(id==="#quiz"){e.preventDefault();scrollToCurrentQuiz();return}
+          if(id.length>1){var tg=document.querySelector(id);if(tg){e.preventDefault();tg.scrollIntoView({behavior:"smooth",block:"start"});return}}
+        }
+        t=t.parentNode;
+      }
+    }catch(err){}
+  });
+
+  try{document.getElementById("langSelect").addEventListener("change",function(e){applyLang(e.target.value)})}catch(e){}
+
+  var lastFocus=null;
+  function closeExit(){document.getElementById("exitModal").className="modal-bg";setExitUi(false);if(lastFocus&&lastFocus.focus)lastFocus.focus({preventScroll:true});}
+  document.addEventListener("keydown",function(e){
+    var modal=document.getElementById("exitModal");if(!modal.classList.contains("show"))return;
+    if(e.key==="Escape"){closeExit();return;}
+    if(e.key==="Tab"){var controls=Array.prototype.slice.call(modal.querySelectorAll("button,a[href]"));var first=controls[0],last=controls[controls.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}
+  });
+  var exitShown=false;
+  function showExitModal(){
+    if(!exitProfile||exitShown)return;
+    if(safeSessGet("vm_exit"))return;
+    try{
+      var quiz=document.getElementById("step4");
+      if(quiz&&!quiz.hidden)return;
+      var qBox=document.getElementById("quiz");
+      if(qBox){var rect=qBox.getBoundingClientRect();if(rect.top<0&&rect.bottom>window.innerHeight*0.5)return}
+    }catch(e){}
+    exitShown=true;
+    safeSessSet("vm_exit","1");
+    try{lastFocus=document.activeElement;loadDeferredMedia(document.getElementById("exitModal"));document.getElementById("exitModal").className="modal-bg show";setExitUi(true);document.getElementById("exitClose").focus()}catch(e){}
+  }
+  try{document.addEventListener("mouseout",function(e){if(!e.relatedTarget&&e.clientY<10)showExitModal()})}catch(e){}
+  try{if(window.innerWidth<880){setTimeout(showExitModal,15000)}}catch(e){}
+  try{document.getElementById("exitClose").addEventListener("click",closeExit)}catch(e){}
+  try{document.getElementById("exitNoBtn").addEventListener("click",closeExit)}catch(e){}
+
+  try{applyLang(pickLang())}catch(e){applyLang("en")}
+  initDockLayout();
+})();
+</script>
+<script>VM_THEME.initGlow(document.body);</script>
+<script>/* Banner-free analytics loader. Loading a tag is not a consent signal. */
+(function(){
+ if(window.VM_ANALYTICS)return;
+ var analytics=(window.VM_SITE_CONFIG||{}).analytics||{},providers=['clarity','google'].filter(function(k){return analytics[k]&&Array.isArray(analytics[k].scripts)&&analytics[k].scripts.length}),started=false;
+ // Respect an unexpired refusal saved by the earlier version of this site.
+ var h=2166136261,source=JSON.stringify(analytics),refused=false;
+ for(var i=0;i<source.length;i++)h=Math.imul(h^source.charCodeAt(i),16777619);
+ try{var previous=JSON.parse(localStorage.getItem('vm_privacy_v1_'+(h>>>0)));refused=!!(previous&&previous.choice==='denied'&&Date.now()-previous.at<180*86400000)}catch(e){}
+ function start(){
+  if(started||!providers.length)return;started=true;
+  providers.forEach(function(kind){analytics[kind].scripts.forEach(function(item){
+   var script=document.createElement('script');script.dataset.vmAnalytics=kind;
+   if(item.src){script.async=item.async!==false;script.src=item.src}else script.textContent=item.code||'';
+   document.head.appendChild(script);
+  })});
+ }
+ // A separately installed CMP can set VM_ANALYTICS_AUTOSTART=false before this script,
+ // and invoke start() only after obtaining valid consent. No consent is invented here.
+ window.VM_ANALYTICS={start:start,enabled:!!providers.length,legacyRefusal:refused};
+ if(window.VM_ANALYTICS_AUTOSTART!==false&&!refused)start();
+})();
+</script>
+</body>
+</html>
