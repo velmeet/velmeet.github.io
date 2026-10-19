@@ -1530,7 +1530,7 @@ const VM_MEDIA=(()=>{
     if(e.key==="Tab"){var controls=Array.prototype.slice.call(modal.querySelectorAll("button,a[href]"));var first=controls[0],last=controls[controls.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}
   });
   var exitShown=false;
-  function showExitModal(){
+  function showExitModal(desktopExit){
     if(!popupProfile||exitShown||document.visibilityState!=='visible')return;
     if(currentQuizStep===3||currentQuizStep===4)return;
     if(safeSessGet("vm_exit"))return;
@@ -1539,13 +1539,13 @@ const VM_MEDIA=(()=>{
       if(quiz&&!quiz.hidden)return;
       var qBox=document.getElementById("quizBox");
       if(qBox){var rect=qBox.getBoundingClientRect(),header=document.querySelector('.site-header'),topEdge=header?header.getBoundingClientRect().bottom:0,bar=document.getElementById('mobileActionBar'),bottomEdge=window.innerHeight;if(bar&&getComputedStyle(bar).display!=='none')bottomEdge=bar.getBoundingClientRect().top;if(rect.height>0&&rect.top<bottomEdge&&rect.bottom>topEdge)return}
-      var focused=document.activeElement;if(focused&&(focused.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(focused.tagName)))return;
+      var focused=document.activeElement;if(focused&&(focused.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(focused.tagName))&&!(desktopExit===true&&focused.tagName==='SELECT'))return;
     }catch(e){}
     exitShown=true;
     safeSessSet("vm_exit","1");
     try{lastFocus=document.activeElement;loadDeferredMedia(document.getElementById("exitModal"));document.getElementById("exitModal").className="modal-bg show";setExitUi(true);document.getElementById("exitClose").focus()}catch(e){}
   }
-  try{document.addEventListener("mouseout",function(e){if(window.innerWidth>880&&!e.relatedTarget&&e.clientY<10)showExitModal()})}catch(e){}
+  try{document.addEventListener("mouseout",function(e){if(window.innerWidth>880&&!e.relatedTarget&&e.clientY<10)showExitModal(true)})}catch(e){}
   // Mobile: count visible-page time only; background tabs never advance the delay.
   var mobileWindowElapsed=0,mobileWindowLast=performance.now(),mobileWindowVisible=document.visibilityState==='visible'&&window.innerWidth<=880;
   function accrueMobileWindowTime(){
