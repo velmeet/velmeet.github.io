@@ -25,8 +25,6 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
 .lang select{border:1px solid #e6e3dd;background:#fff;border-radius:8px;padding:6px 24px 6px 10px;font:inherit;font-size:13px;color:#0f1c2e;cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='%236b7785' d='M0 0l5 6 5-6z'/></svg>");background-repeat:no-repeat;background-position:right 8px center}
 
 /* SOCIAL BAR */
-.bar-social{background:#0f1c2e;color:#fff;padding:9px 16px;text-align:center;font-size:13px;font-weight:500}
-.bar-social .pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:#2d9d5f;-webkit-animation:pulse 2s infinite;animation:pulse 2s infinite;margin-right:8px;vertical-align:middle}
 @-webkit-keyframes pulse{0%{box-shadow:0 0 0 0 rgba(45,157,95,.6)}70%{box-shadow:0 0 0 8px rgba(45,157,95,0)}100%{box-shadow:0 0 0 0 rgba(45,157,95,0)}}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(45,157,95,.6)}70%{box-shadow:0 0 0 8px rgba(45,157,95,0)}100%{box-shadow:0 0 0 0 rgba(45,157,95,0)}}
 
@@ -152,10 +150,10 @@ h2{font-size:32px;line-height:1.2;letter-spacing:-.02em;margin:0 0 12px;font-wei
 
 /* TESTIMONIALS */
 .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.t{background:#fff;border:1px solid #e6e3dd;border-radius:12px;padding:26px}
+.t{background:#fff;border:1px solid #e6e3dd;border-radius:12px;padding:26px;display:flex;flex-direction:column}
 .stars{color:#b8924a;letter-spacing:3px;font-size:14px;margin-bottom:10px}
 .t p{margin:0 0 16px;color:#0f1c2e;font-size:15.5px;line-height:1.55;font-style:italic}
-.t .who{display:flex;align-items:center;gap:10px;padding-top:14px;border-top:1px solid #e6e3dd}
+.t .who{display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:14px;border-top:1px solid #e6e3dd}
 .avatar{width:38px;height:38px;border-radius:50%;background:#eaf1f9;display:flex;align-items:center;justify-content:center;color:#0f2a47;font-weight:700;font-size:13.5px;flex-shrink:0}
 .who div{display:flex;flex-direction:column;min-width:0}
 .who strong{font-size:14.5px;font-weight:600}
@@ -399,8 +397,7 @@ VM_THEME.apply(document.documentElement,(window.VM_SITE_CONFIG||{}).theme);match
 .vm-lang-option:hover,.vm-lang-option:focus-visible{background:var(--vm-raised,#f0efed);outline:2px solid #2783de;outline-offset:-3px}
 </style>
 </head>
-<body>
-<div class="bar-social" id="top"><span class="pulse"></span><span id="socialBarText">8,400 men joined this week</span></div>
+<body id="top">
 <header class="site-header">
   <div class="container nav">
     <a href="#top" class="brand"><span class="brand-mark">V</span> VelvetMeet</a>
@@ -503,9 +500,9 @@ VM_THEME.apply(document.documentElement,(window.VM_SITE_CONFIG||{}).theme);match
   <div class="container">
     <div class="section-head"><div class="section-eyebrow" id="tEyebrowText">What men tell us</div><h2 id="tTitleText">Real men. Real meetings.</h2></div>
     <div class="testimonials">
-      <div class="t"><div class="stars">★★★★★</div><p id="t1Text"></p><div class="who"><div class="avatar" id="avatar1">MK</div><div><strong id="who1Name">Martin K., 52</strong><span data-tloc="1"></span></div></div></div>
-      <div class="t"><div class="stars">★★★★★</div><p id="t2Text"></p><div class="who"><div class="avatar" id="avatar2">TR</div><div><strong id="who2Name">Thomas R., 58</strong><span data-tloc="2"></span></div></div></div>
-      <div class="t"><div class="stars">★★★★★</div><p id="t3Text"></p><div class="who"><div class="avatar" id="avatar3">DL</div><div><strong id="who3Name">David L., 47</strong><span data-tloc="3"></span></div></div></div>
+      <div class="t"><p id="t1Text"></p><div class="who"><div class="avatar" id="avatar1"></div><div><strong id="who1Name"></strong></div></div></div>
+      <div class="t"><p id="t2Text"></p><div class="who"><div class="avatar" id="avatar2"></div><div><strong id="who2Name"></strong></div></div></div>
+      <div class="t"><p id="t3Text"></p><div class="who"><div class="avatar" id="avatar3"></div><div><strong id="who3Name"></strong></div></div></div>
     </div>
   </div>
 </section>
@@ -632,7 +629,6 @@ var I18N = {
     activityCta:"See all matches \u2192",
     activeMin:"{n} min ago",
     kmShort:"km",
-    socialBar:"{n} men joined this week",
     howEyebrow:"How it works", howTitle:"From signup to first message in under a minute",
     howSub:"No long forms. No questionnaires. Just real women, ready to talk.",
     step1t:"Sign up free", step1d:"Just an email and your age. 30 seconds \u2014 no card needed.",
@@ -644,9 +640,6 @@ var I18N = {
     f2t:"Discreet by design", f2d:"Neutral billing. Private browsing. We never share your data. GDPR-compliant.",
     f3t:"No pressure", f3d:"Your pace. Browse, message, meet \u2014 only when you're ready.",
     tEyebrow:"What men tell us", tTitle:"Real men. Real meetings.",
-    t1:"After my divorce I thought dating sites weren't for me. This one's different \u2014 the first woman I wrote to is now a real friend, and more.",
-    t2:"I'm 58. I was tired of apps full of 25-year-olds. Here it's women my age, my city, ready to actually talk.",
-    t3:"No pressure, no fake messages, no endless upsells. I met someone for coffee within a week.",
     faqEyebrow:"Common questions", faqTitle:"What men usually ask",
     faq:[
       ["\ud83d\udd12 Is it really discreet? Will anyone find out?","Discretion is the core of VelvetMeet. Neutral billing line, no posts on social, no emails at odd hours. You choose what's public on your profile."],
@@ -707,7 +700,6 @@ var I18N = {
     activityCta:"Alle Matches sehen \u2192",
     activeMin:"vor {n} Min.",
     kmShort:"km",
-    socialBar:"{n} M\u00e4nner sind diese Woche beigetreten",
     howEyebrow:"So geht's", howTitle:"Von der Anmeldung zur ersten Nachricht in unter einer Minute",
     howSub:"Keine Formulare. Keine Frageb\u00f6gen. Nur echte Frauen, bereit zu reden.",
     step1t:"Kostenlos anmelden", step1d:"Nur E-Mail und Alter. 30 Sekunden \u2014 keine Kreditkarte.",
@@ -719,9 +711,6 @@ var I18N = {
     f2t:"Diskret von Anfang an", f2d:"Neutrale Abrechnung. Privates Browsen. Daten bleiben bei uns. DSGVO-konform.",
     f3t:"Kein Druck", f3d:"Dein Tempo. St\u00f6bern, schreiben, treffen \u2014 wenn du bereit bist.",
     tEyebrow:"Was M\u00e4nner sagen", tTitle:"Echte M\u00e4nner. Echte Treffen.",
-    t1:"Nach meiner Scheidung dachte ich, Dating-Seiten sind nichts f\u00fcr mich. Die hier ist anders \u2014 die erste Frau, der ich schrieb, ist heute eine echte Freundin und mehr.",
-    t2:"Ich bin 58. Hatte genug von Apps voller 25-J\u00e4hriger. Hier sind Frauen in meinem Alter, in meiner Stadt, bereit f\u00fcr ein echtes Gespr\u00e4ch.",
-    t3:"Kein Druck, keine Fake-Nachrichten, kein st\u00e4ndiges Upselling. Innerhalb einer Woche jemanden auf einen Kaffee getroffen.",
     faqEyebrow:"H\u00e4ufige Fragen", faqTitle:"Was M\u00e4nner fragen",
     faq:[
       ["\ud83d\udd12 Ist es wirklich diskret? Erf\u00e4hrt jemand davon?","Diskretion ist der Kern von VelvetMeet. Neutrale Abrechnungsbezeichnung, keine Posts auf Social Media, keine E-Mails zu seltsamen Zeiten. Du entscheidest, was \u00f6ffentlich ist."],
@@ -782,7 +771,6 @@ var I18N = {
     activityCta:"Zobacz wszystkie dopasowania \u2192",
     activeMin:"{n} min temu",
     kmShort:"km",
-    socialBar:"{n} m\u0119\u017cczyzn do\u0142\u0105czy\u0142o w tym tygodniu",
     howEyebrow:"Jak to dzia\u0142a", howTitle:"Od rejestracji do pierwszej wiadomo\u015bci w mniej ni\u017c minut\u0119",
     howSub:"Bez d\u0142ugich formularzy. Bez ankiet. Tylko prawdziwe kobiety, gotowe do rozmowy.",
     step1t:"Za\u0142\u00f3\u017c konto za darmo", step1d:"Tylko e-mail i wiek. 30 sekund \u2014 bez karty.",
@@ -794,9 +782,6 @@ var I18N = {
     f2t:"Dyskretne z za\u0142o\u017cenia", f2d:"Neutralne rozliczenia. Prywatne przegl\u0105danie. Twoje dane zostaj\u0105 u nas. Zgodne z RODO.",
     f3t:"Bez presji", f3d:"Twoje tempo. Przegl\u0105daj, pisz, spotykaj si\u0119 \u2014 gdy b\u0119dziesz gotowy.",
     tEyebrow:"Co m\u00f3wi\u0105 m\u0119\u017cczy\u017ani", tTitle:"Prawdziwi m\u0119\u017cczy\u017ani. Prawdziwe spotkania.",
-    t1:"Po rozwodzie my\u015bla\u0142em, \u017ce portale randkowe nie s\u0105 dla mnie. Ten jest inny \u2014 pierwsza kobieta, do kt\u00f3rej napisa\u0142em, zosta\u0142a prawdziw\u0105 przyjaci\u00f3\u0142k\u0105, i kim\u015b wi\u0119cej.",
-    t2:"Mam 58 lat. Mia\u0142em do\u015b\u0107 aplikacji pe\u0142nych 25-latek. Tu s\u0105 kobiety w moim wieku, w moim mie\u015bcie, gotowe na konkretn\u0105 rozmow\u0119.",
-    t3:"Bez presji, bez fake-wiadomo\u015bci, bez ci\u0105g\u0142ego upsellu. W tydzie\u0144 wypi\u0142em kaw\u0119 z kim\u015b konkretnym.",
     faqEyebrow:"Cz\u0119ste pytania", faqTitle:"O co pytaj\u0105 m\u0119\u017cczy\u017ani",
     faq:[
       ["\ud83d\udd12 Czy to naprawd\u0119 dyskretne? Czy kto\u015b si\u0119 dowie?","Dyskrecja jest sercem VelvetMeet. Neutralna nazwa rozliczeniowa, brak post\u00f3w w social media, brak maili o dziwnych porach. Ty decydujesz, co jest publiczne."],
@@ -857,7 +842,6 @@ var I18N = {
     activityCta:"Voir tous les matchs \u2192",
     activeMin:"il y a {n} min",
     kmShort:"km",
-    socialBar:"{n} hommes inscrits cette semaine",
     howEyebrow:"Comment \u00e7a marche", howTitle:"De l'inscription au premier message en moins d'une minute",
     howSub:"Pas de formulaires. Pas de questionnaires. Que de vraies femmes, pr\u00eates \u00e0 parler.",
     step1t:"Inscris-toi gratuitement", step1d:"Juste un e-mail et ton \u00e2ge. 30 secondes \u2014 sans carte.",
@@ -869,9 +853,6 @@ var I18N = {
     f2t:"Discret par nature", f2d:"Facturation neutre. Navigation priv\u00e9e. On ne partage jamais tes donn\u00e9es. Conforme RGPD.",
     f3t:"Sans pression", f3d:"\u00c0 ton rythme. Parcourir, \u00e9crire, rencontrer \u2014 quand tu es pr\u00eat.",
     tEyebrow:"Ce que disent les hommes", tTitle:"De vrais hommes. De vraies rencontres.",
-    t1:"Apr\u00e8s mon divorce, je pensais en avoir fini avec les sites de rencontres. Celui-ci est diff\u00e9rent \u2014 la premi\u00e8re femme \u00e0 qui j'ai \u00e9crit est devenue une vraie amie, et plus.",
-    t2:"J'ai 58 ans. Marre des applis pleines de filles de 25 ans. Ici, des femmes de mon \u00e2ge, de ma ville, pr\u00eates \u00e0 parler vraiment.",
-    t3:"Pas de pression, pas de faux messages, pas de relances commerciales. J'ai pris un caf\u00e9 avec quelqu'un en une semaine.",
     faqEyebrow:"Questions fr\u00e9quentes", faqTitle:"Ce que les hommes demandent",
     faq:[
       ["\ud83d\udd12 Est-ce vraiment discret ? Quelqu'un peut-il savoir ?","La discr\u00e9tion est au c\u0153ur de VelvetMeet. Nom de facturation neutre, aucun post sur les r\u00e9seaux, aucun e-mail \u00e0 des heures bizarres. Tu d\u00e9cides ce qui est public."],
@@ -932,7 +913,6 @@ var I18N = {
     activityCta:"Vedi tutti i match \u2192",
     activeMin:"{n} min fa",
     kmShort:"km",
-    socialBar:"{n} uomini iscritti questa settimana",
     howEyebrow:"Come funziona", howTitle:"Dall'iscrizione al primo messaggio in meno di un minuto",
     howSub:"Niente moduli. Niente questionari. Solo donne vere, pronte a parlare.",
     step1t:"Iscriviti gratis", step1d:"Solo email ed et\u00e0. 30 secondi \u2014 niente carta.",
@@ -944,9 +924,6 @@ var I18N = {
     f2t:"Discreto per design", f2d:"Fatturazione neutra. Navigazione privata. I tuoi dati restano qui. Conforme GDPR.",
     f3t:"Nessuna pressione", f3d:"Al tuo ritmo. Sfoglia, scrivi, incontra \u2014 quando sei pronto.",
     tEyebrow:"Cosa dicono gli uomini", tTitle:"Veri uomini. Veri incontri.",
-    t1:"Dopo il divorzio pensavo che i siti di incontri non facessero per me. Questo \u00e8 diverso \u2014 la prima donna a cui ho scritto \u00e8 diventata una vera amica, e di pi\u00f9.",
-    t2:"Ho 58 anni. Stufo delle app piene di 25enni. Qui ci sono donne della mia et\u00e0, della mia citt\u00e0, pronte a parlare davvero.",
-    t3:"Niente pressione, niente messaggi finti, niente upsell continui. In una settimana ho preso un caff\u00e8 con qualcuno.",
     faqEyebrow:"Domande frequenti", faqTitle:"Cosa chiedono gli uomini",
     faq:[
       ["\ud83d\udd12 \u00c8 davvero discreto? Lo verr\u00e0 a sapere qualcuno?","La discrezione \u00e8 il cuore di VelvetMeet. Nome di fatturazione neutro, nessun post sui social, nessuna email a orari strani. Decidi tu cosa \u00e8 pubblico."],
@@ -1007,7 +984,6 @@ var I18N = {
     activityCta:"Zie alle matches \u2192",
     activeMin:"{n} min geleden",
     kmShort:"km",
-    socialBar:"{n} mannen aangemeld deze week",
     howEyebrow:"Hoe het werkt", howTitle:"Van aanmelden tot eerste bericht in minder dan een minuut",
     howSub:"Geen formulieren. Geen vragenlijsten. Alleen echte vrouwen, klaar om te praten.",
     step1t:"Gratis aanmelden", step1d:"Alleen e-mail en leeftijd. 30 seconden \u2014 geen kaart nodig.",
@@ -1019,9 +995,6 @@ var I18N = {
     f2t:"Discreet van nature", f2d:"Neutrale facturatie. Priv\u00e9 browsen. Je gegevens blijven bij ons. AVG-conform.",
     f3t:"Geen druk", f3d:"Jouw tempo. Bekijken, schrijven, ontmoeten \u2014 als jij er klaar voor bent.",
     tEyebrow:"Wat mannen zeggen", tTitle:"Echte mannen. Echte ontmoetingen.",
-    t1:"Na mijn scheiding dacht ik dat datingsites niets voor mij waren. Deze is anders \u2014 de eerste vrouw die ik schreef werd een echte vriendin, en meer.",
-    t2:"Ik ben 58. Klaar met apps vol 25-jarigen. Hier zijn vrouwen van mijn leeftijd, mijn stad, klaar voor een echt gesprek.",
-    t3:"Geen druk, geen nepberichten, geen eindeloze upsells. Binnen een week koffie gedronken met iemand.",
     faqEyebrow:"Veelgestelde vragen", faqTitle:"Wat mannen vragen",
     faq:[
       ["\ud83d\udd12 Is het echt discreet? Komt iemand erachter?","Discretie is de kern van VelvetMeet. Neutrale factuurnaam, geen posts op social, geen mails op rare tijden. Jij beslist wat openbaar is."],
@@ -1076,14 +1049,488 @@ var NAME_POOL = {
   nl:["Anna","Sanne","Linda","Eva","Marije","Petra","Saskia","Astrid","Wilma","Brigitte","Ineke","Margriet","Yvonne","Carolien","Annemarie"]
 };
 
-var TESTIMONIAL_NAMES = {
-  en:[["Martin K.",52],["Thomas R.",58],["David L.",47]],
-  de:[["Martin K.",52],["Thomas R.",58],["Andreas F.",47]],
-  pl:[["Marek K.",52],["Tomasz R.",58],["Piotr L.",47]],
-  fr:[["Philippe D.",52],["Jean-Marc R.",58],["Bruno L.",47]],
-  it:[["Marco T.",52],["Giuseppe R.",58],["Andrea F.",47]],
-  nl:[["Mark V.",52],["Thomas B.",58],["Jeroen K.",47]]
-};
+var REVIEW_POOL = [
+  {
+    "id": "review-01",
+    "age": 52,
+    "names": {
+      "en": "Martin",
+      "pl": "Marcin",
+      "fr": "Martin",
+      "it": "Martino",
+      "nl": "Maarten",
+      "de": "Martin"
+    },
+    "texts": {
+      "de": "Ich war anfangs ehrlich gesagt skeptisch. Aber die Anmeldung ging schnell und die Seite ist ziemlich einfach zu bedienen. Das hat mich positiv überrascht.",
+      "en": "To be honest, I was sceptical at first. But signing up was quick and the site is quite easy to use. That was a pleasant surprise.",
+      "pl": "Szczerze mówiąc, na początku byłem sceptyczny. Ale rejestracja poszła szybko, a strona jest dość prosta w obsłudze. To mnie miło zaskoczyło.",
+      "fr": "Pour être honnête, j’étais sceptique au début. Mais l’inscription a été rapide et le site est assez facile à utiliser. Cela m’a agréablement surpris.",
+      "it": "All’inizio, a dire il vero, ero scettico. Ma la registrazione è stata veloce e il sito è piuttosto semplice da usare. È stata una piacevole sorpresa.",
+      "nl": "Om eerlijk te zijn was ik in het begin sceptisch. Maar aanmelden ging snel en de site is vrij eenvoudig te gebruiken. Dat heeft me positief verrast."
+    }
+  },
+  {
+    "id": "review-02",
+    "age": 58,
+    "names": {
+      "en": "Thomas",
+      "pl": "Tomasz",
+      "fr": "Thomas",
+      "it": "Tommaso",
+      "nl": "Thomas",
+      "de": "Thomas"
+    },
+    "texts": {
+      "de": "Mit Ende fünfzig hat man keine Lust mehr auf komplizierte Spielchen. Ich wollte einfach nette Gespräche führen und sehen, was sich daraus entwickelt.",
+      "en": "In your late fifties, you no longer feel like playing complicated games. I just wanted some pleasant conversations and to see where they might lead.",
+      "pl": "Pod koniec pięćdziesiątki nie ma się już ochoty na skomplikowane gierki. Chciałem po prostu miło porozmawiać i zobaczyć, co z tego wyniknie.",
+      "fr": "À la fin de la cinquantaine, on n’a plus envie de petits jeux compliqués. Je voulais simplement avoir des conversations agréables et voir où cela mènerait.",
+      "it": "Quando si è vicini ai sessant’anni, non si ha più voglia di giochetti complicati. Volevo semplicemente fare conversazioni piacevoli e vedere come sarebbero andate le cose.",
+      "nl": "Als je eind vijftig bent, heb je geen zin meer in ingewikkelde spelletjes. Ik wilde gewoon fijne gesprekken voeren en kijken wat daaruit zou ontstaan."
+    }
+  },
+  {
+    "id": "review-03",
+    "age": 47,
+    "names": {
+      "en": "Michael",
+      "pl": "Michał",
+      "fr": "Michel",
+      "it": "Michele",
+      "nl": "Michiel",
+      "de": "Michael"
+    },
+    "texts": {
+      "de": "Mir gefällt, dass ich mir alles in Ruhe anschauen kann. Ich muss nicht sofort irgendetwas entscheiden oder mich unter Druck gesetzt fühlen.",
+      "en": "I like being able to look around at my own pace. I do not have to decide anything straight away or feel under pressure.",
+      "pl": "Podoba mi się, że mogę wszystko spokojnie obejrzeć. Nie muszę od razu o niczym decydować ani czuć presji.",
+      "fr": "J’aime pouvoir tout regarder tranquillement. Je n’ai pas à prendre une décision tout de suite ni à me sentir sous pression.",
+      "it": "Mi piace poter guardare tutto con calma. Non devo decidere subito qualcosa né sentirmi sotto pressione.",
+      "nl": "Ik vind het prettig dat ik alles rustig kan bekijken. Ik hoef niet meteen iets te beslissen of me onder druk gezet te voelen."
+    }
+  },
+  {
+    "id": "review-04",
+    "age": 54,
+    "names": {
+      "en": "Andrew",
+      "pl": "Andrzej",
+      "fr": "André",
+      "it": "Andrea",
+      "nl": "André",
+      "de": "Andreas"
+    },
+    "texts": {
+      "de": "Nach der Arbeit habe ich oft nicht viel Zeit. Deshalb finde ich es praktisch, dass man sich schnell anmelden und ein wenig umsehen kann.",
+      "en": "I often do not have much time after work. So I find it handy that you can sign up quickly and have a look around.",
+      "pl": "Po pracy często nie mam zbyt wiele czasu. Dlatego wygodne jest to, że można szybko się zarejestrować i trochę rozejrzeć.",
+      "fr": "Après le travail, je n’ai souvent pas beaucoup de temps. Je trouve donc pratique de pouvoir s’inscrire rapidement et jeter un coup d’œil.",
+      "it": "Dopo il lavoro spesso non ho molto tempo. Per questo trovo comodo potersi registrare velocemente e dare un’occhiata.",
+      "nl": "Na het werk heb ik vaak niet veel tijd. Daarom vind ik het handig dat je je snel kunt aanmelden en even kunt rondkijken."
+    }
+  },
+  {
+    "id": "review-05",
+    "age": 49,
+    "names": {
+      "en": "Stephen",
+      "pl": "Stefan",
+      "fr": "Stéphane",
+      "it": "Stefano",
+      "nl": "Stefan",
+      "de": "Stefan"
+    },
+    "texts": {
+      "de": "Ich wollte einfach mal etwas Neues ausprobieren. Die Seite ist übersichtlich und ich musste nicht lange suchen, um mich zurechtzufinden.",
+      "en": "I simply wanted to try something new. The site is clearly laid out, and it did not take me long to find my way around.",
+      "pl": "Chciałem po prostu spróbować czegoś nowego. Strona jest przejrzysta i szybko się na niej odnalazłem.",
+      "fr": "Je voulais simplement essayer quelque chose de nouveau. Le site est clair et je n’ai pas mis longtemps à m’y retrouver.",
+      "it": "Volevo semplicemente provare qualcosa di nuovo. Il sito è chiaro e non ci ho messo molto a orientarmi.",
+      "nl": "Ik wilde gewoon eens iets nieuws proberen. De site is overzichtelijk en het duurde niet lang voordat ik mijn weg had gevonden."
+    }
+  },
+  {
+    "id": "review-06",
+    "age": 56,
+    "names": {
+      "en": "Mark",
+      "pl": "Marek",
+      "fr": "Marc",
+      "it": "Marco",
+      "nl": "Mark",
+      "de": "Markus"
+    },
+    "texts": {
+      "de": "Mir ist ein normales Gespräch wichtiger als irgendwelche großen Versprechen. Ich finde, man sollte sich erst einmal ganz entspannt kennenlernen.",
+      "en": "An ordinary conversation matters more to me than big promises. I think you should start by getting to know each other in a relaxed way.",
+      "pl": "Zwykła rozmowa jest dla mnie ważniejsza niż wielkie obietnice. Uważam, że najpierw warto spokojnie się poznać.",
+      "fr": "Une conversation normale compte davantage pour moi que de grandes promesses. Je pense qu’il faut commencer par faire connaissance en toute simplicité.",
+      "it": "Per me una normale conversazione conta più di tante grandi promesse. Penso che prima ci si debba conoscere con tranquillità.",
+      "nl": "Een gewoon gesprek is voor mij belangrijker dan allerlei grote beloften. Ik vind dat je elkaar eerst rustig moet leren kennen."
+    }
+  },
+  {
+    "id": "review-07",
+    "age": 61,
+    "names": {
+      "en": "Peter",
+      "pl": "Piotr",
+      "fr": "Pierre",
+      "it": "Pietro",
+      "nl": "Peter",
+      "de": "Peter"
+    },
+    "texts": {
+      "de": "Ich bin nicht der Typ, der ständig neue Leute anspricht. Online fällt mir der erste Schritt etwas leichter.",
+      "en": "I am not the sort of person who is always approaching new people. Taking the first step feels a little easier online.",
+      "pl": "Nie jestem osobą, która ciągle zagaduje do nowych ludzi. W internecie trochę łatwiej mi zrobić pierwszy krok.",
+      "fr": "Je ne suis pas du genre à aborder sans cesse de nouvelles personnes. En ligne, je trouve un peu plus facile de faire le premier pas.",
+      "it": "Non sono il tipo che attacca continuamente discorso con persone nuove. Online mi riesce un po’ più facile fare il primo passo.",
+      "nl": "Ik ben niet het type dat voortdurend op nieuwe mensen afstapt. Online vind ik het iets makkelijker om de eerste stap te zetten."
+    }
+  },
+  {
+    "id": "review-08",
+    "age": 45,
+    "names": {
+      "en": "Daniel",
+      "pl": "Daniel",
+      "fr": "Daniel",
+      "it": "Daniele",
+      "nl": "Daniël",
+      "de": "Daniel"
+    },
+    "texts": {
+      "de": "Die Anmeldung war unkompliziert. Ich konnte direkt loslegen, ohne mich erst durch unzählige Seiten klicken zu müssen.",
+      "en": "Signing up was straightforward. I could get started right away without having to click through countless pages first.",
+      "pl": "Rejestracja była prosta. Mogłem od razu zacząć, bez przeklikiwania się najpierw przez niezliczone strony.",
+      "fr": "L’inscription était simple. J’ai pu commencer tout de suite, sans devoir d’abord parcourir une multitude de pages.",
+      "it": "La registrazione è stata semplice. Ho potuto iniziare subito, senza dover prima passare attraverso un’infinità di pagine.",
+      "nl": "Aanmelden was eenvoudig. Ik kon meteen beginnen, zonder eerst door talloze pagina’s te hoeven klikken."
+    }
+  },
+  {
+    "id": "review-09",
+    "age": 59,
+    "names": {
+      "en": "Frank",
+      "pl": "Franciszek",
+      "fr": "Franck",
+      "it": "Franco",
+      "nl": "Frank",
+      "de": "Frank"
+    },
+    "texts": {
+      "de": "Nach einer längeren Beziehung ist es gar nicht so einfach, wieder offen für neue Bekanntschaften zu sein. Ich lasse die Sache langsam angehen.",
+      "en": "After a long relationship, it is not that easy to be open to meeting someone new again. I am taking things slowly.",
+      "pl": "Po dłuższym związku nie jest łatwo znów otworzyć się na nowe znajomości. Podchodzę do tego bez pośpiechu.",
+      "fr": "Après une longue relation, il n’est pas si facile de s’ouvrir à nouveau à de nouvelles rencontres. Je prends mon temps.",
+      "it": "Dopo una relazione lunga, non è così facile aprirsi di nuovo a nuove conoscenze. Sto affrontando la cosa senza fretta.",
+      "nl": "Na een lange relatie is het niet zo makkelijk om weer open te staan voor nieuwe contacten. Ik doe het rustig aan."
+    }
+  },
+  {
+    "id": "review-10",
+    "age": 51,
+    "names": {
+      "en": "Oliver",
+      "pl": "Oliwier",
+      "fr": "Olivier",
+      "it": "Oliviero",
+      "nl": "Olivier",
+      "de": "Oliver"
+    },
+    "texts": {
+      "de": "Was ich suche, ist eigentlich ganz einfach: eine sympathische Frau, mit der man lachen und sich ehrlich unterhalten kann.",
+      "en": "What I am looking for is actually quite simple: a lovely woman I can laugh with and talk to honestly.",
+      "pl": "To, czego szukam, jest właściwie proste: sympatyczna kobieta, z którą można się śmiać i szczerze rozmawiać.",
+      "fr": "Ce que je cherche est finalement assez simple : une femme sympathique avec qui rire et discuter sincèrement.",
+      "it": "Quello che cerco è in realtà molto semplice: una donna simpatica con cui ridere e parlare sinceramente.",
+      "nl": "Wat ik zoek is eigenlijk heel eenvoudig: een aardige vrouw met wie je kunt lachen en eerlijk kunt praten."
+    }
+  },
+  {
+    "id": "review-11",
+    "age": 55,
+    "names": {
+      "en": "John",
+      "pl": "Jan",
+      "fr": "Jean",
+      "it": "Giovanni",
+      "nl": "Jan",
+      "de": "Jens"
+    },
+    "texts": {
+      "de": "Ich mag es, dass ich selbst entscheiden kann, wann ich online bin und wie viel Zeit ich dafür investiere.",
+      "en": "I like being able to decide for myself when I go online and how much time I spend on it.",
+      "pl": "Podoba mi się, że sam mogę decydować, kiedy jestem online i ile czasu na to poświęcam.",
+      "fr": "J’aime pouvoir décider moi-même quand me connecter et combien de temps y consacrer.",
+      "it": "Mi piace poter decidere da solo quando collegarmi e quanto tempo dedicarci.",
+      "nl": "Ik vind het fijn dat ik zelf kan bepalen wanneer ik online ben en hoeveel tijd ik eraan besteed."
+    }
+  },
+  {
+    "id": "review-12",
+    "age": 62,
+    "names": {
+      "en": "Stephen",
+      "pl": "Stefan",
+      "fr": "Stéphane",
+      "it": "Stefano",
+      "nl": "Stefan",
+      "de": "Stefan"
+    },
+    "texts": {
+      "de": "In unserem Alter weiß man meistens besser, was man möchte. Ich finde es schön, neue Menschen kennenzulernen, ohne gleich alles planen zu müssen.",
+      "en": "At our age, you usually have a better idea of what you want. I enjoy meeting new people without having to plan everything straight away.",
+      "pl": "W naszym wieku zazwyczaj lepiej się wie, czego się chce. Miło poznawać nowych ludzi bez konieczności planowania od razu wszystkiego.",
+      "fr": "À notre âge, on sait généralement mieux ce que l’on veut. Je trouve agréable de rencontrer de nouvelles personnes sans devoir tout planifier immédiatement.",
+      "it": "Alla nostra età di solito si sa meglio quello che si vuole. Trovo bello conoscere persone nuove senza dover pianificare subito tutto.",
+      "nl": "Op onze leeftijd weet je meestal beter wat je wilt. Ik vind het fijn om nieuwe mensen te leren kennen zonder meteen alles te hoeven plannen."
+    }
+  },
+  {
+    "id": "review-13",
+    "age": 48,
+    "names": {
+      "en": "Robert",
+      "pl": "Robert",
+      "fr": "Robert",
+      "it": "Roberto",
+      "nl": "Robert",
+      "de": "Robert"
+    },
+    "texts": {
+      "de": "Ich hatte keine besonders großen Erwartungen. Mir ging es erst einmal darum, mich umzusehen und ein Gefühl für die Seite zu bekommen.",
+      "en": "I did not have particularly high expectations. To begin with, I just wanted to look around and get a feel for the site.",
+      "pl": "Nie miałem szczególnie dużych oczekiwań. Na początek chciałem się po prostu rozejrzeć i zorientować, jak działa ta strona.",
+      "fr": "Je n’avais pas d’attentes particulièrement élevées. Au début, je voulais simplement regarder et me faire une idée du site.",
+      "it": "Non avevo aspettative particolarmente alte. All’inizio volevo soltanto guardarmi intorno e farmi un’idea del sito.",
+      "nl": "Ik had geen bijzonder hoge verwachtingen. Ik wilde eerst gewoon rondkijken en een gevoel voor de site krijgen."
+    }
+  },
+  {
+    "id": "review-14",
+    "age": 64,
+    "names": {
+      "en": "Charles",
+      "pl": "Karol",
+      "fr": "Charles",
+      "it": "Carlo",
+      "nl": "Karel",
+      "de": "Klaus"
+    },
+    "texts": {
+      "de": "Manchmal fehlt einem einfach jemand, mit dem man über den Tag sprechen kann. Ich finde, auch daraus kann etwas Schönes entstehen.",
+      "en": "Sometimes you simply miss having someone to talk to about your day. I think something lovely can grow from that too.",
+      "pl": "Czasem brakuje po prostu kogoś, z kim można porozmawiać o minionym dniu. Myślę, że z tego też może wyniknąć coś pięknego.",
+      "fr": "Parfois, il manque simplement quelqu’un avec qui parler de sa journée. Je pense que cela aussi peut être le début de quelque chose de beau.",
+      "it": "A volte manca semplicemente qualcuno con cui parlare della propria giornata. Penso che anche da questo possa nascere qualcosa di bello.",
+      "nl": "Soms mis je gewoon iemand met wie je over je dag kunt praten. Ik denk dat ook daar iets moois uit kan ontstaan."
+    }
+  },
+  {
+    "id": "review-15",
+    "age": 53,
+    "names": {
+      "en": "Matthew",
+      "pl": "Mateusz",
+      "fr": "Mathieu",
+      "it": "Matteo",
+      "nl": "Matthijs",
+      "de": "Matthias"
+    },
+    "texts": {
+      "de": "Ich wollte keine komplizierte Anmeldung und keine langen Fragebögen. Hier bin ich schnell durchgestiegen.",
+      "en": "I did not want a complicated sign-up process or long questionnaires. It was easy to get the hang of things here.",
+      "pl": "Nie chciałem skomplikowanej rejestracji ani długich kwestionariuszy. Tutaj szybko się we wszystkim zorientowałem.",
+      "fr": "Je ne voulais ni inscription compliquée ni longs questionnaires. Ici, j’ai vite compris comment cela fonctionnait.",
+      "it": "Non volevo una registrazione complicata né lunghi questionari. Qui ho capito rapidamente come funzionava.",
+      "nl": "Ik wilde geen ingewikkelde aanmelding en geen lange vragenlijsten. Hier had ik snel door hoe alles werkte."
+    }
+  },
+  {
+    "id": "review-16",
+    "age": 60,
+    "names": {
+      "en": "William",
+      "pl": "Wojciech",
+      "fr": "Guillaume",
+      "it": "Guglielmo",
+      "nl": "Willem",
+      "de": "Wolfgang"
+    },
+    "texts": {
+      "de": "Nach einigen Jahren allein ist es schön, sich wieder mit dem Gedanken an eine neue Bekanntschaft zu beschäftigen. Ich schaue einfach, wohin es führt.",
+      "en": "After a few years on my own, it is nice to think about meeting someone new again. I will simply see where it leads.",
+      "pl": "Po kilku latach w pojedynkę miło znów pomyśleć o nowej znajomości. Po prostu zobaczę, dokąd to zaprowadzi.",
+      "fr": "Après quelques années seul, il est agréable de penser à nouveau à une rencontre. Je verrai simplement où cela me mène.",
+      "it": "Dopo alcuni anni da solo, è bello tornare a pensare a una nuova conoscenza. Vedrò semplicemente dove mi porterà.",
+      "nl": "Na een paar jaar alleen is het fijn om weer na te denken over een nieuwe kennismaking. Ik kijk gewoon waar het toe leidt."
+    }
+  },
+  {
+    "id": "review-17",
+    "age": 46,
+    "names": {
+      "en": "Sebastian",
+      "pl": "Sebastian",
+      "fr": "Sébastien",
+      "it": "Sebastiano",
+      "nl": "Sebastiaan",
+      "de": "Sebastian"
+    },
+    "texts": {
+      "de": "Ich finde, beim Kennenlernen sollte man sich nicht verstellen müssen. Ein ehrliches Gespräch sagt mir mehr als ein perfektes Profil.",
+      "en": "I do not think you should have to pretend to be someone else when getting to know a person. An honest conversation tells me more than a perfect profile.",
+      "pl": "Uważam, że poznając kogoś, nie powinno się udawać innej osoby. Szczera rozmowa mówi mi więcej niż idealny profil.",
+      "fr": "Je pense qu’on ne devrait pas avoir à jouer un rôle quand on fait connaissance. Une conversation sincère m’en dit plus qu’un profil parfait.",
+      "it": "Penso che quando ci si conosce non si debba fingere di essere qualcun altro. Una conversazione sincera mi dice più di un profilo perfetto.",
+      "nl": "Ik vind dat je je niet anders hoeft voor te doen als je iemand leert kennen. Een eerlijk gesprek zegt mij meer dan een perfect profiel."
+    }
+  },
+  {
+    "id": "review-18",
+    "age": 57,
+    "names": {
+      "en": "Ralph",
+      "pl": "Rafał",
+      "fr": "Raphaël",
+      "it": "Raffaele",
+      "nl": "Ralf",
+      "de": "Ralf"
+    },
+    "texts": {
+      "de": "Ich nutze solche Seiten lieber in meinem eigenen Tempo. Mir gefällt die Idee, erst einmal in Ruhe zu schauen, wer zu mir passen könnte.",
+      "en": "I prefer to use sites like this at my own pace. I like the idea of first taking a relaxed look at who might be a good match for me.",
+      "pl": "Wolę korzystać z takich stron we własnym tempie. Podoba mi się pomysł, żeby najpierw spokojnie sprawdzić, kto mógłby do mnie pasować.",
+      "fr": "Je préfère utiliser ce genre de sites à mon rythme. J’aime l’idée de regarder d’abord tranquillement qui pourrait me correspondre.",
+      "it": "Preferisco usare siti di questo tipo con i miei tempi. Mi piace l’idea di guardare prima con calma chi potrebbe essere adatto a me.",
+      "nl": "Ik gebruik dit soort sites liever in mijn eigen tempo. Het idee om eerst rustig te kijken wie bij mij zou kunnen passen spreekt me aan."
+    }
+  },
+  {
+    "id": "review-19",
+    "age": 63,
+    "names": {
+      "en": "Martin",
+      "pl": "Marcin",
+      "fr": "Martin",
+      "it": "Martino",
+      "nl": "Maarten",
+      "de": "Martin"
+    },
+    "texts": {
+      "de": "Ich dachte zuerst, dass Online-Dating nichts für mich ist. Aber eigentlich ist es eine ganz praktische Möglichkeit, neue Kontakte zu knüpfen.",
+      "en": "At first I thought online dating was not for me. But it is actually quite a practical way to make new connections.",
+      "pl": "Na początku myślałem, że randki internetowe nie są dla mnie. Ale to właściwie całkiem praktyczny sposób na nawiązanie nowych znajomości.",
+      "fr": "Au début, je pensais que les rencontres en ligne n’étaient pas pour moi. Mais c’est finalement un moyen assez pratique de faire de nouvelles connaissances.",
+      "it": "All’inizio pensavo che gli incontri online non facessero per me. Ma in realtà sono un modo piuttosto pratico per fare nuove conoscenze.",
+      "nl": "In het begin dacht ik dat online daten niets voor mij was. Maar eigenlijk is het een vrij praktische manier om nieuwe contacten te leggen."
+    }
+  },
+  {
+    "id": "review-20",
+    "age": 50,
+    "names": {
+      "en": "Tobias",
+      "pl": "Tobiasz",
+      "fr": "Tobias",
+      "it": "Tobia",
+      "nl": "Tobias",
+      "de": "Tobias"
+    },
+    "texts": {
+      "de": "Mir gefällt, dass ich nicht sofort wissen muss, was daraus wird. Manchmal reicht es, erst einmal einen netten Kontakt zu finden.",
+      "en": "I like not having to know straight away where things will lead. Sometimes finding someone nice to talk to is enough to begin with.",
+      "pl": "Podoba mi się, że nie muszę od razu wiedzieć, co z tego wyniknie. Czasem na początek wystarczy znaleźć kogoś miłego do rozmowy.",
+      "fr": "J’aime ne pas devoir savoir tout de suite où cela mènera. Parfois, trouver quelqu’un d’agréable avec qui parler suffit pour commencer.",
+      "it": "Mi piace non dover sapere subito come andrà a finire. A volte, per cominciare, basta trovare una persona piacevole con cui parlare.",
+      "nl": "Ik vind het fijn dat ik niet meteen hoef te weten waar het toe leidt. Soms is het genoeg om eerst iemand te vinden met wie je prettig kunt praten."
+    }
+  },
+  {
+    "id": "review-21",
+    "age": 65,
+    "names": {
+      "en": "George",
+      "pl": "Grzegorz",
+      "fr": "Georges",
+      "it": "Giorgio",
+      "nl": "Gerrit",
+      "de": "Günther"
+    },
+    "texts": {
+      "de": "Ich bin eher ruhig und brauche etwas Zeit, um Vertrauen aufzubauen. Deshalb möchte ich jemanden erst einmal in Ruhe kennenlernen.",
+      "en": "I am quite a quiet person and need some time to build trust. That is why I want to take my time getting to know someone first.",
+      "pl": "Jestem raczej spokojny i potrzebuję trochę czasu, żeby komuś zaufać. Dlatego najpierw chcę spokojnie poznać drugą osobę.",
+      "fr": "Je suis plutôt réservé et j’ai besoin de temps pour accorder ma confiance. C’est pourquoi je souhaite d’abord faire connaissance tranquillement.",
+      "it": "Sono una persona piuttosto tranquilla e ho bisogno di un po’ di tempo per fidarmi. Per questo vorrei prima conoscere qualcuno con calma.",
+      "nl": "Ik ben vrij rustig en heb wat tijd nodig om vertrouwen op te bouwen. Daarom wil ik iemand eerst op mijn gemak leren kennen."
+    }
+  },
+  {
+    "id": "review-22",
+    "age": 44,
+    "names": {
+      "en": "Christian",
+      "pl": "Krystian",
+      "fr": "Christian",
+      "it": "Cristiano",
+      "nl": "Christiaan",
+      "de": "Christian"
+    },
+    "texts": {
+      "de": "Die Seite wirkt auf mich angenehm unkompliziert. Ich wollte keine große Sache daraus machen, sondern einfach mal schauen.",
+      "en": "The site seems pleasantly straightforward to me. I did not want to make a big thing of it, just have a look.",
+      "pl": "Strona wydaje mi się przyjemnie prosta. Nie chciałem robić z tego wielkiej sprawy, tylko po prostu się rozejrzeć.",
+      "fr": "Le site me paraît agréablement simple. Je ne voulais pas en faire toute une affaire, simplement regarder.",
+      "it": "Il sito mi sembra piacevolmente semplice. Non volevo farne una questione enorme, ma soltanto dare un’occhiata.",
+      "nl": "De site komt op mij prettig eenvoudig over. Ik wilde er geen groot ding van maken, maar gewoon eens kijken."
+    }
+  },
+  {
+    "id": "review-23",
+    "age": 58,
+    "names": {
+      "en": "Bernard",
+      "pl": "Bernard",
+      "fr": "Bernard",
+      "it": "Bernardo",
+      "nl": "Berend",
+      "de": "Bernd"
+    },
+    "texts": {
+      "de": "Es ist nicht immer leicht, im Alltag neue Menschen kennenzulernen. Deshalb finde ich es gut, wenn es dafür eine zusätzliche Möglichkeit gibt.",
+      "en": "It is not always easy to meet new people in everyday life. So I think it is good to have another way of doing that.",
+      "pl": "W codziennym życiu nie zawsze łatwo poznawać nowych ludzi. Dlatego dobrze, że jest ku temu dodatkowa możliwość.",
+      "fr": "Il n’est pas toujours facile de rencontrer de nouvelles personnes au quotidien. Je trouve donc bien qu’il existe une possibilité supplémentaire de le faire.",
+      "it": "Nella vita quotidiana non è sempre facile conoscere persone nuove. Perciò trovo positivo avere un’ulteriore possibilità per farlo.",
+      "nl": "Het is niet altijd makkelijk om in het dagelijks leven nieuwe mensen te leren kennen. Daarom vind ik het goed dat daar een extra mogelijkheid voor is."
+    }
+  },
+  {
+    "id": "review-24",
+    "age": 51,
+    "names": {
+      "en": "Alex",
+      "pl": "Aleksander",
+      "fr": "Alex",
+      "it": "Alessio",
+      "nl": "Alex",
+      "de": "Alex"
+    },
+    "texts": {
+      "de": "Für mich muss nicht alles sofort perfekt sein. Ein sympathischer erster Eindruck und ein gutes Gespräch sind ein schöner Anfang.",
+      "en": "For me, not everything has to be perfect straight away. A nice first impression and a good conversation are a lovely start.",
+      "pl": "Dla mnie nie wszystko musi być od razu idealne. Miłe pierwsze wrażenie i dobra rozmowa to piękny początek.",
+      "fr": "Pour moi, tout n’a pas besoin d’être parfait immédiatement. Une première impression agréable et une bonne conversation sont un beau début.",
+      "it": "Per me non deve essere tutto perfetto fin da subito. Una prima impressione piacevole e una bella conversazione sono un ottimo inizio.",
+      "nl": "Voor mij hoeft niet alles meteen perfect te zijn. Een prettige eerste indruk en een goed gesprek zijn een mooi begin."
+    }
+  }
+];
 
 </script>
 <script>
@@ -1220,6 +1667,23 @@ const VM_MEDIA=(()=>{
     return deck;
   }
 
+  function reviewName(review){var geoLanguage=COUNTRY_LANG[currentGeo]||'en';return review.names[currentGeo]||review.names[geoLanguage]||review.names.en;}
+  function chooseReviews(){
+    var previous=[];try{previous=JSON.parse(safeSessGet('vm_reviews_previous_'+currentGeo)||'[]');if(!Array.isArray(previous))previous=[]}catch(e){}
+    var candidates=REVIEW_POOL.filter(function(review){return previous.indexOf(review.id)<0});
+    if(candidates.length<3)candidates=REVIEW_POOL.slice();
+    var chosen=[],usedNames={};
+    shuffle(candidates).forEach(function(review){var name=reviewName(review);if(chosen.length<3&&!usedNames[name]){chosen.push(review);usedNames[name]=true}});
+    safeSessSet('vm_reviews_previous_'+currentGeo,JSON.stringify(chosen.map(function(review){return review.id})));
+    return chosen;
+  }
+  function applyTestimonials(lang){
+    selectedReviews.forEach(function(review,index){var n=index+1,name=reviewName(review),text=review.texts[lang]||review.texts.en;
+      setText('t'+n+'Text','“'+text+'”');setText('who'+n+'Name',name+', '+review.age);setText('avatar'+n,Array.from(name)[0]);
+      var card=document.getElementById('t'+n+'Text').closest('.t');card.dataset.reviewId=review.id;
+    });
+  }
+
   function pickLang(){
     try{var q=new URLSearchParams(location.search).get("lang");if(q&&I18N[q.toLowerCase()])return q.toLowerCase()}catch(e){}
     var cc=currentGeo;
@@ -1240,6 +1704,7 @@ const VM_MEDIA=(()=>{
   var popupProfile=popupCandidates.length?popupCandidates[rnd(0,popupCandidates.length-1)]:null;
   var popupMinutes=rnd(4,15),popupDistance=rnd(2,18);
   if(popupProfile)safeSessSet('vm_popup_previous_'+currentGeo,popupProfile.id);
+  var selectedReviews=chooseReviews();
   var currentLang="en";
   var currentCity="";
   var currentName="";
@@ -1326,16 +1791,6 @@ const VM_MEDIA=(()=>{
     }catch(e){}
   }
 
-  function applySocialBar(d){
-    try{
-      var n=rnd(7200,9400);
-      var country=d.countryName||"";
-      var s=tpl(d.socialBar||"{n} men",{n:n.toLocaleString(),country:country});
-      if(country) s=s+(s.indexOf(country)>=0?"":" — "+country);
-      setText("socialBarText",s);
-    }catch(e){}
-  }
-
   function applyActivityStrip(d,lang){
     try{
       setText("activityTitleText",d.activityTitle);
@@ -1416,16 +1871,7 @@ const VM_MEDIA=(()=>{
       setText("f2tText",d.f2t);setText("f2dText",d.f2d);
       setText("f3tText",d.f3t);setText("f3dText",d.f3d);
       setText("tEyebrowText",d.tEyebrow);setText("tTitleText",d.tTitle);
-      setText("t1Text","“"+d.t1+"”");setText("t2Text","“"+d.t2+"”");setText("t3Text","“"+d.t3+"”");
-
-      var tn=TESTIMONIAL_NAMES[lang]||TESTIMONIAL_NAMES.en;
-      var initials=function(s){var p=s.split(" ");return (p[0]?p[0][0]:"")+(p[1]?p[1][0]:"")};
-      setText("who1Name",tn[0][0]+", "+tn[0][1]);setText("avatar1",initials(tn[0][0]));
-      setText("who2Name",tn[1][0]+", "+tn[1][1]);setText("avatar2",initials(tn[1][0]));
-      setText("who3Name",tn[2][0]+", "+tn[2][1]);setText("avatar3",initials(tn[2][0]));
-      var cities=LOCAL_CITIES[lang]||LOCAL_CITIES.en;
-      var locEls=document.querySelectorAll("[data-tloc]");
-      for(var k=0;k<locEls.length;k++){locEls[k].textContent=cities[k%cities.length]}
+      applyTestimonials(lang);
       setText("faqEyebrowText",d.faqEyebrow);setText("faqTitleText",d.faqTitle);
       var faq=document.getElementById("faqList");
       if(faq){faq.innerHTML="";var arr=d.faq||[];for(var f=0;f<arr.length;f++){var det=document.createElement("details");if(f===0)det.open=true;var sum=document.createElement("summary");sum.textContent=arr[f][0];var p=document.createElement("p");p.textContent=arr[f][1];det.appendChild(sum);det.appendChild(p);faq.appendChild(det)}}
@@ -1481,7 +1927,6 @@ const VM_MEDIA=(()=>{
     try{var meta=document.getElementById("metaDesc");if(meta)meta.content=d.metaDesc}catch(e){}
     setHeroine(lang);
     applyHeroBlock(d);
-    applySocialBar(d);
     applyActivityStrip(d,lang);
     applyQuiz(d);
     applySections(d,lang);
